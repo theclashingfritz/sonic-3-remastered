@@ -3,9 +3,9 @@
 
 #include "Standard.h"
 #include "Application.h"
-#include "TextureAudio.h"
 #include "LevelScene.h"
-#include "Player.h"
+#include "TextureAudio.h"
+#include <S3/Player.h>
 
 class Scene_DEZ : public LevelScene {
 public:

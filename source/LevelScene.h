@@ -3,6 +3,7 @@
 
 #include "Standard.h"
 #include "Resources.h"
+#include "TextureAudio.h"
 
 #include <Engine/IO/IStream.h>
 #include <Engine/IGraphics.h>
@@ -202,12 +203,12 @@ public:
     int cameraAutoScrollY = 0;
     bool actTransition = false;
     int LevelRoutine = 0;
+	
+    IPlayer *cameraPlayer = NULL;
 
-    Player *cameraPlayer = NULL;
-
-    Player *player = NULL;
-    Player *playerAI = NULL;
-    Player *playerBuffer[8];
+    IPlayer *player = NULL;
+    IPlayer *playerAI = NULL;
+    IPlayer *playerBuffer[8];
     int player_count = 0;
 
     bool levelComplete = false;

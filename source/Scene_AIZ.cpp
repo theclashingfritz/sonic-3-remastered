@@ -2,7 +2,6 @@
 #include "Scene_MainMenu.h"
 #include "Application.h"
 #include "Resources.h"
-#include "Player.h"
 #include "Scene_AIZ.h"
 #include "S3Object.h"
 #include "LevelScene.h"
@@ -726,7 +725,7 @@ void Scene_AIZ::Update() {
         rings = 2;
         player->SuperForm = true;
         player->SuperFlight = true;
-        player->Action = Actions::Normal;
+        player->Action = ActionType::Normal;
         player->Speed = 8.125f;
         player->Ground = true;
         //cameraMinY = 0x7 * 128;
@@ -753,12 +752,12 @@ void Scene_AIZ::Update() {
         BGy = 1.f / 2.f;
         BGcameraLock = false;
     }
-    if (player->x > 0x29 * 128 && CurrentTileset == 0 && (act & 0xF) == 0) {
+    if (player->X > 0x29 * 128 && CurrentTileset == 0 && (act & 0xF) == 0) {
         CurrentTileset = 1;
         player->ObjectControlled = 0;
         player->SuperForm = false;
-        player->formingType = -1;
-        player->formingTimer = 4 * 10;
+        player->SuperFormAnim = SuperFormAnimType::None;
+        player->SuperFormTimer = 4 * 10;
         beginActZoneTransfer(1);
         levelComplete = true;
         levelCompleteTimer = 0;
@@ -1058,21 +1057,21 @@ void Scene_AIZ::Update() {
     }
 
     // Do common palette stuffs (Super Sonic)
-    if (true) {
+    if (player->SuperForm || player->SuperFormAnim == SuperFormAnimType::None) {
         // Super Sonic
         len = 4;
         pick = 3 * ((frameAnim / 16) % len + 6);
 
-        if (player->formingType == 1) {
-            pick = ((4 * 10 - player->formingTimer) / 4);
+        if (player->SuperFormAnim == SuperFormAnimType::Transforming) {
+            pick = ((4 * 10 - player->SuperFormTimer) / 4);
             if (pick < 2)
                 pick = 2;
             pick = 3 * pick;
         }
-        else if (player->formingType == -1) {
-            pick = 3 * (player->formingTimer / 4);
+        else if (player->SuperFormAnim == SuperFormAnimType::None) {
+            pick = 3 * (player->SuperFormTimer / 4);
         }
-        else if (player->formingType == 0) {
+        else if (player->SuperFormTimer == 0) {
             pick = 0;
         }
 

@@ -1,6 +1,415 @@
-g++ -static -c source/S3/HCZ/Bubbler.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+g++ -static -c source/Scene_CNZ.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
 -mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
--o out/CPP/S3/HCZ/Bubbler.o
-g++ -static out/CPP/TextureAudio.o out/CPP/Application.o out/CPP/Scene_TDZ.o out/CPP/Scene_SpecialStage.o out/CPP/Scene_SSZ.o out/CPP/Scene_DEZ.o out/CPP/main.o out/CPP/Scene_MGZ.o out/CPP/S3/HCZ/Level.o out/CPP/S3/HCZ/AirBubble.o out/CPP/S3/HCZ/Bubbler.o out/CPP/S3/CNZ/Barrel.o out/CPP/S3/Player.o out/CPP/S3/AIZ/Bosses/AIZMinibossCutscene.o out/CPP/S3/AIZ/Bosses/AIZBoss.o out/CPP/S3/AIZ/Bosses/AIZMiniboss.o out/CPP/S3/AIZ/Ridge.o out/CPP/S3/AIZ/ForegroundPlant.o out/CPP/S3/AIZ/Rock.o out/CPP/S3/AIZ/Dummy.o out/CPP/S3/AIZ/SpikedLog.o out/CPP/S3/AIZ/FallingLog.o out/CPP/S3/AIZ/DisappearingPlatform.o out/CPP/S3/AIZ/RideVine.o out/CPP/S3/AIZ/LogBridge.o out/CPP/S3/AIZ/Bloominator.o out/CPP/S3/AIZ/RhinoBot.o out/CPP/S3/AIZ/FloatingPlatform.o out/CPP/S3/AIZ/GiantHollowLog.o out/CPP/S3/AIZ/Cork.o out/CPP/S3/AIZ/MonkeyDude.o out/CPP/S3/AIZ/CollapsingPlatform.o out/CPP/S3/AIZ/TreeBark.o out/CPP/S3/Objects/Button.o out/CPP/S3/Objects/Ring.o out/CPP/S3/Objects/Spikes.o out/CPP/S3/Objects/PathSwitcher.o out/CPP/S3/Objects/NonAnimatedStill.o out/CPP/S3/Objects/EggCapsule.o out/CPP/S3/Objects/Points.o out/CPP/S3/Objects/AnimatedStill.o out/CPP/S3/Objects/Starpole.o out/CPP/S3/Objects/Spring.o out/CPP/S3/Objects/BreakableWall.o out/CPP/S3/Objects/InvisibleSolid.o out/CPP/S3/Objects/SpecialStageRing.o out/CPP/S3/Objects/RollEnforcer.o out/CPP/S3/Objects/Monitor.o out/CPP/S3/ObjectNames.o out/CPP/S3/Enemy.o out/CPP/Scene_TitleScreen.o out/CPP/Scene_LBZ.o out/CPP/Scene_SOZ.o out/CPP/Engine/ICrypt.o out/CPP/Engine/IO/IResources.o out/CPP/Engine/ITexture.o out/CPP/Engine/IGraphics.o out/CPP/Scene_AIZ.o out/CPP/Scene_HCZ.o out/CPP/Scene_ICZ.o out/CPP/Player.o out/CPP/Scene_LRZ.o out/CPP/Scene_FBZ.o out/CPP/LevelScene.o out/CPP/Scene_Z_MSZ.o out/CPP/Scene_CNZ.o out/CPP/Scene_MHZ.o out/CPP/Scene_MainMenu.o out/CPP/Resources.o out/CPP/Scene.o out/CPP/Standard.o out/CPP/Input.o meta/sonic3.res -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/GL -std=gnu++11 -lstdc++ -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -DLOAD_PNG_DYNAMIC="DLL/libpng16-16.dll" -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-o out/CPP/Scene_CNZ.o
+In file included from source/Scene_CNZ.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MainMenu.h:4:0,
+                 from source/Scene_CNZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_CNZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_CNZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_CNZ.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_CNZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_CNZ.h:4:0,
+                 from source/Scene_CNZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/LevelScene.h:4:0,
+                 from source/Scene_CNZ.h:7,
+                 from source/Scene_CNZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/TextureAudio.h:26:0,
+                 from source/LevelScene.h:6,
+                 from source/Scene_CNZ.h:7,
+                 from source/Scene_CNZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_AIZ.h:4:0,
+                 from source/Scene_CNZ.cpp:9:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+source/Scene_CNZ.cpp: In member function 'virtual void Scene_CNZ::UnloadUniqueTextures(Application*, int)':
+source/Scene_CNZ.cpp:244:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (tex_ChunksFront != NULL) tex_ChunksFront->Free(); tex_ChunksFront = NULL;
+   ^~
+source/Scene_CNZ.cpp:244:57: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+   if (tex_ChunksFront != NULL) tex_ChunksFront->Free(); tex_ChunksFront = NULL;
+                                                         ^~~~~~~~~~~~~~~
+source/Scene_CNZ.cpp:247:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (tex_Bubble != NULL) tex_Bubble->Free(); tex_Bubble = NULL;
+   ^~
+source/Scene_CNZ.cpp:247:47: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+   if (tex_Bubble != NULL) tex_Bubble->Free(); tex_Bubble = NULL;
+                                               ^~~~~~~~~~
+source/Scene_CNZ.cpp:249:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (tex_ChunksBack != NULL) tex_ChunksBack->Free(); tex_ChunksBack = NULL;
+   ^~
+source/Scene_CNZ.cpp:249:55: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+   if (tex_ChunksBack != NULL) tex_ChunksBack->Free(); tex_ChunksBack = NULL;
+                                                       ^~~~~~~~~~~~~~
+source/Scene_CNZ.cpp:250:6: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+      if (tex_ChunksFront != NULL) tex_ChunksFront->Free(); tex_ChunksFront = NULL;
+      ^~
+source/Scene_CNZ.cpp:250:60: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+      if (tex_ChunksFront != NULL) tex_ChunksFront->Free(); tex_ChunksFront = NULL;
+                                                            ^~~~~~~~~~~~~~~
+source/Scene_CNZ.cpp:252:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (tex_Miniboss != NULL) tex_Miniboss->Free(); tex_Miniboss = NULL;
+   ^~
+source/Scene_CNZ.cpp:252:51: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+   if (tex_Miniboss != NULL) tex_Miniboss->Free(); tex_Miniboss = NULL;
+                                                   ^~~~~~~~~~~~
+source/Scene_CNZ.cpp:253:6: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+      if (tex_NonAnim_ != NULL) tex_NonAnim_->Free(); tex_NonAnim_ = NULL;
+      ^~
+source/Scene_CNZ.cpp:253:54: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+      if (tex_NonAnim_ != NULL) tex_NonAnim_->Free(); tex_NonAnim_ = NULL;
+                                                      ^~~~~~~~~~~~
+source/Scene_CNZ.cpp:254:6: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+      if (tex_Waves != NULL) tex_Waves->Free(); tex_Waves = NULL;
+      ^~
+source/Scene_CNZ.cpp:254:48: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+      if (tex_Waves != NULL) tex_Waves->Free(); tex_Waves = NULL;
+                                                ^~~~~~~~~
+g++ -static -c source/Scene_MHZ.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Scene_MHZ.o
+In file included from source/Scene_MHZ.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MainMenu.h:4:0,
+                 from source/Scene_MHZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MHZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MHZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MHZ.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MHZ.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MHZ.h:4:0,
+                 from source/Scene_MHZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/LevelScene.h:4:0,
+                 from source/Scene_MHZ.h:6,
+                 from source/Scene_MHZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/TextureAudio.h:26:0,
+                 from source/LevelScene.h:6,
+                 from source/Scene_MHZ.h:6,
+                 from source/Scene_MHZ.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_FBZ.h:4:0,
+                 from source/Scene_MHZ.cpp:9:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+g++ -static -c source/Scene_MainMenu.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Scene_MainMenu.o
+In file included from source/Scene_MainMenu.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MainMenu.h:4:0,
+                 from source/Scene_MainMenu.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MainMenu.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MainMenu.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Application.h:5,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MainMenu.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/Scene_MainMenu.h:5,
+                 from source/Scene_MainMenu.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_AIZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:3:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/LevelScene.h:4:0,
+                 from source/Scene_AIZ.h:7,
+                 from source/Scene_MainMenu.cpp:3:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/TextureAudio.h:26:0,
+                 from source/LevelScene.h:6,
+                 from source/Scene_AIZ.h:7,
+                 from source/Scene_MainMenu.cpp:3:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_HCZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:4:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MGZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:5:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_CNZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:6:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_ICZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:7:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_LBZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:8:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_MHZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:9:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_FBZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:10:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_SOZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:11:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_LRZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:12:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_SSZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:13:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_DEZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:14:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_TDZ.h:4:0,
+                 from source/Scene_MainMenu.cpp:15:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene_SpecialStage.h:4:0,
+                 from source/Scene_MainMenu.cpp:16:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/S3/HCZ/Level.h:4:0,
+                 from source/Scene_MainMenu.cpp:20:
+source/S3/HCZ/../../Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+g++ -static -c source/Resources.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Resources.o
+g++ -static -c source/Scene.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Scene.o
+In file included from source/Scene.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/Scene.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Application.h:5,
+                 from source/Scene.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Application.h:5,
+                 from source/Scene.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/Scene.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/TextureAudio.h:26:0,
+                 from source/Scene.cpp:4:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+source/Scene.cpp: In member function 'void Scene::DrawLongFont(ISprite*, const char*, float, float, float)':
+source/Scene.cpp:116:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int p = 0; p < strlen(text); p++) {
+                     ~~^~~~~~~~~~~~~~
+source/Scene.cpp:132:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int p = 0; p < strlen(text); p++) {
+                     ~~^~~~~~~~~~~~~~
+g++ -static -c source/Standard.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Standard.o
+In file included from source/Standard.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/TextureAudio.h:26:0,
+                 from source/Standard.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/TextureAudio.h:27,
+                 from source/Standard.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Application.h:5,
+                 from source/TextureAudio.h:27,
+                 from source/Standard.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Application.h:5,
+                 from source/TextureAudio.h:27,
+                 from source/Standard.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/TextureAudio.h:27,
+                 from source/Standard.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+g++ -static -c source/Input.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+-o out/CPP/Input.o
+In file included from source/Input.cpp:1:0:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Input.h:4:0,
+                 from source/Input.cpp:2:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Engine/ITexture.h:8:0,
+                 from source/Input.h:6,
+                 from source/Input.cpp:2:
+C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Application.h:4:0,
+                 from source/Input.cpp:3:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+In file included from source/Scene.h:4:0,
+                 from source/Application.h:6,
+                 from source/Input.cpp:3:
+source/Standard.h:101:84: warning: backslash-newline at end of file
+ #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
+                                                                                     
+g++ -static out/CPP/Application.o out/CPP/Scene_TDZ.o out/CPP/Scene_SpecialStage.o out/CPP/Scene_SSZ.o out/CPP/Scene_DEZ.o out/CPP/main.o out/CPP/Scene_MGZ.o out/CPP/S3/HCZ/Level.o out/CPP/S3/HCZ/AirBubble.o out/CPP/S3/HCZ/Bubbler.o out/CPP/S3/CNZ/Barrel.o out/CPP/S3/Player.o out/CPP/S3/AIZ/Bosses/AIZMinibossCutscene.o out/CPP/S3/AIZ/Bosses/AIZBoss.o out/CPP/S3/AIZ/Bosses/AIZMiniboss.o out/CPP/S3/AIZ/Ridge.o out/CPP/S3/AIZ/ForegroundPlant.o out/CPP/S3/AIZ/Rock.o out/CPP/S3/AIZ/Dummy.o out/CPP/S3/AIZ/SpikedLog.o out/CPP/S3/AIZ/FallingLog.o out/CPP/S3/AIZ/DisappearingPlatform.o out/CPP/S3/AIZ/RideVine.o out/CPP/S3/AIZ/LogBridge.o out/CPP/S3/AIZ/Bloominator.o out/CPP/S3/AIZ/RhinoBot.o out/CPP/S3/AIZ/FloatingPlatform.o out/CPP/S3/AIZ/GiantHollowLog.o out/CPP/S3/AIZ/Cork.o out/CPP/S3/AIZ/MonkeyDude.o out/CPP/S3/AIZ/CollapsingPlatform.o out/CPP/S3/AIZ/TreeBark.o out/CPP/S3/Objects/Button.o out/CPP/S3/Objects/Ring.o out/CPP/S3/Objects/Spikes.o out/CPP/S3/Objects/PathSwitcher.o out/CPP/S3/Objects/NonAnimatedStill.o out/CPP/S3/Objects/EggCapsule.o out/CPP/S3/Objects/Points.o out/CPP/S3/Objects/AnimatedStill.o out/CPP/S3/Objects/Starpole.o out/CPP/S3/Objects/Spring.o out/CPP/S3/Objects/BreakableWall.o out/CPP/S3/Objects/InvisibleSolid.o out/CPP/S3/Objects/SpecialStageRing.o out/CPP/S3/Objects/RollEnforcer.o out/CPP/S3/Objects/Monitor.o out/CPP/S3/ObjectNames.o out/CPP/S3/Enemy.o out/CPP/Scene_TitleScreen.o out/CPP/Scene_LBZ.o out/CPP/Scene_SOZ.o out/CPP/Engine/ICrypt.o out/CPP/Engine/IO/IResources.o out/CPP/Engine/ITexture.o out/CPP/Engine/IGraphics.o out/CPP/Scene_AIZ.o out/CPP/Scene_HCZ.o out/CPP/Scene_ICZ.o out/CPP/Scene_LRZ.o out/CPP/Scene_FBZ.o out/CPP/LevelScene.o out/CPP/Scene_Z_MSZ.o out/CPP/Scene_CNZ.o out/CPP/Scene_MHZ.o out/CPP/Scene_MainMenu.o out/CPP/Resources.o out/CPP/Scene.o out/CPP/Standard.o out/CPP/Input.o meta/sonic3.res -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/GL -std=gnu++11 -lstdc++ -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -DLOAD_PNG_DYNAMIC="DLL/libpng16-16.dll" -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
 -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
 -Xlinker -Map=Sonic_3.map -o "Sonic 3.exe"

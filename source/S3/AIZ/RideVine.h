@@ -2,7 +2,7 @@
 #define S3_RideVine_H
 
 #include <S3/Object.h>
-#include <Player.h>
+#include <S3/Player.h>
 
 class IRideVine : public Object {
 	

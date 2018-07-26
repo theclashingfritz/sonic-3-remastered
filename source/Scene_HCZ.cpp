@@ -2,10 +2,11 @@
 #include "Scene_MainMenu.h"
 #include "Application.h"
 #include "Resources.h"
-#include "Player.h"
 #include "Scene_HCZ.h"
 #include "S3Object.h"
 #include "LevelScene.h"
+
+#include "S3/Objects/InvisibleSolid.h"
 
 #include "Scene_CNZ.h"
 
@@ -179,20 +180,20 @@ void Scene_HCZ::InitZone(bool resetTextures, int check, int specialRing, bool ac
 
 	// Create Object: Act 2 wall
 	if ((act & 0xF) == 2) {
-		InvisibleSolid* obj = new InvisibleSolid(0x00);
-		obj->x = 0x400 + 2 * 128;
-		obj->y = 0x500 + 2 * 128;
-		obj->w = 128 * 4;
-		obj->h = 128 * 4;
-		obj->data1 = 0x28;
+		IInvisibleSolid* obj = new IInvisibleSolid();
+		obj->X = 0x400 + 2 * 128;
+		obj->Y = 0x500 + 2 * 128;
+		obj->W = 128 * 4;
+		obj->H = 128 * 4;
+		//obj->data1 = 0x28;
 
-		obj->sc = this;
-		obj->app = app;
-		objects[objects_count] = obj;
+		obj->Scene = this;
+		obj->App = app;
+		Objects[objects_count] = obj;
 		giantWallID = objects_count;
 		objects_count++;
 		giantWallX = 0;
-		obj->create();
+		obj->Create();
 	}
 
     if (check <= 0) {
@@ -748,7 +749,7 @@ void Scene_HCZ::HCZ2_UpdateMovingWall() {
 		if (giantWallX == 0) {
 			objects[giantWallID]->x = 0x400 + 2 * 128;
 			objects[giantWallID]->y = 0x600 + 2 * 128;
-			if (player->x > 0x680 && player->y > 0x600)
+			if (player->X > 0x680 && player->Y > 0x600)
 				giantWallX++;
 		}
 		if (giantWallX > 0 && giantWallX < 0x600) {

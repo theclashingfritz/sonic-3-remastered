@@ -4,9 +4,8 @@
 #include "Standard.h"
 #include "Resources.h"
 #include "Application.h"
-#include "TextureAudio.h"
 #include "LevelScene.h"
-#include "Player.h"
+#include <S3/Player.h>
 
 class Scene_CNZ : public LevelScene {
 public:

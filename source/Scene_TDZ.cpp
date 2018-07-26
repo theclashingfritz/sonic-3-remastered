@@ -1,9 +1,8 @@
+#include "Scene_TDZ.h"
 #include "Standard.h"
 #include "Scene_MainMenu.h"
 #include "Application.h"
 #include "Resources.h"
-#include "Player.h"
-#include "Scene_TDZ.h"
 #include "S3Object.h"
 #include "LevelScene.h"
 

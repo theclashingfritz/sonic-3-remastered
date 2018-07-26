@@ -5,7 +5,7 @@
 #include "Application.h"
 #include "TextureAudio.h"
 #include "LevelScene.h"
-#include "Player.h"
+#include <S3/Player.h>
 
 class Scene_LBZ : public LevelScene {
 public:

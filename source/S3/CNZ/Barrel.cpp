@@ -12,14 +12,14 @@ void IBarrel::Update() {
     Frame = Scene->frameAnim;
 
 	if ((lastHitFrom & 0xF0) == 0) { // non auto movement
-        Y = Scene->playerBuffer[currentPlayerID]->$Y + std::cos(toRadians((Scene->frameAnim % 256) * 360 / 256)) * 64;
+        Y = Scene->playerBuffer[currentPlayerID]->Y + std::cos(toRadians((Scene->frameAnim % 256) * 360 / 256)) * 64;
     }
 	
     if (currentPlayerID != -1) {
 		if ((lastHitFrom & 0xF) > 4) {
-            Y = Scene->playerBuffer[currentPlayerID]->$Y + std::cos(toRadians((Frame % 256) * 360 / 256)) * 32 * (FlipX ? -1 : 1);
+            Y = Scene->playerBuffer[currentPlayerID]->Y + std::cos(toRadians((Frame % 256) * 360 / 256)) * 32 * (FlipX ? -1 : 1);
         } else {
-            Y = Scene->playerBuffer[currentPlayerID]->$X + std::cos(toRadians((Frame % 256) * 360 / 256)) * (lastHitFrom & 0xF) * 32 * (FlipX ? -1 : 1);
+            Y = Scene->playerBuffer[currentPlayerID]->X + std::cos(toRadians((Frame % 256) * 360 / 256)) * (lastHitFrom & 0xF) * 32 * (FlipX ? -1 : 1);
         }
 		
         if (Scene->playerBuffer[currentPlayerID]->ObjectControlled == 0) {
@@ -27,10 +27,10 @@ void IBarrel::Update() {
             return;
         }
         int ang = (96 - pR) * 360 / 96;
-        Scene->playerBuffer[currentPlayerID]->$X = X + std::cos(toRadians(ang)) * pX;
-        Scene->playerBuffer[currentPlayerID]->$Y = std::round(Y) - H / 2 - 20;
+        Scene->playerBuffer[currentPlayerID]->X = X + std::cos(toRadians(ang)) * pX;
+        Scene->playerBuffer[currentPlayerID]->Y = std::round(Y) - H / 2 - 20;
         Scene->playerBuffer[currentPlayerID]->Speed = 0;
-        Scene->playerBuffer[currentPlayerID]->Rot3D = ((int)std::round(((float)ang / 30.f) + (pX > 0 ? 0 : 6 /* always facing outwards */) + 12) % 12);
+        Scene->playerBuffer[currentPlayerID]->StoredRotation = float(((int)std::round(((float)ang / 30.f) + (pX > 0 ? 0 : 6 /* always facing outwards */) + 12) % 12));
         pR++;
         pR %= 96;
     }

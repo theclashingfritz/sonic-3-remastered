@@ -2,7 +2,6 @@
 #include "Scene_MainMenu.h"
 #include "Application.h"
 #include "Resources.h"
-#include "Player.h"
 #include "Scene_CNZ.h"
 #include "S3Object.h"
 #include "LevelScene.h"
@@ -326,21 +325,21 @@ void Scene_CNZ::Update() {
 	}
 
     // Do common palette stuffs (Super Sonic)
-    if (player->SuperForm || player->formingType == -1) {
+    if (player->SuperForm || player->SuperFormAnim == SuperFormAnimType::None) {
         // Super Sonic
         len = 4;
         pick = 3 * ((frameAnim / 16) % len + 6);
 
-        if (player->formingType == 1) {
-            pick = ((4 * 10 - player->formingTimer) / 4);
+        if (player->SuperFormAnim == SuperFormAnimType::Transforming) {
+            pick = ((4 * 10 - player->SuperFormTimer) / 4);
             if (pick < 2)
                 pick = 2;
             pick = 3 * pick;
         }
-        else if (player->formingType == -1) {
-            pick = 3 * (player->formingTimer / 4);
+        else if (player->SuperFormAnim == SuperFormAnimType::None) {
+            pick = 3 * (player->SuperFormTimer / 4);
         }
-        else if (player->formingType == 0) {
+        else if (player->SuperFormTimer == 0) {
             pick = 0;
         }
 

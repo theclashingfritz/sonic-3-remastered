@@ -51,6 +51,7 @@
 #endif
 
 class Application;
+class ITexture;
 class Texture;
 class Audio;
 class MusicStackNode;
@@ -89,7 +90,6 @@ int Log2(int x);
 
 #define QUOTE(...) #__VA_ARGS__
 
-
 #define $AudioFree(audio) app->AudioFree(sc->audio)
 #define $AudioStop(audio) app->AudioStop(sc->audio)
 #define $AudioPause(audio) app->AudioPause(sc->audio)
@@ -97,7 +97,8 @@ int Log2(int x);
 #define $AudioIsPlaying(audio) app->AudioIsPlaying(sc->audio)
 #define $AudioPlay(audio, loops) app->AudioPlay(sc->audio, loops)
 #define $AudioSetVolume(audio, percent) app->AudioSetVolume(sc->audio, percent)
+
 #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-    Player* player = playerBuffer[_______p]; \
+    IPlayer* player = playerBuffer[_______p]; \
     IN \
 }

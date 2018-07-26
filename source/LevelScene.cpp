@@ -4,7 +4,6 @@
 #include "Resources.h"
 #include "Scene_MainMenu.h"
 #include "LevelScene.h"
-#include "Player.h"
 
 #define Z_MID 0
 #define Z_FRONT -1
@@ -829,36 +828,13 @@ void LevelScene::InitZone(bool resetTextures, int check, int specialRing, bool a
     if (!actTransition) {
         player_count = 0;
 
-        player = new Player();
-        player->PlayerID = 0;
-        player->app = app;
-        player->sc = this;
-        player->CharacterId = 0;
-        if (player->CharacterId == 0) {
-            player->tex = tex_Sonic;
-            player->tex_Super = tex_SonicSuper;
-        }
-        else if (player->CharacterId == 1) {
-            player->tex = tex_Tails;
-            player->tex_Tails = tex_Tails_Tails;
-        }
-        else if (player->CharacterId == 2)
-            player->tex = tex_Knuckles;
-        player->tex_Insta = tex_Shield_Insta;
-        player->tex_Fire = tex_Shield_Fire;
-        player->tex_Lightning = tex_Shield_Lightning;
-        player->tex_Invinc = tex_Shield_Invincibility;
-        player->tex_Bubble = tex_Shield_Bubble;
-        player->tex_DashDust = tex_Effect_DashDust;
-        player->tex_SkidDust = tex_Effect_SkidDust;
-        player->tex_WaterRun = tex_Effect_WaterRun;
-        player->tex_BubbleFX = tex_Bubble;
-
         MyPlayer = new IPlayer();
+		
+        S("Sonic") = new ISprite(IResources::Load("Sprites/Player/Sonic.spr"), new ITexture(IResources::Load("Sprites/Player/Texture.png"), false));
 
         //S("Sonic") = new ISprite(IResources::Load("Sprites/Player/ManiaSonic.spr"), new ITexture(IResources::Load("Sprites/Player/ManiaSonicPal.png"), false));
-        //S("Tails") = new ISprite(IResources::Load("Sprites/Player/ManiaTails.spr"), new ITexture(IResources::Load("Sprites/Player/ManiaTails.png"), false));
-        //S("Knuckles") = new ISprite(IResources::Load("Sprites/Player/ManiaKnux.spr"), new ITexture(IResources::Load("Sprites/Player/ManiaKnux.png"), false));
+        S("Tails") = new ISprite(IResources::Load("Sprites/Player/ManiaTails.spr"), new ITexture(IResources::Load("Sprites/Player/ManiaTails.png"), false));
+        S("Knuckles") = new ISprite(IResources::Load("Sprites/Player/ManiaKnux.spr"), new ITexture(IResources::Load("Sprites/Player/ManiaKnux.png"), false));
 
         MyPlayer->App = App;
         MyPlayer->G = G;
@@ -873,7 +849,7 @@ void LevelScene::InitZone(bool resetTextures, int check, int specialRing, bool a
         MyPlayer->SpriteShieldInsta = S("Shield (Instashield)");
 
         MyPlayer->X = (sonStartPos[(act & 0xF) / 2] / 0x10000) & 0xFFFF;
-        MyPlayer->Y = (sonStartPos[(act & 0xF) / 2]          ) & 0xFFFF;
+        MyPlayer->Y = (sonStartPos[(act & 0xF) / 2]) & 0xFFFF;
         // Sonic
         if (CharacterChoice == 0) {
             MyPlayer->Sprite = S("Sonic");
@@ -912,44 +888,45 @@ void LevelScene::InitZone(bool resetTextures, int check, int specialRing, bool a
         cameraX[0] = MyPlayer->X;
         cameraY[0] = MyPlayer->Y;
 
-        playerBuffer[0] = player;
+        playerBuffer[0] = MyPlayer;
+		player = MyPlayer;
         player_count++;
 
-        if (false) {
-            playerAI = new Player();
-            playerAI->PlayerID = 1;
-            playerAI->app = app;
-            playerAI->sc = this;
-            playerAI->CharacterId = 1;
-            if (playerAI->CharacterId == 0)
-                playerAI->tex = tex_Sonic;
-            else if (playerAI->CharacterId == 1) {
-                playerAI->tex = tex_Tails;
-                playerAI->tex_Tails = tex_Tails_Tails;
-            }
-            else if (playerAI->CharacterId == 2)
-                playerAI->tex = tex_Knuckles;
-            playerAI->tex_Insta = tex_Shield_Insta;
-            playerAI->tex_Fire = tex_Shield_Fire;
-            playerAI->tex_Lightning = tex_Shield_Lightning;
-            playerAI->tex_Invinc = tex_Shield_Invincibility;
-            playerAI->tex_Bubble = tex_Shield_Bubble;
-            playerAI->tex_DashDust = tex_Effect_DashDust;
-            playerAI->tex_SkidDust = tex_Effect_SkidDust;
-            playerAI->tex_WaterRun = tex_Effect_WaterRun;
-            playerAI->tex_BubbleFX = tex_Bubble;
+        /*
+		playerAI = new Player();
+		playerAI->PlayerID = 1;
+		playerAI->app = app;
+		playerAI->sc = this;
+		playerAI->CharacterId = 1;
+		if (playerAI->CharacterId == 0)
+			playerAI->tex = tex_Sonic;
+		else if (playerAI->CharacterId == 1) {
+			playerAI->tex = tex_Tails;
+			playerAI->tex_Tails = tex_Tails_Tails;
+		}
+		else if (playerAI->CharacterId == 2)
+			playerAI->tex = tex_Knuckles;
+		playerAI->tex_Insta = tex_Shield_Insta;
+		playerAI->tex_Fire = tex_Shield_Fire;
+		playerAI->tex_Lightning = tex_Shield_Lightning;
+		playerAI->tex_Invinc = tex_Shield_Invincibility;
+		playerAI->tex_Bubble = tex_Shield_Bubble;
+		playerAI->tex_DashDust = tex_Effect_DashDust;
+		playerAI->tex_SkidDust = tex_Effect_SkidDust;
+		playerAI->tex_WaterRun = tex_Effect_WaterRun;
+		playerAI->tex_BubbleFX = tex_Bubble;
 
-            playerAI->Controllable = false;
+		playerAI->Controllable = false;
 
-            playerAI->x = player->x;
-            playerAI->y = player->y;
+		playerAI->x = player->x;
+		playerAI->y = player->y;
 
-            // ((UNIQUE))
-            playerAI->Action = Actions::Peril;
+		// ((UNIQUE))
+		playerAI->Action = Actions::Peril;
 
-            playerBuffer[1] = playerAI;
-            player_count++;
-        }
+		playerBuffer[1] = playerAI;
+		player_count++;
+        */
     }
 
     app->print(0, "GENERAL (InitZone object data) load finished in %.3f seconds.", (SDL_GetTicks() - nextTick) / 1000.0f);
@@ -966,16 +943,16 @@ void LevelScene::InitZone(bool resetTextures, int check, int specialRing, bool a
     nextTick = SDL_GetTicks();
 
     if (check == 0 && !actTransition) {
-        if (player->CharacterId < 2) {
+        if (player->Character < CharacterType::Tails) {
             WITH_ALL(
-                player->x = (sonStartPos[(act & 0xF) / 2] / 0x10000) & 0xFFFF;
-                player->y = (sonStartPos[(act & 0xF) / 2]          ) & 0xFFFF;
+                player->X = (sonStartPos[(act & 0xF) / 2] / 0x10000) & 0xFFFF;
+                player->Y = (sonStartPos[(act & 0xF) / 2]          ) & 0xFFFF;
             );
         }
         else {
             WITH_ALL(
-                player->x = (knuStartPos[(act & 0xF) / 2] / 0x10000) & 0xFFFF;
-                player->y = (knuStartPos[(act & 0xF) / 2]          ) & 0xFFFF;
+                player->X = (knuStartPos[(act & 0xF) / 2] / 0x10000) & 0xFFFF;
+                player->Y = (knuStartPos[(act & 0xF) / 2]          ) & 0xFFFF;
             );
         }
     }
@@ -1773,7 +1750,7 @@ void LevelScene::Update() {
         sceneIn -= 1;
     }
     else if (sceneIn == -2) {
-        player->Controllable = true;
+        player->ObjectControlled = 1;
     }
     if (sceneIn <= -2 || actTransition) {
         frame++;
@@ -3165,7 +3142,7 @@ void LevelScene::Render() {
 
         app->SetBlend(1, 1, 1, 1);
         WITH_ALL(
-            sprintf(Label, "%s (%04X %04X) Spd %d Grv %d Grd %d", "P", (int)player->x, (int)player->y, (int)player->Speed, (int)player->Gravity, (int)player->Ground);
+            sprintf(Label, "%s (%04X %04X) Spd %d Grv %d Grd %d", "P", (int)player->X, (int)player->Y, (int)player->Speed, (int)player->Gravity, (int)player->Ground);
             DrawTextDebug(Label, app->renderWidth, line++ * 10, 2, 2);
         );
         sprintf(Label, "%s (%04X %04X)", "Camera", (int)cameraX[0], (int)cameraY[0]);

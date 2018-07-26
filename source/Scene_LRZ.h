@@ -3,9 +3,8 @@
 
 #include "Standard.h"
 #include "Application.h"
-#include "TextureAudio.h"
 #include "LevelScene.h"
-#include "Player.h"
+#include <S3/Player.h>
 
 class Scene_LRZ : public LevelScene {
 public:
