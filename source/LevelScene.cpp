@@ -1750,7 +1750,7 @@ void LevelScene::Update() {
         sceneIn -= 1;
     }
     else if (sceneIn == -2) {
-        player->ObjectControlled = 1;
+        player->ObjectControlled = 0;
     }
     if (sceneIn <= -2 || actTransition) {
         frame++;

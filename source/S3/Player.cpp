@@ -430,6 +430,7 @@ void IPlayer::Create() {
     }
     DropDashEnabled = true;
 }
+
 void IPlayer::Update() {
     InputUp = App->input->up[0];
     InputDown = App->input->down[0];
@@ -459,6 +460,7 @@ void IPlayer::Update() {
     if (ForceRoll)
         H = 28;
 }
+
 void IPlayer::LateUpdate() {
     //DisplayAngle = toRadians(Angle);
     DisplayFlip = Flip;
@@ -799,9 +801,6 @@ void IPlayer::LateUpdate() {
         Frame = 0;
     //*/
 
-
-
-
     if (Action == ActionType::Climb || Action == ActionType::ClimbRise)
         OffX += Flip * 2;
 
@@ -1029,7 +1028,6 @@ void IPlayer::AnimExecute() {
     if (Frame < 0 || Frame >= animFrameCount) {
         //fcountOffset = fcount;
     }
-
 
     if (Frame < 0) {
         Frame = 0;

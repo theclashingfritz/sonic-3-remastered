@@ -1,6 +1,7 @@
 /backups
 /skdisasm-master
 /Flex2
+log.txt
 
 *.zip
 *.log
