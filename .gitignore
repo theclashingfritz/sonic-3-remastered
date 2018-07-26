@@ -2,6 +2,10 @@
 /skdisasm-master
 /Flex2
 
+*.zip
+*.log
+*.map
+
 
 # Prerequisites
 *.d
