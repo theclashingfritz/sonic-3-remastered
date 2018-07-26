@@ -1,0 +1,67 @@
+#ifndef SCENE_H
+#define SCENE_H
+
+#include "Standard.h"
+
+class Scene {
+public:
+	Application* app;
+
+    // Global Audio
+    Audio* aud_BadnikDestroyed;
+    Audio* aud_BGM_Boss1;
+    Audio* aud_BGM_Boss2;
+    Audio* aud_BGM_DataSelect;
+    Audio* aud_BGM_Drowning;
+    Audio* aud_BGM_HCZ1;
+    Audio* aud_BGM_HCZ2;
+    Audio* aud_BGM_Invincibility;
+    Audio* aud_BGM_LifeGet;
+    Audio* aud_BGM_SEGA;
+    Audio* aud_BGM_SpecialStage;
+    Audio* aud_BGM_TitleScreen;
+    Audio* aud_BIGLaser;
+    Audio* aud_BombDrop;
+    Audio* aud_BossHit;
+    Audio* aud_Break;
+    Audio* aud_BreakDeeper;
+    Audio* aud_BubbleGet;
+    Audio* aud_C_ChaosEmerald;
+    Audio* aud_C_ChaosEmeraldContinue;
+    Audio* aud_C_Drown;
+    Audio* aud_C_EnemyShot;
+    Audio* aud_C_IntoLargeRing;
+    Audio* aud_C_ResultsRings;
+    Audio* aud_C_RingLoss;
+    Audio* aud_C_ShortBeep;
+    Audio* aud_C_TailsFly;
+    Audio* aud_C_ToBonusStage;
+    Audio* aud_C_ToSpecialStage;
+    Audio* aud_Checkpoint;
+    Audio* aud_Die;
+    Audio* aud_ExtraLife;
+    Audio* aud_Jump;
+    Audio* aud_Ring;
+    Audio* aud_Roll;
+    Audio* aud_ShieldBounce;
+    Audio* aud_ShieldBubble;
+    Audio* aud_ShieldEJump;
+    Audio* aud_ShieldElectric;
+    Audio* aud_ShieldFire;
+    Audio* aud_Skid;
+    Audio* aud_Spiked;
+    Audio* aud_SpikeHurt;
+    Audio* aud_SpinRev;
+    Audio* aud_Spring;
+
+
+	void drawText(Texture* texture, const char* text, float x, float y, int xa, int ya, int type);
+	virtual void Load() { }
+	virtual void Update() { }
+    virtual void Render() { }
+    virtual void Free() { }
+	void FreeAudio();
+};
+
+#endif
+

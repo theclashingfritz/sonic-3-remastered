@@ -1,0 +1,321 @@
+Obj_AIZRideVineHandle:
+		move.w	x_pos(a0),d4
+		move.w	y_pos(a0),d5
+		bsr.w	sub_22040
+		cmp.w	x_pos(a0),d4
+		beq.s	loc_2208A
+		move.w	d4,$42(a0)
+
+loc_2208A:
+		cmp.w	y_pos(a0),d5
+		beq.s	loc_22094
+		move.w	d5,$44(a0)
+
+loc_22094:
+		lea	has_something_32(a0),a2
+		lea	(Player_1).w,a1
+		move.w	(Ctrl_1_logical).w,d0
+		bsr.s	sub_220C2
+		lea	(Player_2).w,a1
+		addq.w	#1,a2
+		move.w	(Ctrl_2_logical).w,d0
+		bsr.s	sub_220C2
+		tst.w	has_something_32(a0)
+		beq.s	loc_220BA
+		tst.w	$30(a0)
+		bne.s	locret_220C0
+
+loc_220BA:
+		jmp	(Draw_Sprite).l
+; ---------------------------------------------------------------------------
+
+locret_220C0:
+		rts
+
+; =============== S U B R O U T I N E =======================================
+
+
+sub_220C2:
+
+		tst.b	(a2)
+		beq.w	loc_222F4
+		bmi.w	loc_2217E
+		tst.b	4(a1)
+		bpl.w	loc_22190
+		cmpi.b	#4,5(a1)
+		bhs.w	loc_22190
+		move.b	d0,d1
+		andi.b	#$70,d1
+		beq.w	loc_221EC
+		clr.b	$2E(a1)
+		clr.b	(a2)
+		cmpi.w	#1,$30(a0)
+		beq.s	loc_2215C
+		move.w	x_pos(a0),d1
+		sub.w	$42(a0),d1
+		asl.w	#7,d1
+		move.w	d1,$18(a1)
+		move.w	y_pos(a0),d1
+		sub.w	$44(a0),d1
+		asl.w	#7,d1
+		move.w	d1,$1A(a1)
+		move.b	#$3C,2(a2)
+		btst	#$A,d0
+		beq.s	loc_22124
+		move.w	#-$200,$18(a1)
+
+loc_22124:
+		btst	#$B,d0
+		beq.s	loc_22130
+		move.w	#$200,$18(a1)
+
+loc_22130:
+		addi.w	#-$380,$1A(a1)
+
+loc_22136:
+		bset	#1,$2A(a1)
+		move.b	#1,$40(a1)
+		move.b	#$E,$1E(a1)
+		move.b	#7,$1F(a1)
+		move.b	#2,$20(a1)
+		bset	#2,$2A(a1)
+		rts
+; ---------------------------------------------------------------------------
+
+loc_2215C:
+		move.b	#$3C,2(a2)
+		movea.w	$3C(a0),a3
+		move.b	$26(a3),d0
+		jsr	(GetSineCosine).l
+		asl.w	#3,d1
+		move.w	d1,$18(a1)
+		asl.w	#3,d0
+		move.w	d0,$1A(a1)
+		bra.s	loc_22136
+; ---------------------------------------------------------------------------
+
+loc_2217E:
+		move.w	#$300,$18(a1)
+		move.w	#$200,$1A(a1)
+		bset	#1,$2A(a1)
+
+loc_22190:
+
+		clr.b	$2E(a1)
+		clr.b	(a2)
+		move.b	#$3C,2(a2)
+		rts
+; End of function sub_220C2
+
+
+; =============== S U B R O U T I N E =======================================
+
+
+sub_2219E:
+		cmpa.w	#Player_1,a1
+		bne.s	locret_221E0
+		tst.b	d0
+		beq.s	locret_221E0
+		moveq	#0,d1
+		move.b	$25(a0),d1
+		cmp.b	byte_221E2(pc,d1.w),d0
+		bne.s	loc_221DA
+		addq.b	#1,$25(a0)
+		move.b	byte_221E3(pc,d1.w),d1
+		bne.s	locret_221E0
+		moveq	#0,d1
+		subi.w	#-Level_select_flag,d1
+		movea.w	d1,a4
+		moveq	#1,d1
+		move.b	d1,(a4)
+		move.b	d1,1(a4)
+		move.w	d0,d1
+		moveq	#$33,d0
+		jsr	(Play_Sound_2).l
+		move.w	d1,d0
+
+loc_221DA:
+		move.b	#0,$25(a0)
+
+locret_221E0:
+		rts
+; End of function sub_2219E
+
+; ---------------------------------------------------------------------------
+byte_221E2:	dc.b 4
+byte_221E3:	dc.b 4
+		dc.b 4
+		dc.b 8
+		dc.b 8
+		dc.b 8
+		dc.b 1
+		dc.b 1
+		dc.b 1
+		dc.b 0
+; ---------------------------------------------------------------------------
+
+loc_221EC:
+		tst.w	$30(a0)
+		bne.s	loc_22258
+		bsr.s	sub_2219E
+		move.w	x_pos(a0),x_pos(a1)
+		move.w	y_pos(a0),y_pos(a1)
+		addi.w	#$14,y_pos(a1)
+		movea.w	$3C(a0),a3
+		moveq	#0,d0
+		move.b	$26(a3),d0
+		btst	#0,$2A(a1)
+		beq.s	loc_2221A
+		neg.b	d0
+
+loc_2221A:
+		addq.b	#8,d0
+		lsr.w	#4,d0
+		move.b	byte_22248(pc,d0.w),sprite_frame(a1)
+
+loc_22224:
+		move.b	$2A(a1),d1
+		andi.b	#1,d1
+		andi.b	#-4,4(a1)
+		or.b	d1,4(a1)
+		moveq	#0,d0
+		move.b	sprite_frame(a1),d0
+		move.l	a2,-(sp)
+		jsr	(Tails_Carry_LoadPLC).l
+		movea.l	(sp)+,a2
+		rts
+; ---------------------------------------------------------------------------
+byte_22248:	dc.b $91
+		dc.b $91
+		dc.b $90
+		dc.b $90
+		dc.b $90
+		dc.b $90
+		dc.b $90
+		dc.b $90
+		dc.b $92
+		dc.b $92
+		dc.b $92
+		dc.b $92
+		dc.b $92
+		dc.b $92
+		dc.b $91
+		dc.b $91
+; ---------------------------------------------------------------------------
+
+loc_22258:
+		movea.w	$3C(a0),a3
+		moveq	#0,d0
+		move.b	$26(a3),d0
+		btst	#0,$2A(a1)
+		beq.s	loc_2226C
+		neg.b	d0
+
+loc_2226C:
+		addi.b	#$10,d0
+		lsr.w	#5,d0
+		add.w	d0,d0
+		move.b	byte_222D4(pc,d0.w),sprite_frame(a1)
+		move.b	#0,$20(a1)
+		andi.w	#-2,d0
+		move.b	byte_222E4(pc,d0.w),d2
+		move.b	byte_222E5(pc,d0.w),d3
+		ext.w	d2
+		ext.w	d3
+		btst	#0,$2A(a1)
+		beq.s	loc_2229A
+		neg.w	d2
+
+loc_2229A:
+		movea.w	$3C(a0),a3
+		move.b	$26(a3),d0
+		addq.b	#4,d0
+		andi.b	#-8,d0
+		jsr	(GetSineCosine).l
+		neg.w	d0
+		addi.w	#8,d0
+		addi.w	#8,d1
+		asr.w	#4,d0
+		asr.w	#4,d1
+		add.w	x_pos(a3),d0
+		add.w	d2,d0
+		move.w	d0,x_pos(a1)
+		add.w	y_pos(a3),d1
+		add.w	d3,d1
+		move.w	d1,y_pos(a1)
+		bra.w	loc_22224
+; ---------------------------------------------------------------------------
+byte_222D4:	dc.b $78
+		dc.b $78
+		dc.b $7F
+		dc.b $7F
+		dc.b $7E
+		dc.b $7E
+		dc.b $7D
+		dc.b $7D
+		dc.b $7C
+		dc.b $7C
+		dc.b $7B
+		dc.b $7B
+		dc.b $7A
+		dc.b $7A
+		dc.b $79
+		dc.b $79
+byte_222E4:	dc.b 0
+byte_222E5:	dc.b $18
+		dc.b $EE
+		dc.b $13
+		dc.b $E8
+		dc.b 0
+		dc.b $EE
+		dc.b $ED
+		dc.b 0
+		dc.b $E8
+		dc.b $12
+		dc.b $ED
+		dc.b $18
+		dc.b 0
+		dc.b $12
+		dc.b $13
+; ---------------------------------------------------------------------------
+
+loc_222F4:
+		tst.b	2(a2)
+		beq.s	loc_22302
+		subq.b	#1,2(a2)
+		bne.w	locret_2237C
+
+loc_22302:
+		move.w	x_pos(a1),d0
+		sub.w	x_pos(a0),d0
+		addi.w	#$10,d0
+		cmpi.w	#$20,d0
+		bhs.w	locret_2237C
+		move.w	y_pos(a1),d1
+		sub.w	y_pos(a0),d1
+		cmpi.w	#$18,d1
+		bhs.w	locret_2237C
+		tst.b	$2E(a1)
+		bne.s	locret_2237C
+		cmpi.b	#4,5(a1)
+		bhs.s	locret_2237C
+		tst.w	(Debug_placement_mode).w
+		bne.s	locret_2237C
+		clr.w	$18(a1)
+		clr.w	$1A(a1)
+		clr.w	$1C(a1)
+		move.w	x_pos(a0),x_pos(a1)
+		move.w	y_pos(a0),y_pos(a1)
+		addi.w	#$14,y_pos(a1)
+		move.b	#$14,$20(a1)
+		move.b	#0,$3D(a1)
+		move.b	#3,$2E(a1)
+		andi.b	#-3,4(a1)
+		move.b	#1,(a2)
+		moveq	#$4A,d0
+		jsr	(Play_Sound_2).l
+
+locret_2237C:
+
+		rts
+; ---------------------------------------------------------------------------

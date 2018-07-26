@@ -1,0 +1,23 @@
+#if __VERSION__ < 110
+precision mediump float;
+#endif
+uniform sampler2D u_sampler;
+uniform vec4 u_color;
+uniform bool u_useTex;
+
+#if __VERSION__ >= 130
+    in vec2 _texcoord;
+    out vec4 gl_FragColor;
+#else
+    varying vec2 _texcoord;
+#endif
+
+void main() {
+    if (u_useTex)
+        gl_FragColor = texture2D(u_sampler, _texcoord) * u_color;
+    else
+        gl_FragColor = u_color;
+
+    if (gl_FragColor.a < 0.005)
+        discard;
+}

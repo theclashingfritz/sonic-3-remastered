@@ -1,0 +1,1 @@
+https://github.com/atom/one-dark-syntax/blob/master/styles/colors.less

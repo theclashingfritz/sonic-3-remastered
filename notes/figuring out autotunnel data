@@ -1,0 +1,260 @@
+!!!!REFER TO "Levels\Misc\Object list - Sonic 3.asm" FOR OBJ INFO!!!!
+
+
+
+
+
+
+
+
+
+
+just make it so Sonic's X value is controlled by the tube and his speed, calculated and all that
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+byte_39006:	2, 4, 4, 4, 4, 4, $C, 0
+byte_3900E:	2, 4, 6, 6, 6, 6,  8, 8, 8, 8, $A, $A, 0, 0
+byte_3901C:	2, 4, 6, 6, 6, 6,  8, 8, 8, 8, $A,  0
+byte_39028:	2, 4, 6, 6, 6, 6,  8, 8, 8, 8,  8,  8, 8, 8, 8, 8, 8, 8, $E, 0
+
+word word_3903C[] =
+{
+    $840,   $120,   byte_39006,
+   $1540,   $620,   byte_3900E,
+   $1740,   $3A0,   byte_3900E,
+   $1CC0,   $620,   byte_39006,
+   $1FC0,   $2A0,   byte_3901C,
+   $24C0,   $220,   byte_39028,
+   $26C0,   $120,   byte_39006,
+   $3040,   $620,   byte_3900E,
+}
+
+
+Structure of Obj_69_1 (Blue Slide thing):
+    D0 = Object.Subtype;
+    // Get the last 7 bits
+    D0 &= 0x7F;
+    // Shift 3 bits left
+    D0 <<= 3;
+    // Load end-object-position-data at D0 into A1
+    A1 = &word_3903C[D0];
+    // Move the data at A1[0] to Object[x30] and increment the pointer forwards
+    Object[x30] = A1++;
+    // Move the data at A1[1] to Object[x32] and increment the pointer forwards
+    Object[x32] = A1++;
+    // Move the pointer at A1[2] to Object[x40] and increment the pointer forwards
+    Object[x40] = A1++;
+
+    //////// loc_3909C ////////
+    A1 = Sonic;
+    A4 = Object[x34];
+    sub_390C2();
+
+    A1 = Tails;
+    A4 = Object[x3A];
+    sub_390C2();
+
+    D0 = Object[x34];
+    D0 += Object[x3A];
+
+    //////// sub_390C2 ////////
+    void sub_390C2() {
+        D0 = 0;
+        D0 = (byte)*A4;
+        switch (D0) {
+            case 0:
+                loc_39102();
+            case 1:
+                loc_3925C();
+            case 2:
+                loc_392B6();
+            case 3:
+                loc_392EE();
+            case 4:
+                loc_3931E();
+            case 5:
+                loc_3935E();
+            case 6:
+                loc_3938E();
+            case 7:
+                loc_393BE();
+        }
+        if (A4 == 0) {
+            return;
+        }
+        sub_39208();
+
+        D0 = 0;
+        D0 = (byte)*A4 + 2;
+        D0 /= 0x60;
+
+        *A2 = *A0 + 0x40;
+        A4[0] = *A2 + D0;
+        if (A4[0] != 0) {
+            return;
+        }
+        *A1 + x2E = 0;
+    }
+
+    void loc_39102() {
+        // A1 is Player
+        if (DEBUG)
+            return;
+        if (A0[0x2C] >= 0x80)
+            loc_39198();
+        D0 = Sonic.X;
+        D0 -= Object.X;
+        D0 += 8;
+        if (D0 - 0x10 >= 0)
+            return;
+        D1 = Sonic.Y;
+        D1 -= Object.Y;
+        if (D1 - 0x30 >= 0)
+            return;
+        if (Sonic.ControlLocked)
+            return;
+        if (Object.Flip == +1)
+            if (Player.Speed < 0)
+                return;
+        tst.w	$1C(a1)
+        bpl.s	return;
+        tst.w	$18(a1)
+        bpl.s	return;
+        neg.w	$1C(a1)
+        bra.s	loc_39158
+    }
+
+    void loc_39198() {
+        D0 = Sonic.X;
+        D0 -= Object.X;
+        D0 += 0x10;
+        if (D0 - 0x20 >= 0)
+            return;
+        D1 = Sonic.Y;
+        D1 -= Object.Y;
+        D1 += 0x10;
+        if (D0 - 0x10 >= 0)
+            return;
+        if (Sonic.ControlLocked)
+            return;
+        if (Sonic.PotentialSpeed >= 0)
+            return;
+        A4[0] += 2;
+        Sonic.ControlLocked = true;
+        Sonic.Rolling = true;
+        Sonic.Height = 30;
+        Sonic.Width = 14;
+        Sonic.Rolling = true;
+
+
+        Sonic.Angle = 0x28;
+        D1 = Sonic.Y;
+        D1 -= Object.Y;
+        *A4 + 2 = D1;
+    }
+
+    void sub_39208() {
+        D0 = A1[0x26];
+        GetSineCosine();
+        D1 *= A1[0x1C];
+        D1 = (D1 & 0xFF00) + (D1 & 0xFF) >> 8;
+        A1[0x18] = D1;
+        muls.w	$1C(a1),d0
+        asr.l	#8,d0
+        move.w	d0,$1A(a1)
+        move.b	$26(a1),d0
+        GetSineCosine();
+        muls.w	#$50,d0
+        asr.l	#8,d0
+        tst.w	$1C(a1)
+        bmi.s	loc_39250
+        tst.w	d0
+        bpl.s	loc_39242
+        asr.l	#2,d0
+    }
+
+
+
+
+
+
+Structure of "AutoTunnels":
+- Always begins with a "word" (it's byte-sized though), could be a size?
+  - Okay, so this first word? It's the amount of data to follow, in bytes. (Remember, two words may make a byte, but two wrongs don't make those)
+- What the data is/stores? Beats me.
+- I guess we can graph out this first "AutoTunnel_00".
+  - If we go under the assumption that each word pair is some kind of vector...
+  - X: 0F 60, Y: 05 78
+  - X: 0F 60, Y: 05 48
+  - X: 0F 60, Y: 03 78
+  - What does this even mean lol. It looks sorta like a straight line, or at least a constant X velocity to the left.
+  - So basically we have an object that moves:
+    - Goes to left, moves down fast
+    - Goes to left, moves down less fast
+    - Still goes to left, moves down even slowest
+  - So sorta like a J shaped curve I guess
+  - Could be coordinates though
+- "AutoTunnel_Data" is a routine/address that uses all of them loaded into an "array"
+- Subroutine "AutoTunnel_GetPath" uses AutoTunnel_Data, mentions something about "setting an absolute position"
+  - First thing it does is set the D0 register as the value of A0[0x2C] ( A0[44] )
+  - We gotta figure out what goes into A0 soon
+  - !!!!!!!!!!!!!!! A0 IS THE OBJECT'S STATUS TABLE, IT'S THE AUTOTUNNEL OBJECT, A0 is the AUTO TUNNEL OBJECT, 0x2C IS THE SUBTYPE
+  - Since it's negative, we keep going
+  - Mask it with 0x1F, in our case (0x80), we get 0
+  - d0 = 0 + 0 = 0
+  - d0 = 0 + 0 = 0 (hardest step right there)
+  - LEA: set the pointer for A2 to AutoTunnel_Data
+  - Get the address at A2[d0] (A2[0]), and make it the main starting point for now
+  - Get the first value (size of our tunnel array) and put it in d0
+  - Subtract 4 from d0 (in our case, now d0 is 8, originally was 12)
+  - Put the value of d0 (8) into A4 + 4
+  - LEA: set the pointer for A2 to A2[d0] (or A2[8] in our case)
+  - Load the value at A2 (or A2[8] in our case), put it in D4, and increment to next data pointer (move pointer over to the next index)
+  - Put D4 into A1[0x10] (Sonic's X Coordinate)
+  - Load the value at A2 (or A2[10] in our case, incremented by two because word size), put it in D5, and increment to next data pointer (move pointer over to the next index)
+  - Put D5 into A1[0x14] (Sonic's Y Coordinate)
+  - Move A2 back 8 "bytes" (indexes) (so now it's at A2[4], was at A2[12] after the increment)
+  - Branch to loc_2980C!!!!!!
+    - Put the current address of A2 (or A2[4] IOC) into A4 + 6
+      // this thing below is probably another set of coordinates
+    - Load the value at A2 (or A2[4] IOC), put it in D4, and increment to next data pointer (move pointer over to the next index)
+    - Load the value at A2 (or A2[6] IOC), put it in D5, and increment to next data pointer (move pointer over to the next index)
+    - Set D2 to 0x1000
+  - I think we're going to AutoTunnel_CalcSpeed next, but I'm not sure....
+    - set D0 to 0
+    - set D3 to D2 (0x1000)
+    - set D0 to D4 (Tunnel's next X Coordinate)
+    - subtract D0 by A1[0x10] (Sonic's X Coordinate)
+    - if D0 >= 0, BRANCH to loc_29828
+    - else, D0 = -D0 and D2 = -D2
+    - Back at loc_29828 BRANCH HQ...
+      -
+
+it's gotta set sonic to rolling
+and take away his movement
+
+move\.b\s\#2\,\$20\(a1\)[\s\S\n]{0,500}bset\s\#2\,\$2E\(a1\)
+
+
+move\.b\s\#2\,\$20\(a1\)[\s\S\n]{0,500}move\.b\s\#1\,\$2E\(a1\)
+
+move\.b\s\#1\,\$2E\(a1\)[\s\S\n]{0,500}move\.b\s\#2\,\$20\(a1\)
+
+
+43612 Obj_HCZWaveSplash
+
+77623 Obj_HCZWaterSplash

@@ -1,0 +1,44 @@
+
+
+
+d0 = 0100XXXX   // move
+d0 -= 0x1300    // subi
+d0 = XXXX0100   // swap
+d0 = XXXX0000   // clr (just in case something snuck thru asr earlier)
+d0 >> 5         // asr (divide camX by 32)
+d2 = d0         // move (make a backup of d0)
+d0 << 1         // add (multiply by 2)
+d1 = d0         // move (make a backup of double d2)
+d0 << 3         // lsl (multiply by 8)
+d0 -= d1        // sub
+                // d0 is currently: camX / 2 - camX / 16
+                // d1 is currently: camX / 16
+                // d2 is currently: camX / 32
+                // d0 form 7FFF0000
+d0 = 0000XXXX   // swap
+a1[0] = camX / 2 - camX / 16 // move
+d0 = XXXX0000   // swap
+
+loc_23B06A:
+
+d0 += d1        // add
+d0 = 0000XXXX   // swap
+a1[-0x2C] = camX / 2 // move
+
+a1[0x2] = camX / 2 // move
+a1[0x4] = camX / 2 + camX / 16
+a1[0x6] = camX / 2 + camX / 16 + camX / 16
+a1[0x8] = camX / 2 + camX / 16
+a1[0xA] = camX / 2 // move
+
+// load new a1
+d0 = camX / 32 // move d2 into d0
+a1[-0x1] = camX / 32
+
+d3 = ($FFFFA83C).w // load cloud movement into XXXX0000
+($FFFFA83C).w += 0x2000 // addi (8192)
+d0 >> 1 // d0 = camX / 64
+d1 = 5
+d0 += d3 // camX / 64 + cloudMovement
+a[-0x1] = camX / 64 + cloudMovement
+d0 += camX / 32

@@ -1,0 +1,108 @@
+include meta/gmsl
+
+rwildcard = $(foreach d, $(wildcard $1*), $(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+
+TARGET   = "Sonic 3.app/Contents/MacOS/Sonic 3"
+OBJS     = main.o
+
+SRC_C   = $(call rwildcard, source/, *.c)
+SRC_CPP = $(call rwildcard, source/, *.cpp)
+SRC_PNG = $(call rwildcard, source/, *.png)
+SRC_OGG = $(call rwildcard, source/, *.ogg)
+SRC_BIN = $(call rwildcard, source/, *.bin)
+SRC_WAV = $(call rwildcard, source/, *.wav)
+
+OBJ_DIRS := $(sort $(addprefix outMac/, $(dir $(SRC_C:source/%.c=%.o))) \
+			$(addprefix outMac/, $(dir $(SRC_CPP:source/%.cpp=%.o))) \
+			$(addprefix outMac/, $(dir $(SRC_PNG:source/%.png=%.o))) \
+			$(addprefix outMac/, $(dir $(SRC_OGG:source/%.ogg=%.o))) \
+			$(addprefix outMac/, $(dir $(SRC_BIN:source/%.bin=%.o))) \
+			$(addprefix outMac/, $(dir $(SRC_WAV:source/%.wav=%.o))))
+
+OBJS     := $(addprefix outMac/, $(SRC_C:source/%.c=%.o)) \
+			$(addprefix outMac/, $(SRC_CPP:source/%.cpp=%.o)) \
+			$(addprefix outMac/, $(SRC_PNG:source/%.png=%.o)) \
+			$(addprefix outMac/, $(SRC_OGG:source/%.ogg=%.o)) \
+			$(addprefix outMac/, $(SRC_BIN:source/%.bin=%.o)) \
+			$(addprefix outMac/, $(SRC_WAV:source/%.wav=%.o))
+
+LIBS =  -Wl,-subsystem,windows
+IMPORTANTTHINGTO_GET_RID_OF_CONSOLE =  -Wl,-subsystem,windows
+
+all: sonicwin
+
+test:
+	@rm -rf "outMac/main.o"
+	make all
+
+clean:
+	@@rm -r $(OBJS)
+
+sonicwin: $(OBJS)
+	@mkdir -p $(OBJ_DIRS)
+	@g++ $^ \
+		-Wall -std=c++11 \
+		-F/Library/Frameworks/ \
+		-I/Library/Frameworks/SDL2.frameworks/Headers/ \
+		-I/Library/Frameworks/SDL2_image.framework/Headers/ \
+		-I/Library/Frameworks/SDL2_mixer.framework/Headers/ \
+		-framework SDL2 \
+		-framework SDL2_image \
+		-framework SDL2_mixer \
+		-framework Cocoa \
+		-o $(TARGET)
+
+$(OBJ_DIRS):
+	mkdir -p $@
+
+outMac/%.o: source/%.png | $(OBJ_DIRS)
+	@touch outMac/stub.c
+	@gcc -o outMac/stub.o -c outMac/stub.c
+	$(eval FULL = J$(subst .,_,$(subst -,_,$(subst /,_,$(subst source/,,$^))))________________________)
+	$(eval FULL1 = $(call substr,$(FULL),1,16))
+	$(eval FULL2 = $(call substr,$(FULL),17,32))
+	ld -r -o $@ -sectcreate $(FULL1) $(FULL2) $^ outMac/stub.o
+
+outMac/%.o: source/%.bin | $(OBJ_DIRS)
+	@touch outMac/stub.c
+	@gcc -o outMac/stub.o -c outMac/stub.c
+	$(eval FULL = J$(subst .,_,$(subst -,_,$(subst /,_,$(subst source/,,$^))))________________________)
+	$(eval FULL1 = $(call substr,$(FULL),1,16))
+	$(eval FULL2 = $(call substr,$(FULL),17,32))
+	ld -r -o $@ -sectcreate $(FULL1) $(FULL2) $^ outMac/stub.o
+
+outMac/%.o: source/%.ogg | $(OBJ_DIRS)
+	@touch outMac/stub.c
+	@gcc -o outMac/stub.o -c outMac/stub.c
+	$(eval FULL = J$(subst .,_,$(subst -,_,$(subst /,_,$(subst source/,,$^))))________________________)
+	$(eval FULL1 = $(call substr,$(FULL),1,16))
+	$(eval FULL2 = $(call substr,$(FULL),17,32))
+	ld -r -o $@ -sectcreate $(FULL1) $(FULL2) $^ outMac/stub.o
+
+outMac/%.o: source/%.wav | $(OBJ_DIRS)
+	@touch outMac/stub.c
+	@gcc -o outMac/stub.o -c outMac/stub.c
+	$(eval FULL = J$(subst .,_,$(subst -,_,$(subst /,_,$(subst source/,,$^))))________________________)
+	$(eval FULL1 = $(call substr,$(FULL),1,16))
+	$(eval FULL2 = $(call substr,$(FULL),17,32))
+	ld -r -o $@ -sectcreate $(FULL1) $(FULL2) $^ outMac/stub.o
+
+outMac/%.o: source/%.cpp | $(OBJ_DIRS)
+	@g++ -c \
+		-Wall -std=c++11 \
+		-F/Library/Frameworks/ \
+		-I/Library/Frameworks/SDL2.framework/Headers/ \
+		-I/Library/Frameworks/SDL2_image.framework/Headers/ \
+		-I/Library/Frameworks/SDL2_mixer.framework/Headers/ \
+		-DPLATFORM_MAC \
+		-o "$@" "$<"
+
+outMac/%.o: source/%.c | $(OBJ_DIRS)
+	@g++ -c \
+		-Wall \
+		-F/Library/Frameworks/ \
+		-I/Library/Frameworks/SDL2.framework/Headers/ \
+		-I/Library/Frameworks/SDL2_image.framework/Headers/ \
+		-I/Library/Frameworks/SDL2_mixer.framework/Headers/ \
+		-DPLATFORM_MAC \
+		-o "$@" "$<"

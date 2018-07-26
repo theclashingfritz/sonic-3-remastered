@@ -1,0 +1,41 @@
+loc_AIZ_Miniboss_State_0_Init
+loc_AIZ_Miniboss_State_1_WaitOnPlayerReady ; Set the function 'loc_68A94' for TIMER end
+
+(loc_68556)
+- waits for camera to be in correct position
+- sets STATE to 4
+- locks camera
+- set TIMER to 180 frames
+- fade music
+(loc_68A94) (loc_AIZ_Miniboss_State_2)
+- set the function 'loc_68ACC' for TIMER end
+- set STATE to 6
+- set YSPEED to 1
+- set TIMER to 175
+- play MUSIC (miniboss)
+- set something to 46
+(loc_68ACC) (loc_AIZ_Miniboss_State_3)
+- set the function 'loc_68ADE' for TIMER end
+- set TIMER to 20
+- set STATE to 8
+- set YSPEED to 0
+- die
+(loc_68ADE)
+- set the function 'loc_68AFE' for TIMER end
+- set TIMER to 30
+(loc_68AFE)
+- it shoot the fire
+
+loc_AIZ_Miniboss_State_3
+- wait until TIMER is done
+
+loc_AIZ_Miniboss_State_4
+- Swing_UpAndDown
+- wait until TIMER is done
+- subtract 1 from something
+- if > 0
+  - set TIMER to 64
+  - play SOUND (fire blast)
+  - make fire
+
+FFFFB038 = Character ID

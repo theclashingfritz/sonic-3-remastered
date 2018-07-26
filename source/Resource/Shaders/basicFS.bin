@@ -1,0 +1,28 @@
+#if __VERSION__ < 110
+precision mediump float;
+#endif
+uniform sampler2D u_sampler;
+uniform vec4 u_color;
+uniform bool u_useTex;
+
+#if __VERSION__ >= 130
+    in vec2 _texcoord;
+    out vec4 gl_FragColor;
+#else
+    varying vec2 _texcoord;
+#endif
+
+void main() {
+    vec4 color;
+    if (u_useTex)
+        color = texture2D(u_sampler, _texcoord) * vec4(u_color.r >= 0.0 ? u_color.r : 1.0, u_color.g, u_color.b, abs(u_color.a));
+    else
+        color = u_color;
+
+    gl_FragColor = color;
+    if (u_color.r < 0.0)
+        gl_FragColor = mix(color, vec4(vec3(color.r + color.g + color.b) / 3.0, color.a), abs(u_color.r));
+
+    if (gl_FragColor.a < 0.005)
+        discard;
+}

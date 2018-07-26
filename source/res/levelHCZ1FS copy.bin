@@ -1,0 +1,170 @@
+#if __VERSION__ < 110
+precision mediump float;
+#endif
+uniform sampler2D u_sampler;
+uniform sampler2D u_palette1;
+uniform sampler2D u_palette2;
+
+uniform float u_waterline;
+uniform float u_waterlineStop;
+uniform int u_globalFrame;
+
+uniform vec4 u_color;
+uniform bool u_useTex;
+
+uniform vec4 u_data;
+
+#if __VERSION__ >= 130
+    in vec2 _texcoord;
+    in vec4 _position;
+
+    out vec4 gl_FragColor;
+#else
+    varying vec2 _texcoord;
+    varying vec4 _position;
+#endif
+
+void main() {
+    vec4 color;
+    if (u_useTex) {
+        vec4 index = texture2D(u_sampler, _texcoord);
+        float pal0 = index[0];
+        float pal1 = index[1];
+        float pal2 = index[2];
+        float pal3 = index[3];
+
+        float boost = 0.0;
+
+        bool wet = false;
+        if (gl_FragCoord.y / 225.0 < u_waterline && gl_FragCoord.y / 225.0 > u_waterlineStop)
+            wet = true;
+
+        if (pal3 == 0.0) {
+            discard;
+        }
+
+        int value = 3;
+        if (index[0] > 0.0)
+            value = 0;
+        else if (index[1] > 0.0)
+            value = 1;
+        else if (index[2] > 0.0)
+            value = 2;
+
+        if (mod(_position.w, 4.0) > 1.0 - 0.1 && mod(_position.w, 4.0) < 1.0 + 0.1) {
+            if (value == 0) {
+                pal0 = 0.0;
+                pal1 = index[0];
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }
+            else if (value == 1) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = index[1];
+                pal3 = 1.0;
+            }
+            else if (value == 2) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = index[2] + 15.0 / 255.0;
+            }
+            else if (value == 2) {
+                pal0 = index[3] - 15.0 / 255.0;
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }
+        }
+        if (mod(_position.w, 4.0) > 2.0 - 0.1 && mod(_position.w, 4.0) < 2.0 + 0.1) {
+            /*if (value == 0) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = index[0];
+                pal3 = 1.0;
+            }
+            else if (value == 1) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = index[1] + 15.0 / 255.0;
+            }
+            else if (value == 2) {
+                pal0 = index[2];
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }
+            else if (value == 2) {
+                pal0 = 0.0;
+                pal1 = index[3] - 15.0 / 255.0;
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }*/
+        }
+        if (mod(_position.w, 4.0) > 3.0 - 0.1 && mod(_position.w, 4.0) < 3.0 + 0.1) {
+            /*if (value == 0) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = index[0] + 15.0 / 255.0;
+            }
+            else if (value == 1) {
+                pal0 = index[1];
+                pal1 = 0.0;
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }
+            else if (value == 2) {
+                pal0 = 0.0;
+                pal1 = index[2];
+                pal2 = 0.0;
+                pal3 = 1.0;
+            }
+            else if (value == 2) {
+                pal0 = 0.0;
+                pal1 = 0.0;
+                pal2 = index[3] - 15.0 / 255.0;
+                pal3 = 1.0;
+            }*/
+        }
+        if (_position.w > 4.0 - 0.1) {
+            //boost = floor(_position.w / 4.0);
+        }
+
+        vec2 finalVector = vec2(0, 0);
+        if (pal0 > 0.0 && pal3 == 1.0) {
+            finalVector = vec2(0.125, pal0 + boost / 16.0);
+        }
+        else if (pal1 > 0.0 && pal3 == 1.0) {
+            finalVector = vec2(0.375, pal1 + boost / 16.0);
+        }
+        else if (pal2 > 0.0 && pal3 == 1.0) {
+            finalVector = vec2(0.625, pal2 + boost / 16.0);
+        }
+        else {
+            pal3 -= 15.0 / 255.0;
+            pal3 = pal3 * 16.0;
+            finalVector = vec2(0.875, pal3 / 16.0 + boost / 16.0);
+            if (u_data.r > 0.5 && pal3 >= 8.0 && pal3 < 11.0) {
+                //finalVector = vec2(0.625, pal3 / 16.0 + boost / 16.0);
+                //wet = true;
+            }
+        }
+        if (wet) {
+            color = texture2D(u_palette2, finalVector) * vec4(u_color.r >= 0.0 ? u_color.r : 1.0, u_color.g, u_color.b, abs(u_color.a));
+        }
+        else {
+            color = texture2D(u_palette1, finalVector) * vec4(u_color.r >= 0.0 ? u_color.r : 1.0, u_color.g, u_color.b, abs(u_color.a));
+        }
+    }
+    else {
+        color = vec4(u_color.r >= 0.0 ? u_color.r : 1.0, u_color.g, u_color.b, abs(u_color.a));
+    }
+
+
+    gl_FragColor = color;
+    if (u_color.r < 0.0)
+        gl_FragColor = mix(color, vec4(vec3(color.r + color.g + color.b) / 3.0, color.a), abs(u_color.r));
+}

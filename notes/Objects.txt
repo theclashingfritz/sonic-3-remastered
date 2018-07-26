@@ -1,0 +1,6 @@
+
+
+
+0x05 - Rock from AIZ, LRZ and EMZ
+Subtypes (based on bits):
+Bit 0 Set - Breakable via Jumping

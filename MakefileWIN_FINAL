@@ -1,0 +1,69 @@
+rwildcard = $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+
+TARGET    = sonic
+OBJS      = main.o
+
+SRC_C    := $(call rwildcard, source/, *.c)
+SRC_CPP  := $(call rwildcard, source/, *.cpp)
+SRC_PNG  := $(call rwildcard, source/, *.png)
+SRC_OGG  := $(call rwildcard, source/, *.ogg)
+SRC_BIN  := $(call rwildcard, source/, *.bin)
+SRC_WAV  := $(call rwildcard, source/, *.wav)
+
+OBJ_DIRS := $(sort $(addprefix out/, $(dir $(SRC_C:source/%.c=%.o))) \
+			$(addprefix out/CPP/, $(dir $(SRC_CPP:source/%.cpp=%.o))) \
+			$(addprefix out/, $(dir $(SRC_PNG:source/%.png=%.o))) \
+			$(addprefix out/, $(dir $(SRC_OGG:source/%.ogg=%.o))) \
+			$(addprefix out/, $(dir $(SRC_BIN:source/%.bin=%.o))) \
+			$(addprefix out/, $(dir $(SRC_WAV:source/%.wav=%.o))))
+OBJS     := $(addprefix out/, $(SRC_C:source/%.c=%.o)) \
+			$(addprefix out/CPP/, $(SRC_CPP:source/%.cpp=%.o)) \
+			$(addprefix out/, $(SRC_PNG:source/%.png=%.o)) \
+			$(addprefix out/, $(SRC_OGG:source/%.ogg=%.o)) \
+			$(addprefix out/, $(SRC_BIN:source/%.bin=%.o)) \
+			$(addprefix out/, $(SRC_WAV:source/%.wav=%.o))
+
+LIBS =  -Wl,-subsystem,windows
+IMPORTANTTHINGTO_GET_RID_OF_CONSOLE =  -Wl,-subsystem,windows
+
+all: sonicwin
+
+win: sonicwin
+
+wclean:
+	rmdir /s /q "out/CPP/"
+	del /f Sonic.exe
+
+sonicwin: $(OBJS)
+	g++ -static $^ meta/sonic3.res -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -std=gnu++11 -lm -lstdc++ -lmingw32 -lSDL2main -lSDL2 -lglew32 -lglew32mx -lglew32.dll -lopengl32 -lglu32 -lglew32mx -lSDL2_image -lSDL2_mixer \
+	-lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -DGL_GLEXT_PROTOTYPES \
+	-o Sonic.exe
+
+$(OBJ_DIRS):
+	@if not exist "$(subst /,\\,$@)" mkdir $(subst /,\\,$@)
+
+out/%.o: source/%.png | $(OBJ_DIRS)
+	ld -r -b binary -o $@ $^
+	@objcopy --prefix-symbols=_ $@
+
+out/%.o: source/%.bin | $(OBJ_DIRS)
+	ld -r -b binary -o $@ $^
+	@objcopy --prefix-symbols=_ $@
+
+out/%.o: source/%.ogg | $(OBJ_DIRS)
+	ld -r -b binary -o $@ $^
+	objcopy --prefix-symbols=_ $@
+
+out/%.o: source/%.wav | $(OBJ_DIRS)
+	ld -r -b binary -o $@ $^
+	@objcopy --prefix-symbols=_ $@
+
+out/CPP/%.o: source/%.cpp | $(OBJ_DIRS)
+	g++ -static -c $< -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -lmingw32 -lSDL2 -lglew32 -lglew32mx -lglew32.dll -lopengl32 -lglu32 -lglew32mx -lSDL2_image -lSDL2_mixer \
+	-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -DGL_GLEXT_PROTOTYPES \
+	-o $@
+
+out/%.o: source/%.c | $(OBJ_DIRS)
+	g++ -static -c $< -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -lmingw32 -lSDL2 -lglew32 -lglew32mx -lglew32.dll -lopengl32 -lglu32 -lglew32mx -lSDL2_image -lSDL2_mixer \
+	-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -DGL_GLEXT_PROTOTYPES \
+	-o $@

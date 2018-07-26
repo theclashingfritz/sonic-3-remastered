@@ -1,0 +1,356 @@
+Obj_AIZRideVine:
+
+		movea.l	a0,a1
+		move.l	#loc_21D28_Check_For_Player,(a1)
+		bsr.w	sub_21D00_ObjectSetup_SetsUpVineObjectAtA1
+		move.b	#$21,sprite_frame(a1)
+		move.w	x_pos(a0),d2
+		move.w	y_pos(a0),d3
+		moveq	#0,d1
+		move.b	subtype(a0),d1
+		andi.w	#$7F,d1
+		lsl.w	#4,d1
+		add.w	d2,d1
+		move.w	d1,parent_end_x_46(a0)
+		moveq	#3,d1
+		addq.w	#1,d1
+		jsr	(Create_New_Sprite3).l
+		bne.w	loc_21CFE
+		move.w	a1,child_vine_below_3E(a0)
+		move.l	#loc_21F80_MainCode,(a1)
+		move.w	a0,parent_vine_above_3C(a1)
+		bra.s	loc_21CD0
+; ---------------------------------------------------------------------------
+
+loc_21CB8_CreateRopeChild:
+		jsr	(Create_New_Sprite3).l
+		bne.w	loc_21CFE
+		move.l	#loc_22014_MainVineSpriteCode,(a1)
+		move.w	a2,parent_vine_above_3C(a1)
+		move.w	a1,child_vine_below_3E(a2)
+
+loc_21CD0:
+		movea.l	a1,a2
+		bsr.s	sub_21D00_ObjectSetup_SetsUpVineObjectAtA1
+		move.w	d2,x_pos(a1)
+		move.w	d3,y_pos(a1)
+		addi.w	#$10,d3
+		addq.w	#1,rope_counter_36(a0)
+		move.w	rope_counter_36(a0),rope_counter_36(a1)
+		dbf	d1,loc_21CB8_CreateRopeChild
+		move.l	#Obj_AIZRideVineHandle,(a1)
+		move.b	#$20,sprite_frame(a1)
+		move.w	a1,child_vinehandle_40(a0)
+
+loc_21CFE:
+
+		bra.s	loc_21D28_Check_For_Player
+
+; =============== S U B R O U T I N E =======================================
+
+
+sub_21D00_ObjectSetup_SetsUpVineObjectAtA1:
+
+		move.b	#4,4(a1)
+		move.b	#8,7(a1)
+		move.b	#8,6(a1)
+		move.w	#$200,8(a1)
+		move.l	#Map_AIZMHZRideVine,$C(a1)
+		move.w	#$41B,$A(a1)
+		rts
+; End of function sub_21D00_ObjectSetup_SetsUpVineObjectAtA1
+
+; ---------------------------------------------------------------------------
+
+loc_21D28_Check_For_Player:
+
+		movea.w	child_vinehandle_40(a0),a1
+		tst.w	has_something_32(a1)
+		beq.s	loc_21D48                                    ; if there is no something, dont start the movement code
+		move.l	#loc_21D4C_MovementUpdate,(a0)
+		movea.w	child_vine_below_3E(a0),a1
+		move.w	#1,$2E(a1)
+		move.w	#0,$38(a1)
+
+loc_21D48:
+		bra.w	loc_21F38_Draw_Sprite
+; ---------------------------------------------------------------------------
+
+loc_21D4C_MovementUpdate:
+		addi.l	#$80000,x_pos(a0)
+		addi.l	#$20000,y_pos(a0)
+		move.w	x_pos(a0),d0
+		cmp.w	parent_end_x_46(a0),d0
+		blo.w	loc_21DEE
+		tst.b	subtype(a0)
+		bpl.s	loc_21DC2
+		move.l	#loc_21DF2,(a0)
+		move.w	#$800,$18(a0)
+		move.w	#$200,$1A(a0)
+		move.l	#Map_AnimatedStillSprites,$C(a0)
+		move.w	#$62E9,$A(a0)
+		move.b	#8,7(a0)
+		move.b	#$C,6(a0)
+		move.b	#0,sprite_frame(a0)
+		move.w	#1,$20(a0)
+		movea.w	child_vinehandle_40(a0),a1
+		lea	has_something_32(a1),a2
+		tst.b	(a2)
+		beq.s	loc_21DB6
+		move.b	#$81,(a2)
+
+loc_21DB6:
+		addq.w	#1,a2
+		tst.b	(a2)
+		beq.s	loc_21DC0
+		move.b	#$81,(a2)
+
+loc_21DC0:
+		bra.s	loc_21DEE
+; ---------------------------------------------------------------------------
+
+loc_21DC2:
+		move.l	#loc_21E14,(a0)
+		movea.w	child_vine_below_3E(a0),a1
+		move.l	#loc_21FE8,(a1)
+		move.w	#0,angle_3A(a1)
+		movea.w	child_vinehandle_40(a0),a1
+		move.w	#1,$30(a1)
+		move.w	#0,rotation(a0)
+		move.w	#$400,angle_3A(a0)
+
+loc_21DEE:
+
+		bra.w	loc_21F38_Draw_Sprite
+; ---------------------------------------------------------------------------
+
+loc_21DF2:
+		jsr	(MoveSprite).l
+		tst.b	4(a0)
+		bmi.s	loc_21E04
+		move.w	#$7FF0,x_pos(a0)
+
+loc_21E04:
+		lea	(Ani_AnimatedStillSprites).l,a1
+		jsr	(Animate_Sprite).l
+		bra.w	loc_21F38_Draw_Sprite
+; ---------------------------------------------------------------------------
+
+loc_21E14:
+		movea.w	child_vinehandle_40(a0),a1
+		move.w	angle_3A(a0),d0
+		move.b	rotation(a0),d1
+		ext.w	d1
+		bpl.s	loc_21E26
+		neg.w	d1
+
+loc_21E26:
+		add.w	d1,d1
+		sub.w	d1,d0
+		sub.w	d0,rotation(a0)
+		tst.w	has_something_32(a1)
+		bne.s	loc_21E68
+		move.b	rotation(a0),d0
+		addq.b	#8,d0
+		cmpi.b	#$10,d0
+		bhs.s	loc_21E68
+		move.l	#loc_21E6C,(a0)
+		move.w	#0,$42(a0)
+		move.w	#$FD00,$44(a0)
+		move.w	#$1000,$38(a0)
+		move.w	#0,$2E(a0)
+		movea.w	child_vinehandle_40(a0),a1
+		move.w	#2,$30(a1)
+
+loc_21E68:
+
+		bra.w	loc_21F38_Draw_Sprite
+; ---------------------------------------------------------------------------
+
+loc_21E6C:
+		moveq	#0,d2
+		move.b	$38(a0),d2
+		move.w	$44(a0),d0
+		move.w	#0,d1
+		tst.w	$2E(a0)
+		bne.s	loc_21EC4
+		add.w	d2,d0
+		move.w	d0,$44(a0)
+		add.w	d0,$42(a0)
+		cmp.b	$42(a0),d1
+		bgt.s	loc_21EEE
+		asr.w	#4,d0
+		sub.w	d0,$44(a0)
+		move.w	#1,$2E(a0)
+		cmpi.w	#$C00,$38(a0)
+		beq.s	loc_21EAC
+		subi.w	#$40,$38(a0)
+		bra.s	loc_21EEE
+; ---------------------------------------------------------------------------
+
+loc_21EAC:
+
+		move.l	#loc_21F0A,(a0)
+		move.w	#0,$38(a0)
+		movea.w	child_vinehandle_40(a0),a1
+		move.w	#0,$30(a1)
+		bra.s	loc_21EEE
+; ---------------------------------------------------------------------------
+
+loc_21EC4:
+		sub.w	d2,d0
+		move.w	d0,$44(a0)
+		add.w	d0,$42(a0)
+		cmp.b	$42(a0),d1
+		ble.s	loc_21EEE
+		asr.w	#4,d0
+		sub.w	d0,$44(a0)
+		move.w	#0,$2E(a0)
+		cmpi.w	#$C00,$38(a0)
+		beq.s	loc_21EAC
+		subi.w	#$40,$38(a0)
+
+loc_21EEE:
+
+		move.w	$42(a0),d0
+		move.w	d0,rotation(a0)
+		asr.w	#3,d0
+		move.w	d0,angle_3A(a0)
+		movea.w	child_vine_below_3E(a0),a1
+		move.w	angle_3A(a0),angle_3A(a1)
+		bra.w	loc_21F38_Draw_Sprite
+; ---------------------------------------------------------------------------
+
+loc_21F0A:
+		move.b	$38(a0),d0
+		addi.w	#$200,$38(a0)
+		jsr	(GetSineCosine).l            ; Returns the sine in d0 and the cosine in d1 (both multiplied by $100)
+		asl.w	#2,d0
+		cmpi.w	#$400,d0
+		bne.s	loc_21F26
+		move.w	#$3FF,d0
+
+loc_21F26:
+		move.w	d0,rotation(a0)
+		move.w	d0,angle_3A(a0)
+		movea.w	child_vine_below_3E(a0),a1
+		move.w	angle_3A(a0),angle_3A(a1)
+
+loc_21F38_Draw_Sprite:
+
+		move.w	x_pos(a0),d0
+		andi.w	#$FF80,d0
+		sub.w	(Camera_X_pos_coarse_back).w,d0
+		cmpi.w	#$280,d0
+		bhi.w	loc_21F52
+		jmp	(Draw_Sprite).l
+; ---------------------------------------------------------------------------
+
+loc_21F52:
+		move.w	rope_counter_36(a0),d2
+		subq.w	#1,d2
+		bcs.s	loc_21F6E
+		movea.w	child_vine_below_3E(a0),a2
+
+loc_21F5E:
+		movea.l	a2,a1
+		movea.w	child_vine_below_3E(a1),a2
+		jsr	(Delete_Referenced_Sprite).l
+		dbf	d2,loc_21F5E
+
+loc_21F6E:
+		move.w	respawn_addr(a0),d0
+		beq.s	loc_21F7A
+		movea.w	d0,a2
+		bclr	#7,(a2)
+
+loc_21F7A:
+		jmp	(Delete_Current_Sprite).l
+; ---------------------------------------------------------------------------
+
+loc_21F80_MainCode:
+		tst.w	counter(a0)
+		bne.s	loc_21FA8
+		move.b	$38(a0),d0
+		addi.w	#$200,$38(a0)
+		jsr	(GetSineCosine).l            ; Returns the sine in d0 and the cosine in d1 (both multiplied by $100)
+		asl.w	#2,d0
+		cmpi.w	#$400,d0
+		bne.s	loc_21FA2
+		move.w	#$3FF,d0
+
+loc_21FA2:
+		move.w	d0,angle_3A(a0)
+		bra.s	loc_21FBE
+; ---------------------------------------------------------------------------
+
+loc_21FA8:
+		move.b	$38(a0),d0
+		addi.w	#$100,$38(a0)
+		jsr	(GetSineCosine).l            ; Returns the sine in d0 and the cosine in d1 (both multiplied by $100)
+		asl.w	#3,d0
+		move.w	d0,angle_3A(a0)
+
+loc_21FBE:
+		move.w	angle_3A(a0),d0
+		move.w	d0,rotation(a0)
+		move.b	rotation(a0),d0
+		addq.b	#4,d0
+		lsr.b	#3,d0
+		move.b	d0,sprite_frame(a0)
+		movea.w	parent_vine_above_3C(a0),a1
+		move.w	x_pos(a1),x_pos(a0)
+		move.w	y_pos(a1),y_pos(a0)
+		jmp	(Draw_Sprite).l
+; ---------------------------------------------------------------------------
+
+loc_21FE8:
+		movea.w	parent_vine_above_3C(a0),a1
+		move.w	rotation(a1),rotation(a0)
+		move.b	rotation(a0),d0
+		addq.b	#4,d0
+		lsr.b	#3,d0
+		move.b	d0,sprite_frame(a0)
+		movea.w	parent_vine_above_3C(a0),a1
+		move.w	x_pos(a1),x_pos(a0)
+		move.w	y_pos(a1),y_pos(a0)
+		jmp	(Draw_Sprite).l
+; ---------------------------------------------------------------------------
+
+loc_22014_MainVineSpriteCode:
+		movea.w	parent_vine_above_3C(a0),a1
+		move.w	angle_3A(a1),angle_3A(a0)
+		move.w	rotation(a1),d0
+		add.w	angle_3A(a0),d0
+		move.w	d0,rotation(a0)
+		move.b	rotation(a0),d0
+		addq.b	#4,d0
+		lsr.b	#3,d0
+		move.b	d0,sprite_frame(a0)
+		bsr.w	sub_22040
+		jmp	(Draw_Sprite).l
+
+; =============== S U B R O U T I N E =======================================
+
+
+sub_22040:
+
+		movea.w	parent_vine_above_3C(a0),a1
+		move.b	rotation(a1),d0
+		addq.b	#4,d0
+		andi.b	#-8,d0
+		jsr	(GetSineCosine).l            ; Returns the sine in d0 and the cosine in d1 (both multiplied by $100)
+		neg.w	d0
+		addi.w	#8,d0
+		addi.w	#8,d1
+		asr.w	#4,d0
+		asr.w	#4,d1
+
+		add.w	x_pos(a1),d0
+		move.w	d0,x_pos(a0)
+		add.w	y_pos(a1),d1
+		move.w	d1,y_pos(a0)
+		rts
+; End of function sub_22040
+
+; ---------------------------------------------------------------------------

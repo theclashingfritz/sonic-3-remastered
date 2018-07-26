@@ -1,0 +1,18 @@
+int i = 0;
+void AIZ1_IntroDeform() {
+    d0 = (Camera_X >> 1);
+    // start a0 at line FFFFA828 - FFFFA7F0 = 0x38 = 56
+    i = 56;
+    if (d0 < 0x580)
+       loc_23AFF8();
+    d1 = 0x24 = 36 // d1 times to repeat for later, d1 pixels to shift
+    loc_23AFF0(); // loc_Cloud_SetLineHOffset
+}
+void loc_23AFF0() {
+    a0[i++] = d0;
+    if (d1-- > 0) {
+        loc_23AFF0();
+        return;
+    }
+    loc_23B018();
+}

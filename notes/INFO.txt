@@ -1,0 +1,24 @@
+Sonic 3 Pointer List:
+http://info.sonicretro.org/SCHG:Sonic_3_%26_Knuckles/Object_Editing/Pointer_List_1
+
+Sprite Mappings Docs:
+http://info.sonicretro.org/SCHG:Sonic_3_%26_Knuckles/Object_Editing#Sprite_Mappings
+
+Lost Data (Bored Falling Asleep Animation, Whistle Animation, 8th Special Stage):
+http://info.sonicretro.org/Broken/Lost_Sprites_and_Tiles
+
+Classic Sonic Level Design:
+http://forums.sonicretro.org/index.php?showtopic=28302
+
+Bridge Depression (Sonic Physics Guide):
+http://info.sonicretro.org/SPG:Game_Objects
+
+Sonic 3 Special Stage Editor:
+https://forums.sonicretro.org/index.php?showtopic=36754
+
+Which Side Was Hit?
+https://gamedev.stackexchange.com/questions/29786/a-simple-2d-rectangle-collision-algorithm-that-also-determines-which-sides-that
+
+
+printf\("ERROR: ([A-z0-9 \!\@\#\$\%\^\&\*\(\)\:\.\/\\\:\"\'\_\+\*\-]+)\\n"
+print(2, "$1"

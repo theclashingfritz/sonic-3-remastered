@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Menlo";
+    src: url("/resources/Menlo.ttf");
+}
+
+.root {
+    -fx-base: transparent;
+    -fx-background: transparent;
+    -fx-selection-bar-non-focused: transparent;
+}
+
+#codeArea {
+    -fx-font-size: 14px;
+    -fx-font-family: Menlo, Monaco, "Courier New", monospace;
+    -fx-background-color: hsb(220, 23.01%, 20.34%);
+}
+
+.paragraph-box {
+    -fx-padding: 4px 0px 4px 0px;
+}
+
+.paragraph-box:has-caret {
+    -fx-background-color: -fx-syntax-guide;
+}
+
+.text {
+    -fx-fill: hsb(220, 10.82%, 75.06%);
+}
+
+.keyword {
+    -fx-fill: hsb(286, 45.62%, 86.80%);
+    -fx-font-weight: bold;
+}
+.classes {
+    -fx-fill: hsb( 39, 46.27%, 89.77%);
+}
+.method {
+    -fx-fill: hsb(207, 59.39%, 93.88%);
+    -fx-font-weight: bold;
+}
+.constant {
+    -fx-fill: hsb( 29, 51.33%, 82.06%);
+    -fx-font-weight: bold;
+}
+.string {
+    -fx-fill: hsb( 95, 37.78%, 76.44%);
+}
+.comment {
+	-fx-fill: hsb(220, 18.18%, 44.00%);
+}
+
+.caret {
+    -fx-stroke: hsb(207, 59.39%, 93.88%);
+    -fx-stroke-width: 3;
+}
+
+.lineno {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 16px 0px 16px;
+}

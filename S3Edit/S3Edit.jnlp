@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="S3Edit.jnlp">
+  <information>
+    <title>IE Sprite Viewer</title>
+    <vendor>Unknown</vendor>
+    <description>IE Sprite Viewer</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="S3Edit.jar" size="4155806" download="eager" />
+    <jar href="ini4j-0.5.4.jar" size="102220" download="eager" />
+    <jar href="lib\flowless-0.6.jar" size="64324" download="eager" />
+    <jar href="lib\reactfx-2.0-M5.jar" size="428541" download="eager" />
+    <jar href="lib\richtextfx-0.8.0.jar" size="231493" download="eager" />
+    <jar href="lib\undofx-1.3.1.jar" size="23755" download="eager" />
+    <jar href="lib\wellbehavedfx-0.3.jar" size="66436" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="SpriteViewer"  name="IE Sprite Viewer" />
+  <update check="background"/>
+</jnlp>

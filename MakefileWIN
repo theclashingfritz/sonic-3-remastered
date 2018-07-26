@@ -1,0 +1,46 @@
+rwildcard = $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+
+TARGET    = sonic
+OBJS      = main.o
+
+SRC_C    := $(call rwildcard, source/, *.c)
+SRC_CPP  := $(call rwildcard, source/, *.cpp)
+SRC_H    := $(call rwildcard, source/, *.h)
+SRC_PNG  := $(call rwildcard, source/, *.png)
+SRC_OGG  := $(call rwildcard, source/, *.ogg)
+SRC_BIN  := $(call rwildcard, source/, *.bin)
+SRC_WAV  := $(call rwildcard, source/, *.wav)
+
+OBJ_DIRS := $(sort $(addprefix out/CPP/, $(dir $(SRC_C:source/%.c=%.o))) \
+			$(addprefix out/CPP/, $(dir $(SRC_CPP:source/%.cpp=%.o))))
+OBJS     := $(addprefix out/CPP/, $(SRC_C:source/%.c=%.o)) \
+			$(addprefix out/CPP/, $(SRC_CPP:source/%.cpp=%.o))
+HEADERS  := $(SRC_H)
+
+LIBS =  -Wl,-subsystem,windows
+IMPORTANTTHINGTO_GET_RID_OF_CONSOLE =  -Wl,-subsystem,windows
+
+all: sonicwin
+
+wclean:
+	rmdir /s /q "out/CPP/"
+	del /f "Sonic 3.exe"
+
+sonicwin: $(OBJS)
+	g++ -static $^ meta/sonic3.res -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/GL -std=gnu++11 -lstdc++ -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -DLOAD_PNG_DYNAMIC="DLL/libpng16-16.dll" -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+	-lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+	-Xlinker -Map=Sonic_3.map -o "Sonic 3.exe"
+
+$(OBJ_DIRS):
+	@if not exist "$(subst /,\\,$@)" mkdir $(subst /,\\,$@)
+
+
+out/CPP/%.o: source/%.cpp | $(OBJ_DIRS)
+	g++ -static -c $< -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+	-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+	-o $@
+
+out/CPP/%.o: source/%.c | $(OBJ_DIRS)
+	g++ -static -c $< -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
+	-mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
+	-o $@

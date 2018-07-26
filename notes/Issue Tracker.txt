@@ -1,0 +1,46 @@
+To Be Finished:
+- Implement Miniboss patterns
+  - Also make his explosions look like they do in the game
+- Add Giant Rings
+
+Critical
+- FIX FRAMEBUFFER ISSUE ON MAC
+- Move all object initialization function in Scene_CNZ.cpp to each object's respective create function in Objects.h
+- Implement Pause menu controls
+- Create the spinning signpost
+- Make the Bubblers have accurate timing
+- Make it so Sonic doesn't walk "behind" those clear tubes underwater
+- Fix weird Peril animation in first water tunnel
+- Mega Chompers need to be implemented
+- Add first geyser debris
+
+Normal
+- Don't stop Rings from moving if you lose the Thunder Shield
+- Fix collision and speeds in Water Tunnels
+- Make HCZ1 Waterline move
+- Make Countdown Bubbles animation accurate
+
+- Memory optimizations need to be made
+
+- Create Silver Snake Blocks
+
+For new zone acts:
+- chunks (auto-generated with S3Edit)
+- layout (copied from disasm with S3Edit)
+- objects (copied from disasm with S3Edit)
+- rings (copied from disasm)
+- tiles (auto-generated with S3Edit)
+- Dry and Wet Palettes
+- TILES sheet (auto-generated with S3Edit)
+
+
+
+
+
+Requests:
+- Higher quality samples (lol)
+- 8-way rotation option
+- option for Original and New HUD position
+- 2P levels like in Mania
+- New / CD touchscreen controls
+- Hydrocity Act 1/2 background swap option

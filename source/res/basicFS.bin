@@ -1,0 +1,103 @@
+#if __VERSION__ < 110
+precision mediump float;
+#endif
+uniform sampler2D u_sampler;
+uniform sampler2D u_palette1;
+uniform sampler2D u_palette2;
+uniform vec4 u_color;
+uniform bool u_useTex;
+
+uniform vec4 u_palette[64];
+uniform int  u_paletteLineSize;
+uniform float u_waterline;
+uniform float u_waterlineStop;
+
+uniform bool  u_fadeToWhite;
+uniform float u_fade;
+
+#if __VERSION__ >= 130
+    in vec4 _position;
+    in vec2 _texcoord;
+    in vec4 _color;
+    out vec4 gl_FragColor;
+#else
+    varying vec4 _position;
+    varying vec2 _texcoord;
+    varying vec4 _color;
+#endif
+
+void main() {
+    vec4 color;
+    if (u_useTex)
+        color = texture2D(u_sampler, _texcoord);// * _color;
+    else
+        color = _color;
+
+    if (color.a < 0.005)
+        discard;
+
+    bool wet = false;
+    if (gl_FragCoord.y / 225.0 < u_waterline && gl_FragCoord.y / 225.0 > u_waterlineStop)
+        wet = true;
+
+    if (_position[3] >= 0.0 && _position[3] < 4.0 && u_useTex) {
+        vec2 coord;
+        float w = mod(_position.w, 4.0);
+
+        if (color.r > 0.0 && color.g == 0.0 && color.b == 0.0) {
+            coord = vec2(w * 0.25, color.r);
+        }
+        else if (color.r == 0.0 && color.g > 0.0 && color.b == 0.0) {
+            coord = vec2(w * 0.25 + 0.25, color.g);
+        }
+        else if (color.r == 0.0 && color.g == 0.0 && color.b > 0.0) {
+            coord = vec2(w * 0.25 + 0.50, color.b);
+        }
+        else if (color.r == 0.0 && color.g == 0.0 && color.b == 0.0 && color.a > 0.0) {
+            coord = vec2(w * 0.25 + 0.75, color.a);
+        }
+
+        if (wet)
+            color = texture2D(u_palette2, coord);
+        else
+            color = texture2D(u_palette1, coord);
+    }
+
+    if (u_fade > 0.0 && _position[3] < 4.0) {
+        float FadeSeparation = 0.5;
+        float Fade = clamp(u_fade * 3.0, 0.0, 3.0);
+
+        float r, g, b;
+
+        if (u_fadeToWhite) {
+            r = color.r + Fade;
+            g = color.g;
+            if (r > 1.0) {
+                g += r - 1.0;
+                r = 1.0;
+            }
+            b = color.b;
+            if (g > 1.0) {
+                b = max(0.0, color.b + g - 1.0);
+                g = 1.0;
+            }
+        }
+        else {
+            r = color.r - Fade;
+            g = color.g;
+            if (r < 0.0) {
+                g += r;
+                r = 0.0;
+            }
+            b = color.b;
+            if (g < 0.0) {
+                b = max(0.0, color.b + g);
+                g = 0.0;
+            }
+        }
+
+        color = vec4(r, g, b, color.a);
+    }
+
+    gl_FragColor = color;
+}

@@ -1,0 +1,3 @@
+For 270 + 16 -> (32 start + 16 size) * 8 frames
+For 286 + 4  -> (0 start + 4 size) * 8 frames
+For 290 + 15 -> (160 start + 15 size) * 2 frames

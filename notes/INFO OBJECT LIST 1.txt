@@ -1,0 +1,867 @@
+ID: (00) - Ring
+
+
+ID: (01) - Monitor
+
+$00 - Static (harms character)
+$01 - 1-up
+$02 - Robotnik
+$03 - Super Ring
+$04 - Speed Shoes
+$05 - Fire shield
+$06 - Lightning shield
+$07 - Bubble shield
+$08 - Invincibility
+$09 - S monitor
+$0A - Broken
+
+ID: (02) - Collision plane switcher
+
+
+ID: 03 - Large tree from AIZ 1 (the one right leading up to the miniboss cutscene)
+
+
+ID: 04 - Crumbling platforms from AIZ and ICZ
+
+
+ID: 05 - Rock from AIZ, LRZ and EMZ
+
+Upper nybble controls size of rock:
+
+$0x = Tall
+$1x = Medium
+$2x = Short
+Lower nybble controls behaviour of rock:
+
+$x0 - Solid (can't be destroyed)
+$x1 - Can be destroyed by jumping on it
+$x2 - Pushable
+$x4 - Can be destroyed by a spin dash or Knuckles' fists
+
+ID: 06 - Vine which slides down a rope from AIZ 1
+
+
+ID: (07) - Spring
+The upper nybble determines the orientation:
+$0 - facing up
+$1 - facing to the side
+$2 - facing down
+$3 - facing diagonally up and to the right
+$4 - facing diagonally down and to the right
+The lower nybble determines the colour:
+
+$0 - red
+$2 - yellow
+
+ID: (08) - Spikes
+The upper nybble determines size and orientation. Size varies from $0 (smallest) to $3 (largest), and if bit 2 of this nybble (bit 6 of the entire byte) is set, the spike is vertical. The lower nybble determines the spike type. 0 means static, 1 means it moves up and down, 2 means it moves sideways, and 3 means it's pushable
+
+ID: 09 - Tree bark from AIZ 1. Used only by the tree at coordinates $2F78 and $318. The only purpose this serves is that the bombers passing through the sky are masked by it instead of appearing over the tree
+
+
+ID: 0A - Rope peg from AIZ 1, at the end of the pulley which you ride down
+
+
+ID: (0B) - Ring (unused slot)
+
+
+ID: 0C - Swinging vine from AIZ
+
+
+ID: 0D - Breakable wall
+
+
+ID: 0E - Ridge from AIZ, MHZ, SOZ and LRZ which launches player up and forces twirl
+
+
+ID: 0F - Collapsing platform/bridge/ledge
+
+
+ID: 10 - Tube transporters from LBZ
+
+
+ID: 11 - Floating platform from LBZ
+
+Determines platform type:
+
+0 - stationary
+1 - moves left and right
+2 - moves left and right over a larger range
+3 - moves up and down
+4 - moves up and down over a larger range
+5 - moves diagonally up and to the right
+6 - moves diagonally down and to the right
+7 - doesn't sink slightly when player stands on it
+8-B - move around clockwise in the shape of a rectangle. The size of the rectangle increases from 8 to B
+C - moves left and right over a very large range
+D - falls when player stands on it
+E - unknown
+
+ID: 12 - Platform in LBZ which moves up when a flag is set and then returns to its original position when the flag is cleared (unused)
+The upper nybble can be set anywhere from 0-5, and specifies the Y range the platform travels between. The lower nybble is an index number into the level trigger flags data, used to choose the correct flag to check for motion
+
+ID: 13 - Exploding trigger from LBZ which causes bridges to change positions
+Serves as an index number into the level trigger flags data. Used to associate the trigger with the actual bridge
+
+ID: 14 - Bridge from LBZ which changes position when its corresponding trigger explodes
+The upper nybble determines starting position and ending position:
+0 - starts vertical, falls down horizontally leftwards
+1 - starts horizontal, becomes upright vertically to the right
+2 - starts vertical, falls down horizontally rightwards
+3 - starts vertical, falls down horizontally rightwards
+The lower nybble serves as an index number into the level trigger flags data. Used to associate the bridge with its trigger
+
+
+ID: 15 - Launcher from LBZ which thrusts the player forward at a high speed
+If this is 0, the launcher gives the player an initial X speed of $1000. If it's 2 (which incidentally none of the boosters in-game are), the speed given is $A00
+
+ID: 16 - Flame thrower from LBZ
+
+
+ID: 17 - Hooked ride from LBZ
+
+
+ID: 18 - Cup elevator from LBZ
+
+
+ID: 19 - Pole attached to cup elevator from LBZ
+
+
+ID: 1A - Unknown object which can be rotated using controller 2. Art seems to have been deleted, so purpose is hard to gauge (unused)
+
+
+ID: 1B - Smashable mini-pillar from LBZ
+
+
+ID: (1C) - Ring (unused slot)
+
+
+ID: 1D - Platform from LBZ which you can hang on to at the bottom (unused)
+
+
+ID: 1E - Launcher from LBZ 2 which thrusts player upward and forces a spin
+
+
+ID: 1F - Hook from LBZ which transports player up
+
+
+ID: 20 - Smashing pillar from MGZ, smashing spikes from LBZ
+
+
+ID: 21 - Laser-shooting gate from LBZ
+
+
+ID: 22 - Siren from LBZ 1
+
+
+ID: 23 - Invisible object which forces a falling animation when the player comes in contact with it (unused)
+Vertical radius of the object, divided by 8
+
+ID: 24 - Looping pipes from LBZ/pipes from LRZ which eject the player out at high speed
+
+
+ID: (25) - Ring (unused slot)
+
+
+ID: 26 - "Pinball mode" toggle tag. Placed at the entrances and exits to tunnels to force the player into a ball.
+
+
+ID: 27 - Leftover lava collision marker (object $31) from Sonic 2 (unused)
+Can be set from 0 to 2, and determines the width of the marker
+
+ID: (28) - Invisible barrier (the GTGT blocks in debug mode)
+
+
+ID: 29 - Disappearing platform from AIZ
+
+
+ID: 2A - Breakable floor piece from various levels
+
+
+ID: 2B - Flipping stairway from AIZ
+
+
+ID: 2C - Collapsing log bridge from AIZ
+
+
+ID: 2D - Falling logs from AIZ
+
+
+ID: 2E - Spiked rotating log from AIZ 2
+
+
+ID: 2F - Various non-animated still sprites from levels. Includes stuff like bridge posts from AIZ, waterfalls from HCZ, mini-towers from LBZ, etc
+The mapping frame to display
+
+ID: 30 - Various animated still sprites from levels. Includes stuff like fire pieces from AIZ 2, the rotating pieces on which bricks travel in SOZ, special lava pieces from LRZ, etc
+The animation number to use
+
+ID: 31 - Rotating cylinders from LBZ
+
+
+ID: 32 - Drawbridge from AIZ 2 (the one which Knuckles destroys after the boss fight)
+
+
+ID: 33 - Button
+
+
+ID: 34 - Starpole
+The designation number of the star pole, from $00-$09. Used to determine order - if you hit pole $04 before you've hit $03, the game will behave as if you did hit $03, even if you never actually go near it
+
+ID: 35 - Plants in foreground in AIZ 1
+
+$20 - Short plant that has flowers, faces left
+$21 - Has four leaves, doesn't have flowers, faces right
+$30 - Shortest with flowers, has three leaves, faces left
+$31 - Four leaves, no flowers, faces right
+$40 - Tall with three leaves, has flowers, faces left
+$41 - Three leaves, no flowers, faces right
+$50 - Four leaves, no flowers, faces right, middle leaf seems to be taller than $21's
+$51 - Seems to be the same as $50, I didn't notice a difference
+
+ID: 36 - Breakable bar from HCZ
+
+
+ID: 37 - The vertical water stream from HCZ 1 which moves forward when you break the first barrier
+
+
+ID: 38 - Propelling fans from HCZ and CGZ
+
+
+ID: 39 - Large fan from HCZ which propels player forward
+
+
+ID: 3A - Hand launcher from HCZ
+
+
+ID: 3B - Wall in HCZ 1 from which a stream of water gushes out, breaking bricks along the way
+
+
+ID: 3C - Door (used in HCZ, CNZ and DEZ)
+
+
+ID: 3D - Spring from FBZ 2 which moves up and down. Only used once in entire game
+
+
+ID: 3E - Conveyor belt from HCZ
+
+
+ID: 3F - Spike on HCZ conveyor belt
+
+
+ID: 40 - Single block from HCZ. Usually pieced together to form horizontal groups
+
+
+ID: 41 - Balloon from CNZ
+
+
+ID: 42 - Cannon from CNZ
+
+
+ID: 43 - Platform from CNZ which falls when you stand on it and rises when you jump
+
+
+ID: 44 - Trapdoor in CNZ from which player is ejected after entering a corkscrew
+
+
+ID: 45 - Lightbulb in bell-jar from CNZ 2 (near the button which turns the lights off)
+
+
+ID: 46 - Fans which make the player hover from CNZ
+
+
+ID: 47 - Rotating barrels from CNZ
+
+
+ID: 48 - Vacuum tubes from CNZ
+
+
+ID: 49 - Rotating wheel from CNZ
+
+
+ID: 4A - Bumper
+
+
+ID: 4B - Triangular springs from CNZ which knock the player forward
+
+
+ID: 4C - Corkscrew from CNZ
+
+
+ID: 4D - Pole from CNZ on which you go round and round diagonally upwards or downwards
+
+
+ID: 4E - Rotating vertical mesh from CNZ
+
+
+ID: 4F - Mud from MGZ and ALZ and quicksand from DPZ
+
+
+ID: 50 - Pole from MGZ, at the base of some loops, on which you go round and round
+
+
+ID: 51 - Floating platform
+
+The upper nybble determines size - 0 is for MGZ, 1 is for HCZ and 2 is for AIZ. The lower nybble determines platform type:
+
+0 - stationary
+1 - moves left and right
+2 - moves left and right over a larger range
+3 - moves up and down
+4 - moves up and down over a larger range
+5 - moves diagonally up and to the right
+6 - moves diagonally down and to the right
+7 - moves up as far as possible when player stands on it
+8-B - move around clockwise in the shape of a rectangle. The size of the rectangle increases from 8 to B
+C - moves left and right over a very large range
+
+ID: 52 - Smashing pillar from MGZ, smashing spikes from LBZ (repeated entry)
+
+
+ID: 53 - Platforms from MGZ which rotate around a centre
+
+
+ID: 54 - Air-bubble emitting object
+
+
+ID: 55 - Arrow-shooting head from MGZ which you have to hit thrice
+
+
+ID: 56 - Moving rotating platform from MGZ with spikes on the sides
+
+
+ID: 57 - Platform in MGZ triggered by the rotating blue wheel
+
+
+ID: 58 - Swinging spiked ball from MGZ
+If it's 0, the ball swings horizontally. If it's 1, the ball swings vertically
+
+ID: 59 - Blue rotating wheel from MGZ which is triggered by a Spin Dash
+
+
+ID: 5A - Pulley from MGZ
+
+
+ID: 5B - Blue spinning top platform from MGZ
+
+
+ID: 5C - Launcher for the blue spinning top from MGZ
+
+
+ID: 5D - Triangular springs from CGZ
+
+
+ID: 5E - Platform from CGZ with blades at the bottom
+
+
+ID: 5F - Retracting spring from 2P mode
+
+
+ID: 60 - Elephant block from BPZ
+
+
+ID: 61 - Balloon from BPZ
+
+
+ID: 62 - Dissolving sand bar from DPZ
+0 for the shorter one, 1 for the longer one
+
+ID: 63 - Button from DPZ
+
+
+ID: 64 - Bubble containing item in 2P mode
+
+
+ID: 65 - Goal marker in 2P mode
+
+
+ID: 66 - Dripper from EMZ
+
+
+ID: 67 - Silver blocks from HCZ 2 which move around and expand and collapse into each other
+
+
+ID: 68 - Spinning blue column from HCZ
+
+
+ID: 69 - Curved twisting blue pipe from HCZ 2
+
+
+ID: (6A) - Invisible block which hurts player
+
+
+ID: (6B) - Invisible block which kills player
+
+
+ID: 6C - Bridge which sags when you walk across it
+
+
+ID: 6D - Special water splash from HCZ, where a waterfall hits an object
+
+
+ID: 6E - Water drops from HCZ
+
+
+ID: 6F - Horizontal rotating mesh from FBZ
+
+
+ID: 70 - Vertical mesh from FBZ inside which player rotates
+
+
+ID: 71 - Floating platform from FBZ
+
+
+ID: 72 - Row of metal hangers from FBZ
+
+
+ID: 73 - Magnetic ceiling panel from FBZ
+
+
+ID: 74 - Magnetic spiked platform and chain from FBZ
+
+
+ID: 75 - 4 spheres in a chain which move in and out of pipes arranged in a rectangle (FBZ)
+
+
+ID: 76 - L-shaped pipe in FBZ from which the sphere chain emerges
+
+
+ID: 77 - Rotating sphere chain from FBZ
+
+
+ID: 78 - Object which launches player forward in FBZ and DEZ
+
+
+ID: 79 - Disappearing platform from FBZ (the one in the shape of a quarter-circle)
+
+
+ID: 7A - Door from FBZ in the shape of a corkscrew
+
+
+ID: 7B - Fan pole from FBZ
+
+
+ID: 7C - Fan on top of pole from FBZ
+
+
+ID: 7D - Giant crushing piston from FBZ 1
+
+
+ID: 7E - Blocks from FBZ which make up the horizontal platform gate
+
+
+ID: 7F - Missile launcher from FBZ
+
+
+ID: 80 - Hidden monitors which bounce out when the starpost touches them
+
+
+ID: 81 - Egg capsule
+
+
+ID: 82 - All appearances of Knuckles as a bad guy or as a non-controllable character
+
+Determines behavior:
+
+00 - Knuckles at the start of AIZ 1
+04 - Knuckles at the end of AIZ 2
+08 - Knuckles at the end of HCZ 2
+0C - Knuckles in the middle of CNZ 2
+10 - Knuckles at the end of CNZ 2
+14 - Knuckles from LBZ 1
+18 - Knuckles from LBZ 2
+1C - Knuckles from MHZ 1
+20 - Knuckles from MHZ 2
+24 - Knuckles at the end of LRZ 2
+28 - Knuckles boss from HPZ
+2C - Knuckles from SSZ
+30 - Knuckles in the MHZ 1 intro (only in S&K alone)
+
+ID: 83 - Buttons used by Knuckles
+
+
+ID: 84 - Sonic during the AIZ intro sequence
+
+
+ID: 85 - Giant ring
+
+
+ID: 86 - Gumball level from gumball bonus stage. Also initializes all other sprites
+
+
+ID: 87 - Springs on the sides of the gumball bonus stage
+
+
+ID: 88 - Special breakable floor from CNZ 2 which causes a water level rise when broken
+
+
+ID: 89 - Button which switches the lights on again in CNZ 2
+
+
+ID: 8A - Doors and insides of windows in the cutscene at the end of FBZ 2
+
+
+ID: 8B - Sprite which performs some sprite masking. Not sure what effect this achieves
+
+
+ID: 8C - Bloominator badnik from AIZ
+
+
+ID: 8D - Rhinobot
+
+
+ID: 8E - Monkey badnik from AIZ
+
+
+ID: 8F - Catakiller Jr. badnik from AIZ
+
+
+ID: 90 - First appearance of the AIZ 1 miniboss, in which he sets the level on fire
+
+
+ID: 91 - Miniboss from AIZ 1
+
+
+ID: 92 - Boss from AIZ 2
+
+
+ID: 93 - Jawz badnik from HCZ
+
+
+ID: 94 - Blastoid badnik from HCZ
+
+
+ID: 95 - Buggernaut badnik from HCZ
+
+
+ID: 96 - Turbo Spiker badnik from HCZ
+
+
+ID: 97 - Mega Chopper badnik from HCZ
+
+
+ID: 98 - Pointdexter badnik from HCZ
+
+
+ID: 99 - Miniboss from HCZ 1
+
+
+ID: 9A - Boss from HCZ 2
+
+
+ID: 9B - Bubbles badnik from MGZ
+
+
+ID: 9C - Spiker badnik from MGZ
+
+
+ID: 9D - Mantis badnik from MGZ
+
+
+ID: 9E - Driller from MGZ 1
+
+
+ID: 9F - Miniboss from MGZ 1
+
+
+ID: A0 - Drilling Eggman from MGZ 2
+
+
+ID: A1 - Boss from MGZ 2
+
+
+ID: A2 - Knuckles' boss from MGZ 2
+
+
+ID: A3 - Clamer badnik from CNZ
+
+
+ID: A4 - Blastoid badnik from CNZ
+
+
+ID: A5 - Batbot badnik from CNZ
+
+
+ID: A6 - Miniboss from CNZ 1
+
+
+ID: A7 - Boss from CNZ 2
+
+
+ID: A8 - Blaster badnik from FBZ
+
+
+ID: A9 - Technosqueek badnik from FBZ
+
+
+ID: AA - Miniboss from FBZ 1
+
+
+ID: AB - Laser boss from FBZ 2
+
+
+ID: AC - Boss from FBZ 2
+
+
+ID: AD - Penguinator badnik from ICZ
+
+
+ID: AE - Star Pointer badnik from ICZ
+
+
+ID: AF - Crushing column from ICZ
+Determines column type:
+1 - moves up as soon as player stands on it
+2 - moves up by itself at constant intervals
+3 - comes down as soon as player passes it, blocks path
+4 - moves down by itself at constant intervals
+5 - only blocks Knuckles' way
+
+ID: B0 - Platform from ICZ
+Determines platform type:
+0 - falls down when player stands on it, slides down slopes and breaks walls
+2 - moves when player pushes it, slides down slopes and breaks walls
+4 - stationary (unused in game)
+6 - sinks when player stands on it
+
+ID: B1 - Breakable wall from ICZ
+
+
+ID: B2 - Freezer from ICZ
+
+
+ID: B3 - Segmented column from ICZ
+Determines column type:
+0 - doesn't have top non-breakable standing segment
+2 - has top non-breakable standing segment
+
+ID: B4 - Swinging platform from ICZ
+0 for normal, 2 for the special one at the end of ICZ 1 which breaks off
+
+ID: B5 - Stalactite from ICZ
+
+
+ID: B6 - Ice cube which covers monitors and switches from ICZ
+
+
+ID: B7 - Ice spikes from ICZ
+
+
+ID: B8 - Harmful ice pieces from ICZ
+0 for the ones on the walls, 2 for the ones in the air
+
+ID: B9 - Snowpile from ICZ
+
+
+ID: BA - Trampoline from ICZ
+
+
+ID: BB - Right trampoline support from ICZ
+
+
+ID: BC - Miniboss from ICZ 1
+
+
+ID: BD - Boss from ICZ 2
+
+
+ID: BE - Snale Blaster badnik from LBZ
+
+
+ID: BF - Ribot badnik from LBZ
+
+
+ID: C0 - Orbinaut badnik from LBZ
+
+
+ID: C1 - Corkey badnik from LBZ
+
+
+ID: C2 - Flybot767 badnik from LBZ
+
+
+ID: C3 - Eggman from LBZ 1
+
+
+ID: C4 - Miniboss box from LBZ 1. Triggered only in case the player dies during the fight and restarts at the near starpost
+
+
+ID: C5 - Knuckles' miniboss box from LBZ 1
+
+
+ID: C6 - Egg Mobile which transports Sonic to the final boss arena in LBZ 2
+
+
+ID: (C7) - Ring (unused slot)
+
+
+ID: C8 - Towers supporting the Death Egg at the time of launch
+
+
+ID: C9 - Miniboss from LBZ 1
+
+
+ID: CA - Laser columns boss from LBZ 2
+
+
+ID: CB - Black ball machine boss from LBZ 2
+
+
+ID: CC - Squeeze Tag boss from LBZ 2
+
+
+ID: CD - Laser colums boss initializer for Knuckles in LBZ 2
+
+
+ID: CE - Door of Flying Battery which Sonic breaks to fall down into Sandopolis
+
+
+ID: CF - Egg prison from FBZ
+Determines how prison acts:
+0 - releases animals
+1 - releases rings
+2 - releases enemies
+
+ID: D0 - Egg prison plunger from FBZ which acts as a spring
+
+
+ID: (D1) - Ring (unused slot)
+
+
+ID: (D2) - Ring (unused slot)
+
+
+ID: (D3) - Ring (unused slot)
+
+
+ID: (D4) - Ring (unused slot)
+
+
+ID: (D5) - Ring (unused slot)
+
+
+ID: (D6) - Ring (unused slot)
+
+
+ID: (D7) - Ring (unused slot)
+
+
+ID: (D8) - Ring (unused slot)
+
+
+ID: (D9) - Ring (unused slot)
+
+
+ID: (DA) - Ring (unused slot)
+
+
+ID: (DB) - Ring (unused slot)
+
+
+ID: (DC) - Ring (unused slot)
+
+
+ID: (DD) - Ring (unused slot)
+
+
+ID: (DE) - Ring (unused slot)
+
+
+ID: (DF) - Ring (unused slot)
+
+
+ID: E0 - Missile which shoots out of a wall in FBZ 1
+
+
+ID: E1 - Mine from FBZ
+
+
+ID: E2 - Elevator from FBZ
+
+
+ID: E3 - Spring which flips onto itself at the end of a tunnel from FBZ
+
+
+ID: E4 - Flamethrower from FBZ
+
+
+ID: E5 - Spider crane from FBZ
+
+
+ID: E6 - Triangular bumper from magnetic orbs bonus stage
+
+
+ID: E7 - Flipper from magnetic orbs bonus stage
+
+
+ID: E8 - Energy trap from magnetic orbs bonus stage
+
+
+ID: E9 - Individual spheres which make up the magnetic orbs bonus stage energy trap
+
+
+ID: EA - Platform from magnetic orbs bonus stage (unused, but viewable in debug mode)
+
+
+ID: EB - Gumball item from magnetic orbs bonus stage
+
+
+ID: EC - Magnetic orb from magnetic orbs bonus stage
+
+
+ID: ED - Item orb from magnetic orbs bonus stage
+
+
+ID: (EE) - Ring (unused slot)
+
+
+ID: (EF) - Ring (unused slot)
+
+
+ID: (F0) - Ring (unused slot)
+
+
+ID: (F1) - Ring (unused slot)
+
+
+ID: (F2) - Ring (unused slot)
+
+
+ID: (F3) - Ring (unused slot)
+
+
+ID: (F4) - Ring (unused slot)
+
+
+ID: (F5) - Ring (unused slot)
+
+
+ID: (F6) - Ring (unused slot)
+
+
+ID: (F7) - Ring (unused slot)
+
+
+ID: (F8) - Ring (unused slot)
+
+
+ID: (F9) - Ring (unused slot)
+
+
+ID: (FA) - Ring (unused slot)
+
+
+ID: (FB) - Ring (unused slot)
+
+
+ID: (FC) - Ring (unused slot)
+
+
+ID: (FD) - Ring (unused slot)
+
+
+ID: (FE) - Ring (unused slot)
+
+
+ID: FF - Pendulum from FBZ which swings player from one side to another
+0 for horizontal, $80 for vertical

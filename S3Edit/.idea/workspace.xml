@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="IE Sprite Packer" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8096440a-1daf-432e-8e73-3860e748cc1f" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="S3Edit" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="S3Edit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11169">
+              <caret line="3527" column="59" lean-forward="false" selection-start-line="3527" selection-start-column="59" selection-end-line="3527" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#7686#7761#0" expanded="false" />
+                <element signature="e#8055#8128#0" expanded="false" />
+                <element signature="e#8420#8493#0" expanded="false" />
+                <element signature="e#8785#8858#0" expanded="false" />
+                <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+                <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#18148#18189#0" expanded="false" />
+                <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#33041#33053#0" expanded="false" />
+                <element signature="e#33474#33518#0" expanded="false" />
+                <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#41828#41831#0" expanded="false" />
+                <element signature="e#42329#42358#0" expanded="false" />
+                <element signature="e#42747#42768#0" expanded="false" />
+                <element signature="class#44022:46522" expanded="false" />
+                <element signature="method#run#0;class#44022:46522" expanded="false" />
+                <element signature="e#60809#60825#0" expanded="false" />
+                <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#100222#100243#0" expanded="false" />
+                <element signature="e#102719#102739#0" expanded="false" />
+                <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#154739#154777#0" expanded="false" />
+                <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+                <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+                <element signature="e#162552#162569#0" expanded="false" />
+                <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+                <element signature="e#163772#163773#0" expanded="false" />
+                <element signature="e#163814#163815#0" expanded="false" />
+                <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+                <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+                <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+                <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+                <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpritePacke.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SpritePacke.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="172" column="48" lean-forward="false" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
+              <folding>
+                <element signature="method#start#0;class#SpritePacke#0" expanded="false" />
+                <element signature="method#saveTextureToFile#0;class#SpritePacke#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteViewer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SpriteViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1938">
+              <caret line="142" column="52" lean-forward="false" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Packer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SpritePacker/Packer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SpriteReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImpostorIDE.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CodeEditor/ImpostorIDE.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="25" column="44" lean-forward="false" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1059#1060#0" expanded="false" />
+                <element signature="e#1087#1088#0" expanded="false" />
+                <element signature="method#createToolBarButtons#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="method#tabOpenFile#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="method#checkForScene#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="method#command_RunGame#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="class#6478:8206" expanded="false" />
+                <element signature="method#run#0;class#6478:8206" expanded="false" />
+                <element signature="method#command_RunScene#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="method#command_BuildGame#0;class#ImpostorIDE#0" expanded="false" />
+                <element signature="class#10062:14333" expanded="false" />
+                <element signature="method#run#0;class#10062:14333" expanded="false" />
+                <element signature="e#10595#10603#0" expanded="false" />
+                <element signature="e#11094#11732#0" expanded="false" />
+                <element signature="e#11731#11732#0" expanded="false" />
+                <element signature="e#11900#12185#0" expanded="false" />
+                <element signature="e#12184#12185#0" expanded="false" />
+                <element signature="e#13032#13277#0" expanded="false" />
+                <element signature="e#13276#13277#0" expanded="false" />
+                <element signature="e#14132#14307#0" expanded="false" />
+                <element signature="e#14306#14307#0" expanded="false" />
+                <element signature="method#start#0;class#ImpostorIDE#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ReadASM</find>
+      <find>= {</find>
+      <find>populateObjectFacts</find>
+      <find>currentRoutine.</find>
+      <find>FILE_header</find>
+      <find>GenerateSourceFiles</find>
+      <find>lvlTitles</find>
+      <find>PrintWriter</find>
+      <find>DataOutputStream</find>
+      <find>unc</find>
+      <find>, decodeKosinski</find>
+      <find>GeneratePaletteImage</find>
+      <find>bPaletteWater</find>
+      <find>tempStaticTiles</find>
+      <find>ACT</find>
+      <find>dataCollisionIndex</find>
+      <find>FINISHED MAIN TILE CREATION</find>
+      <find>% 0x600</find>
+      <find>0x600</find>
+      <find>(til * 2 + 1 + 0x600)</find>
+      <find>dataCollisionDataSize</find>
+      <find>(til * 2 + 1 + 0x600) / dataCollisionDataSize</find>
+      <find>(Layout)</find>
+      <find>.lvl</find>
+      <find>(Tiles)</find>
+      <find>GenerateTileIDs</find>
+      <find>list</find>
+      <find>.list</find>
+      <find>GenerateChunkCollisions</find>
+      <find>dataTilePixels</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>ReadASM</replace>
+      <replace>dataTiledata</replace>
+      <replace>dataTilePixels</replace>
+      <replace>&quot;</replace>
+      <replace>hsb(220, 23.01%, 20.34%)</replace>
+      <replace>FILE_source</replace>
+    </replaceStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/S3Edit.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/CodeEditor/TextEditor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/SpritePacke.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/CodeEditor/ImpostorIDE.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/ObjectFact.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ObjectFacts.java" />
+        <option value="$PROJECT_DIR$/src/OF.java" />
+        <option value="$PROJECT_DIR$/src/JavaKeywords.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/misc/JavaKeywordsAsync.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/OpenFile.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/JavaKeywords.java" />
+        <option value="$PROJECT_DIR$/src/modena_dark.css" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/java-keywords.css" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/java-keywords2.css" />
+        <option value="$PROJECT_DIR$/src/java-keywords2.css" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ErrorProperty.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ErrorLine.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ImageFilter.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ImageUtilities.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/PaletteTone.java" />
+        <option value="$PROJECT_DIR$/src/ObjectFact.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ImpostorIDE.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/MyStyledAreaBehavior.kt" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/MyStyledAreaBehavior.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ParStyle.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ArrowFactory.java" />
+        <option value="$PROJECT_DIR$/src/java-keywords.css" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/TextFlowExt.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/TextExt.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ParagraphText.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/ParagraphBox.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/IStyleClassedTextArea.java" />
+        <option value="$PROJECT_DIR$/src/SpritePacker.java" />
+        <option value="$PROJECT_DIR$/src/IRectangle2D.java" />
+        <option value="$PROJECT_DIR$/src/CodeEditor/TextEditor.java" />
+        <option value="$PROJECT_DIR$/src/SpritePacker/IRectangle2D.java" />
+        <option value="$PROJECT_DIR$/src/SpriteReader.java" />
+        <option value="$PROJECT_DIR$/src/SpriteViewer.java" />
+        <option value="$PROJECT_DIR$/src/SpritePacker/PackerPlus.java" />
+        <option value="$PROJECT_DIR$/src/S3Edit.java" />
+        <option value="$PROJECT_DIR$/src/SpritePacker/Packer.java" />
+        <option value="$PROJECT_DIR$/src/SpritePacke.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JavaFX</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImpostorEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="S3Edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImpostorEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="S3Edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImpostorEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="S3Edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpritePacker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sonic3/tools" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Justin\Dropbox\S3Edit\src" />
+      <recent name="C:\Users\Justin\Dropbox\S3Edit\src\CodeEditor" />
+      <recent name="C:\Users\Justin\Dropbox\S3Edit\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="SpritePacker" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Justin\Dropbox\S3Edit\src" />
+      <recent name="C:\Users\Justin\Dropbox\S3Edit\src\CodeEditor" />
+      <recent name="C:\Users\Justin\Dropbox\S3Edit" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SpritePacker">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="S3Edit" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="false" name="S3EDIT" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="S3Edit" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Code Editor" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="CodeEditor.ImpostorIDE" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SpritePacker" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="SpritePacke" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SpriteREADER" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="SpriteReader" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Sprite Viewer" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="SpriteViewer" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="S3Edit" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.S3EDIT" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Code Editor" />
+      <item index="2" class="java.lang.String" itemvalue="Application.SpritePacker" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SpriteREADER" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Sprite Viewer" />
+    </list>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8096440a-1daf-432e-8e73-3860e748cc1f" name="Default" comment="" />
+      <created>1502945074467</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1502945074467</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3066089" sideWeight="0.51492536" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45287108" sideWeight="0.48507464" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20628998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39852008" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16143012" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="55" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/ObjectFacts.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/misc/JavaKeywordsAsync.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/misc/ManualHighlighting.java" />
+    <entry file="file://$PROJECT_DIR$/src/resources.properties" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/event/EventHandler.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/richtextfx-0.8.0.jar!/org/fxmisc/richtext/StyleClassedTextArea.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/regex/Pattern.java" />
+    <entry file="file://$PROJECT_DIR$/src/java-keywords2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modena_dark.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="24" column="80" lean-forward="false" selection-start-line="24" selection-start-column="80" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ErrorProperty.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ErrorLine.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/effect/SepiaTone.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/com/sun/scenario/effect/SepiaTone.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/com/sun/scenario/effect/CoreEffect.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/com/sun/scenario/effect/FilterEffect.java" />
+    <entry file="file://$PROJECT_DIR$/src/OF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="139" column="26" lean-forward="false" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/MyStyledAreaBehavior.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ParStyle.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/function/IntFunction.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/TextFlowExt.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/TextExt.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ParagraphText.java" />
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ParagraphBox.java" />
+    <entry file="file://$PROJECT_DIR$/../sonic3/source/res/Title_SonicBase.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ImageFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ImageUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/PaletteTone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/TextEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="209" column="105" lean-forward="false" selection-start-line="209" selection-start-column="105" selection-end-line="209" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/IStyleClassedTextArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java-keywords.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="1" lean-forward="false" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ArrowFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outagain.txt" />
+    <entry file="file://$PROJECT_DIR$/src/ObjectFact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpritePacker/IRectangle2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="66" column="125" lean-forward="false" selection-start-line="66" selection-start-column="125" selection-end-line="66" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/ArrayList.java" />
+    <entry file="file://$PROJECT_DIR$/src/SpritePacker/PackerPlus.java" />
+    <entry file="file://$PROJECT_DIR$/src/SpriteReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpriteViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="142" column="52" lean-forward="false" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeEditor/ImpostorIDE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="44" lean-forward="false" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1059#1060#0" expanded="false" />
+            <element signature="e#1087#1088#0" expanded="false" />
+            <element signature="method#createToolBarButtons#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="method#tabOpenFile#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="method#checkForScene#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="method#command_RunGame#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="class#6478:8206" expanded="false" />
+            <element signature="method#run#0;class#6478:8206" expanded="false" />
+            <element signature="method#command_RunScene#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="method#command_BuildGame#0;class#ImpostorIDE#0" expanded="false" />
+            <element signature="class#10062:14333" expanded="false" />
+            <element signature="method#run#0;class#10062:14333" expanded="false" />
+            <element signature="e#10595#10603#0" expanded="false" />
+            <element signature="e#11094#11732#0" expanded="false" />
+            <element signature="e#11731#11732#0" expanded="false" />
+            <element signature="e#11900#12185#0" expanded="false" />
+            <element signature="e#12184#12185#0" expanded="false" />
+            <element signature="e#13032#13277#0" expanded="false" />
+            <element signature="e#13276#13277#0" expanded="false" />
+            <element signature="e#14132#14307#0" expanded="false" />
+            <element signature="e#14306#14307#0" expanded="false" />
+            <element signature="method#start#0;class#ImpostorIDE#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/S3Edit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11169">
+          <caret line="3527" column="59" lean-forward="false" selection-start-line="3527" selection-start-column="59" selection-end-line="3527" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getRGB#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readImageThing#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#7686#7761#0" expanded="false" />
+            <element signature="e#8055#8128#0" expanded="false" />
+            <element signature="e#8420#8493#0" expanded="false" />
+            <element signature="e#8785#8858#0" expanded="false" />
+            <element signature="method#main#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#findDimensions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#cleanName#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#makeOF#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseInt#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#parseBool#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#populateObjectFacts#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#18148#18189#0" expanded="false" />
+            <element signature="method#generateS3EditDirectories#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#getBackupFilename#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#listFilesForFolder#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateResourcesFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateSceneHFile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#generateObjectCreate#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#readBytes#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinski#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#decodeKosinskiM#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#33041#33053#0" expanded="false" />
+            <element signature="e#33474#33518#0" expanded="false" />
+            <element signature="method#startAddMenus#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddStatusBar#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#startAddCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ensureFileWillBeThere#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#41828#41831#0" expanded="false" />
+            <element signature="e#42329#42358#0" expanded="false" />
+            <element signature="e#42747#42768#0" expanded="false" />
+            <element signature="class#44022:46522" expanded="false" />
+            <element signature="method#run#0;class#44022:46522" expanded="false" />
+            <element signature="e#60809#60825#0" expanded="false" />
+            <element signature="method#GetASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ReadASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#NamedVariable#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AddressIndexToObjectDef#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#ConvertASM#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#moveChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#dropChunk#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#selectObject#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#refreshCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#concat#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateStaticTilesSheet#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#100222#100243#0" expanded="false" />
+            <element signature="e#102719#102739#0" expanded="false" />
+            <element signature="method#displayTilesOnCanvas#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GeneratePaletteImage#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateTileIDs#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateChunkCollisions#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#GenerateSourceFiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#154739#154777#0" expanded="false" />
+            <element signature="method#drawTile#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#1;class#S3Edit#0" expanded="false" />
+            <element signature="method#drawTile#2;class#S3Edit#0" expanded="false" />
+            <element signature="e#162552#162569#0" expanded="false" />
+            <element signature="class#EditMode#0;class#S3Edit#0" expanded="false" />
+            <element signature="e#163772#163773#0" expanded="false" />
+            <element signature="e#163814#163815#0" expanded="false" />
+            <element signature="class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="method#AnimatedTiles#0;class#AnimatedTiles#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Obj#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Instruction#0;class#S3Edit#0" expanded="false" />
+            <element signature="class#Routine#0;class#S3Edit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpritePacker/Packer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpritePacke.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="172" column="48" lean-forward="false" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
+          <folding>
+            <element signature="method#start#0;class#SpritePacke#0" expanded="false" />
+            <element signature="method#saveTextureToFile#0;class#SpritePacke#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>IE Sprite Packer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>S3Edit</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>org.fxmisc.richtext:richtextfx:0.8.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

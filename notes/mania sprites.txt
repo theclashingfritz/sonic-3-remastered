@@ -1,0 +1,35 @@
+Loop Point Data: //forums.sonicretro.org/index.php?showtopic=37127&view=findpost&p=907996
+
+
+SONIC MANIA ANIMATION/MAPPING FORMAT
+DOCUMENTED BY THESTONEBANANA
+LAST REV: AUGUST 31st 2017
+
+Entry Title (has no set length)
+then afterwards...
+0x00 = Amount of frames, word
+0x02 = Animation speed (higher the number, the faster it is), word
+0x04 = Frame number to loop the animation at, word
+0x05 = 0x04, byte (this may change, no idea what it's purpose is though)
+
+then come the individual frame mappings themselves, which are in the following format:
+0x00 = Sheet number (specified in the heading of the mappings), byte
+0x01 = X coordinate of the top left of the sprite, word
+0x03 = Y coordinate of the top left of the sprite, word
+0x05 = Horizontal size in pixels of the sprite, word
+0x07 = Vertical size in pixels of the sprite, word
+0x09 = Horizontal Displacement of the sprite, word
+0x0B = Vertical displacement of the sprite, word
+0x0D = Horizontal radius in pixels (negative), word
+0x0F = Vertical radius in pixels (negative), word
+0x11 = ???? (seems like this is connected to the horizontal radius somehow, investigate later)
+0x13 = Vertical radius in pixels (positive), word
+0x15 = Horizontal radius in pixels (negative) && 0x00FF + 1[?], word
+0x17 = Vertical radius in pixels (negative), word
+0x19 = ???? - 1
+0x1B = Vertical radius in pixels (positive again[?]), word
+To indicate the end of the mappings entry, 0x0008 is used. Otherwise, the space is simply filled with 0x0000.
+
+Tails =     FFF6 FFF0 FF0A 0010 00F7 FFF0 FF09 0010 0008
+Sonic =     FFF6 FFEC FF0A 0014 00F7 FFEC FF09 0014 0008
+Chibi Sonic =   FFF8 FFF4 FF08 000C 00F9 FFF4 FF07 000C 0008

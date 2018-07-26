@@ -1,0 +1,14 @@
+
+0x40 - 0x43: Sonic Act 0 Start Position (XXXXYYYY) [Typically unused]
+0x44 - 0x47: Sonic Act 1 Start Position
+0x48 - 0x4B: Sonic Act 2 Start Position
+0x4C - 0x4F: Sonic Act 3 Start Position
+0x50 - 0x53: Knuckles Act 0 Start Position (XXXXYYYY) [Typically unused]
+0x54 - 0x57: Knuckles Act 1 Start Position
+0x58 - 0x5B: Knuckles Act 2 Start Position
+0x5C - 0x5F: Knuckles Act 3 Start Position
+0x60 - 0x61: Act 1 Water Level
+0x62 - 0x63: Act 2 Water Level
+0x70 - 0x8F: Level Name
+0x90:        Number of Camera Zones
+0xA0 - 0xA7: Camera Zone (XXXXYYYYWWWWHHHH)

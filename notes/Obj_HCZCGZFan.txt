@@ -1,0 +1,83 @@
+void Obj_HCZCGZFan() {
+    if (Competition_mode == 1)
+        loc_309CC();
+    A1 = A0; // A1 = Object;
+    if (Object.Subtype > 0)
+        loc_30602();
+    locret_3064C();
+    Object.MainCode = loc_30850;
+    A1.X = Object.X;
+    Object.OriginalX = Object.X; // A0[0x40] = A0[0x10]
+    A1.Y = Object.Y;
+    Object.Y += 0x1C; // 28
+    // ART BLOCK-START
+    // move.l    #Map_HCZWaterRushBlock,$C(a0)
+    // move.w    #$43D4,$A(a0)
+    // ART BLOCK-END
+    Object.Width = 0x10; // 16
+    Object.Height = 0x10; // 16
+    // SOME ART THING move.b	#4,4(a0)
+    D0 = Object.Subtype;
+}
+
+
+
+Fan (Solid) that comes out from right 64 pixels (on at any X when player over Y - 0x14 and not under Y - 0x14 + 0x50)
+Subtype	= A8
+Bits	= 1010 1000
+Height	= 0x80 + 0x80
+Solid	= true
+Moves	= -64px
+
+Fan (Solid) that does not move (on at any X when player over Y - 0x14 and not under Y - 0x14 + 0x50)
+Subtype	= 86
+Bits	= 1000 0110
+Height	= 0x60 + 0x80
+Solid	= true
+Moves	= 0px
+
+Subtype	= 8B
+Bits	= 1000 1011
+Height	= 0xB0 + 0x80
+Solid	= true
+Moves	= 0px
+
+Subtype	= B0
+Bits	= 1011 0000
+Height	= 0x0 + 0x80
+Solid	= true
+Moves	= -96px
+
+Subtype	= A6
+Bits	= 1010 0110
+Height	= 0x60 + 0x80
+Solid	= true
+Moves	= -64px
+
+Subtype	= 19
+Bits	= 0001 1001
+Height	= 0x90 + 0x80
+Solid	= false
+Moves	= 0px
+AlwaysOn= true
+
+Subtype	= 45
+Bits	= 0100 0101
+Height	= 0x50 + 0x80
+Solid	= false
+Moves	= 0px
+OnOff	= true
+
+Subtype	= 44
+Bits	= 0100 0100
+Height	= 0x40 + 0x80
+Solid	= false
+Moves	= 0px
+OnOff	= true
+
+Subtype	= 59
+Bits	= 0101 1001
+Height	= 0x90 + 0x80
+Solid	= false
+Moves	= 0px
+AlwaysOn= true
