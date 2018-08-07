@@ -1377,6 +1377,7 @@ void IPlayer::Step() {
         //HandleObjects();
         //HandleBreakableTerrain();
         HandleSprings();
+		//HandleControlOnStandObjects();
         /*HandleRings();
 
         HandleBumpers();
@@ -2443,20 +2444,20 @@ void IPlayer::SpeedMovement() {
         if (Ground && !ForceRoll && (!CollisionASensor(-1, 0) && !CollisionBSensor(-1, 0))) {
             //if (TerrainAngle >= 0 && (AngleMode == 1 || AngleMode == 3))
             //    Angle = wrapAngle(TerrainAngle);
+		
+			Gravity = -Speed * Sin[Angle];
+			Speed = Speed * Cos[Angle];
+			if (Action == ActionType::Rolling) {
+				X += (4 * Sin[AngleModeLast * 90]);
+				Y += (4 * Cos[AngleModeLast * 90]);
+			}
+			Angle = 0;
+			AngleMode = 0;
+			Ground = false;
 
-            //app->print(0, "No ground detected, falling off. Angle: %d, AngleMode: %d", (int)Angle, AngleMode);
-            Gravity = -Speed * Sin[Angle];
-            Speed = Speed * Cos[Angle];
-            if (Action == ActionType::Rolling) {
-                X += (4 * Sin[AngleModeLast * 90]);
-                Y += (4 * Cos[AngleModeLast * 90]);
-            }
-            Angle = 0;
-            AngleMode = 0;
-            Ground = false;
-
-            App->print(3, "No ground detected, falling off.");
-       }
+			//App->print(3, "No ground detected, falling off.");
+			App->print(3, "No ground detected, falling off. Angle: %d, AngleMode: %d, ObjectControlled: %d", Angle, AngleMode, ObjectControlled);
+        }
     }
 
     if ((Angle >= 45 && Angle <= 315) && std::abs(Speed) < 2.5f && !ForceRoll) {
@@ -3634,6 +3635,7 @@ bool IPlayer::HandleSprings() {
 void IPlayer::HandleEnemies() {
 
 }
+
 void IPlayer::HandlePathSwitchers() {
     for (int o = 0; o < Scene->ObjectPathSwitcherCount; o++) {
         Object* obj = Scene->ObjectsPathSwitcher[o];
@@ -3665,6 +3667,23 @@ void IPlayer::HandlePathSwitchers() {
             }
         }
     }
+}
+
+void IPlayer::HandleControlOnStandObjects() {
+    for (int o = 0; o < Scene->ObjectSolidCount; o++) {
+        Object* obj = Scene->ObjectsSolid[o];
+        if (obj != NULL && obj->ControlOnStand) {
+			if (obj->X + obj->W / 2 >= X - W / 2 - 1 &&
+                    obj->Y + obj->H / 2 >= Y - H / 2 - 1 &&
+                    obj->X - obj->W / 2 <  X + W / 2 + 1 &&
+                    obj->Y - obj->H / 2 <  Y + H / 2 + 1) {
+				int oc = obj->OnStandControlled(0 /* PLAYER ID */);
+				if (oc > 0) {
+					ObjectControlled = oc;
+				}
+			}
+		}
+	}
 }
 
 void IPlayer::Jump() {

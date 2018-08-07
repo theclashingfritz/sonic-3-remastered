@@ -7,7 +7,7 @@ class IPlayer;
 #include "../Engine/IGraphics.h"
 #include "../Engine/IE.h"
 
-#include <LevelScene.h>
+#include "../LevelScene.h"
 #include "Object.h"
 
 /*
@@ -355,6 +355,7 @@ class IPlayer : public Object {
 		void HandleEnemies();
 		void HandleMonitors();
 		void HandlePathSwitchers();
+		void HandleControlOnStandObjects();
 		bool HandleBreakableTerrain();
 
 		void HandleObjects();

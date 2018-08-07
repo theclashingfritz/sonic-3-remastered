@@ -21,8 +21,8 @@ Scene_MGZ::Scene_MGZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_MGZ_level_lvl, "Resource/Stages/MGZ/level.lvl"),
         // Musics
-        newFile(res_MGZ_act_1_ogg, "Resource/Stages/MGZ/Music/Act 1.ogg"),
-        newFile(res_MGZ_act_2_ogg, "Resource/Stages/MGZ/Music/Act 2.ogg"),
+        newFile(res_MGZ_act_1_ogg, "Resource/Stages/MGZ/Music/Act_1.ogg"),
+        newFile(res_MGZ_act_2_ogg, "Resource/Stages/MGZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_MGZ_layout_1_bin, "Resource/Stages/MGZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_MGZ_layout_1_bin, "Resource/Stages/MGZ/Data (Layout)/1.bin"), // Act 1

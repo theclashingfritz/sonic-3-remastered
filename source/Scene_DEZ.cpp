@@ -21,8 +21,8 @@ Scene_DEZ::Scene_DEZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_DEZ_level_lvl, "Resource/Stages/DEZ/level.lvl"),
         // Musics
-        newFile(res_DEZ_act_1_ogg, "Resource/Stages/DEZ/Music/Act 1.ogg"),
-        newFile(res_DEZ_act_2_ogg, "Resource/Stages/DEZ/Music/Act 2.ogg"),
+        newFile(res_DEZ_act_1_ogg, "Resource/Stages/DEZ/Music/Act_1.ogg"),
+        newFile(res_DEZ_act_2_ogg, "Resource/Stages/DEZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_DEZ_layout_1_bin, "Resource/Stages/DEZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_DEZ_layout_1_bin, "Resource/Stages/DEZ/Data (Layout)/1.bin"), // Act 1

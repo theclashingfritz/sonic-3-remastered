@@ -21,8 +21,8 @@ Scene_ICZ::Scene_ICZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_ICZ_level_lvl, "Resource/Stages/ICZ/level.lvl"),
         // Musics
-        newFile(res_ICZ_act_1_ogg, "Resource/Stages/ICZ/Music/Act 1.ogg"),
-        newFile(res_ICZ_act_2_ogg, "Resource/Stages/ICZ/Music/Act 2.ogg"),
+        newFile(res_ICZ_act_1_ogg, "Resource/Stages/ICZ/Music/Act_1.ogg"),
+        newFile(res_ICZ_act_2_ogg, "Resource/Stages/ICZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_ICZ_layout_1_bin, "Resource/Stages/ICZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_ICZ_layout_1_bin, "Resource/Stages/ICZ/Data (Layout)/1.bin"), // Act 1

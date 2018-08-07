@@ -21,8 +21,8 @@ Scene_FBZ::Scene_FBZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_FBZ_level_lvl, "Resource/Stages/FBZ/level.lvl"),
         // Musics
-        newFile(res_FBZ_act_1_ogg, "Resource/Stages/FBZ/Music/Act 1.ogg"),
-        newFile(res_FBZ_act_2_ogg, "Resource/Stages/FBZ/Music/Act 2.ogg"),
+        newFile(res_FBZ_act_1_ogg, "Resource/Stages/FBZ/Music/Act_1.ogg"),
+        newFile(res_FBZ_act_2_ogg, "Resource/Stages/FBZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_FBZ_layout_1_bin, "Resource/Stages/FBZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_FBZ_layout_1_bin, "Resource/Stages/FBZ/Data (Layout)/1.bin"), // Act 1

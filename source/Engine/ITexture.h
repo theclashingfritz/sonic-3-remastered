@@ -5,7 +5,7 @@
 #include "Gen/IResourceGen.h"
 #include "IO/IResources.h"
 
-#include "Standard.h"
+#include "../Standard.h"
 
 #if !defined(PLATFORM_WINDOWS)
 #if defined(PLATFORM_IOS) && !defined(PLATFORM_MAC)

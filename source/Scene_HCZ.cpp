@@ -23,8 +23,8 @@ Scene_HCZ::Scene_HCZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[1 + 2 + 20 + 12] = {
         newFile(res_HCZ_level_lvl, "Resource/Stages/HCZ/level.lvl"),
         // Musics
-        newFile(res_HCZ_act_1_ogg, "Resource/Stages/HCZ/Music/Act 1.ogg"),
-        newFile(res_HCZ_act_2_ogg, "Resource/Stages/HCZ/Music/Act 2.ogg"),
+        newFile(res_HCZ_act_1_ogg, "Resource/Stages/HCZ/Music/Act_1.ogg"),
+        newFile(res_HCZ_act_2_ogg, "Resource/Stages/HCZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_HCZ_layout_1_bin, "Resource/Stages/HCZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_HCZ_layout_1_bin, "Resource/Stages/HCZ/Data (Layout)/1.bin"), // Act 1

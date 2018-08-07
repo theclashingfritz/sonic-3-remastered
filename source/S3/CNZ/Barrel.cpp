@@ -1,49 +1,57 @@
 #include "Barrel.h"
 
 void IBarrel::Create() {
-    W = 16;
-    H = 16;
+    W = 64;
+    H = 64;
+	$X = X;
+    $Y = Y;
     Active = true;
     Priority = false;
+	Scene->ObjectsSolid[Scene->ObjectSolidCount++] = this;
 	Sprite = App->Sprites["Barrel"];
 }
 
 void IBarrel::Update() {
     Frame = Scene->frameAnim;
-
-	if ((lastHitFrom & 0xF0) == 0) { // non auto movement
-        Y = Scene->playerBuffer[currentPlayerID]->Y + std::cos(toRadians((Scene->frameAnim % 256) * 360 / 256)) * 64;
-    }
 	
-    if (currentPlayerID != -1) {
-		if ((lastHitFrom & 0xF) > 4) {
-            Y = Scene->playerBuffer[currentPlayerID]->Y + std::cos(toRadians((Frame % 256) * 360 / 256)) * 32 * (FlipX ? -1 : 1);
-        } else {
-            Y = Scene->playerBuffer[currentPlayerID]->X + std::cos(toRadians((Frame % 256) * 360 / 256)) * (lastHitFrom & 0xF) * 32 * (FlipX ? -1 : 1);
-        }
-		
-        if (Scene->playerBuffer[currentPlayerID]->ObjectControlled == 0) {
-            currentPlayerID = -1;
-            return;
-        }
-        int ang = (96 - pR) * 360 / 96;
-        Scene->playerBuffer[currentPlayerID]->X = X + std::cos(toRadians(ang)) * pX;
-        Scene->playerBuffer[currentPlayerID]->Y = std::round(Y) - H / 2 - 20;
-        Scene->playerBuffer[currentPlayerID]->Speed = 0;
-        Scene->playerBuffer[currentPlayerID]->StoredRotation = float(((int)std::round(((float)ang / 30.f) + (pX > 0 ? 0 : 6 /* always facing outwards */) + 12) % 12));
-        pR++;
-        pR %= 96;
-    }
-
-    if (NonCollect > 0)
-        NonCollect--;
-
-    if (Lifespan > 0)
-        Lifespan--;
-
-    if (Lifespan == 0)
-        Active = false;
-
+	if (this->PlayerID == -1) {
+		return;
+	}
+	
+	IPlayer *currentPlayer = Scene->playerBuffer.at(PlayerID);
+	//IPlayer *currentPlayer = Scene->MyPlayer;
+	
+	if (currentPlayer == nullptr) {
+		PlayerID = -1;
+		currentPlayer = nullptr;
+		return;
+	}
+	
+	if (currentPlayer->ObjectControlled == 0) {
+		PlayerID = -1;
+		currentPlayer = nullptr;
+		return;
+	}
+	
+	if ((Data & 0xF0) == 0) { // non auto movement
+		Y = $Y + std::cos(toRadians((Frame % 256) * 360 / 256)) * 64;
+		//App->print(0, "Barrel: New Y is %d", Y);
+	} else if ((Data & 0xF) > 4) {
+		Y = $Y + std::cos(toRadians((Frame % 256) * 360 / 256)) * 32 * (FlipX ? -1 : 1);
+		//App->print(0, "Barrel: (Flip X) New Y is %d", Y);
+	} else {
+		X = $X + std::cos(toRadians((Frame % 256) * 360 / 256)) * (Data & 0xF) * 32 * (FlipX ? -1 : 1);
+		//App->print(0, "Barrel: New X is %d", X);
+	}
+	
+	int ang = (96 - pR) * 360 / 96;
+	currentPlayer->X = X + std::cos(toRadians(ang)) * pX;
+	currentPlayer->Y = std::round(Y) - H / 2 - 20;
+	currentPlayer->Speed = 0;
+	currentPlayer->StoredRotation = float(((int)std::round(((float)ang / 30.f) + (pX > 0 ? 0 : 6 /* always facing outwards */) + 12) % 12));
+	currentPlayer = nullptr;
+	pR++;
+	pR %= 96;
 }
 
 void IBarrel::Render(int CamX, int CamY) {
@@ -57,7 +65,35 @@ void IBarrel::Render(int CamX, int CamY) {
 }
 
 int IBarrel::OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data) {
-	lastHitFrom = HitFrom;
-	currentPlayerID = PlayerID;
-    return 0;
+    if (!Active) {
+        return 0;
+	}
+	
+	IPlayer *currentPlayer = Scene->MyPlayer;
+	//App->print(0, "Barrel: Setting Data to %d", Data);
+	this->Data = Data;
+	currentPlayer->ObjectControlled = 0;
+	currentPlayer = nullptr;
+
+	return 1;
+}
+
+int IBarrel::OnStandControlled(int PlayerID) {
+	if (this->PlayerID == -1) {
+		this->PlayerID = PlayerID;
+		IPlayer *currentPlayer = Scene->playerBuffer.at(PlayerID);
+
+		pX = currentPlayer->X - X;
+		if (std::abs(currentPlayer->X - X) > 32) {
+			if (pX < 0) {
+				pX = -32;
+			} else {
+				pX = 32;
+			}
+		}
+		pR = 0;
+		currentPlayer = nullptr;
+		return 1;
+	}
+	return 0 ;
 }

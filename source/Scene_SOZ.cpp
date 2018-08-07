@@ -21,8 +21,8 @@ Scene_SOZ::Scene_SOZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_SOZ_level_lvl, "Resource/Stages/SOZ/level.lvl"),
         // Musics
-        newFile(res_SOZ_act_1_ogg, "Resource/Stages/SOZ/Music/Act 1.ogg"),
-        newFile(res_SOZ_act_2_ogg, "Resource/Stages/SOZ/Music/Act 2.ogg"),
+        newFile(res_SOZ_act_1_ogg, "Resource/Stages/SOZ/Music/Act_1.ogg"),
+        newFile(res_SOZ_act_2_ogg, "Resource/Stages/SOZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_SOZ_layout_1_bin, "Resource/Stages/SOZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_SOZ_layout_1_bin, "Resource/Stages/SOZ/Data (Layout)/1.bin"), // Act 1

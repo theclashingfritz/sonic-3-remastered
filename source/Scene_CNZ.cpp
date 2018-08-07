@@ -15,8 +15,8 @@ Scene_CNZ::Scene_CNZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[1 + 2 + 20 + 12] = {
         newFile(res_CNZ_level_lvl, "Resource/Stages/CNZ/level.lvl"),
         // Musics
-        newFile(res_CNZ_act_1_ogg, "Resource/Stages/CNZ/Music/Act 1.ogg"),
-        newFile(res_CNZ_act_2_ogg, "Resource/Stages/CNZ/Music/Act 2.ogg"),
+        newFile(res_CNZ_act_1_ogg, "Resource/Stages/CNZ/Music/Act_1.ogg"),
+        newFile(res_CNZ_act_2_ogg, "Resource/Stages/CNZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_CNZ_layout_1_bin, "Resource/Stages/CNZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_CNZ_layout_1_bin, "Resource/Stages/CNZ/Data (Layout)/1.bin"), // Act 1

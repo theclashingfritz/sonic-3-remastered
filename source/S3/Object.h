@@ -1,13 +1,13 @@
 #ifndef S3_OBJECT_H
 #define S3_OBJECT_H
 
-#include <Application.h>
+#include "../Application.h"
 
-#include <Engine/ITexture.h>
-#include <Engine/IGraphics.h>
-#include <Engine/IE.h>
+#include "../Engine/ITexture.h"
+#include "../Engine/IGraphics.h"
+#include "../Engine/IE.h"
 
-#include <S3/LevelScene.h>
+#include "../S3/LevelScene.h"
 
 class Object {
 	public:
@@ -34,9 +34,9 @@ class Object {
 		bool FlipX;
 		bool FlipY;
 
-		int  Frame = 0;
-		int  Timer = -1;
-		int  Rotation = 0;
+		int Frame = 0;
+		int Timer = -1;
+		int Rotation = 0;
 
 		bool Solid = false;
 		bool SolidTop = false;
@@ -48,6 +48,7 @@ class Object {
 		bool BreakableByGlide = false;
 		bool BreakableByKnuckles = false;
 		bool CollidingWithPlayer = false;
+		bool ControlOnStand = false;
 
 		bool BounceOffShield = false;
 		bool NegatedByFireShield = false;
@@ -65,6 +66,7 @@ class Object {
 		virtual int  OnBreakHorizontal(int, int) { return 0; };
 		virtual int  OnBreakVertical(int, int) { return 0; };
 		virtual int  OnCollisionWithPlayer(int, int, int) { return 0; };
+		virtual int  OnStandControlled(int) { return 0; };
 		virtual bool CustomSolidityCheck(int, int, int, bool) { return false; };
 		virtual void OnLeaveScreen() { };
 };

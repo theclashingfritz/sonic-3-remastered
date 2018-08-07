@@ -21,8 +21,8 @@ Scene_LBZ::Scene_LBZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_LBZ_level_lvl, "Resource/Stages/LBZ/level.lvl"),
         // Musics
-        newFile(res_LBZ_act_1_ogg, "Resource/Stages/LBZ/Music/Act 1.ogg"),
-        newFile(res_LBZ_act_2_ogg, "Resource/Stages/LBZ/Music/Act 2.ogg"),
+        newFile(res_LBZ_act_1_ogg, "Resource/Stages/LBZ/Music/Act_1.ogg"),
+        newFile(res_LBZ_act_2_ogg, "Resource/Stages/LBZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_LBZ_layout_1_bin, "Resource/Stages/LBZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_LBZ_layout_1_bin, "Resource/Stages/LBZ/Data (Layout)/1.bin"), // Act 1

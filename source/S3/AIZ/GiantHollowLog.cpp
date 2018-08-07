@@ -151,20 +151,17 @@ void IGiantHollowLog::Render(int CamX, int CamY) {
 int  IGiantHollowLog::OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data) {
     if (Scene->MyPlayer->Data1 != 2) {
         if (Scene->MyPlayer->X >= X && Scene->MyPlayer->Y > Y) {
-            if (Scene->MyPlayer->Ground &&
-                Scene->MyPlayer->Speed >= 6 &&
-                Scene->MyPlayer->ObjectControlled == 0) {
+            if (Scene->MyPlayer->Ground && Scene->MyPlayer->Speed >= 6 && Scene->MyPlayer->ObjectControlled == 0) {
                 //pID = PlayerID;
                 Scene->MyPlayer->Data1 = 2;
                 Scene->MyPlayer->Data2 = Scene->MyPlayer->Speed;
                 Scene->MyPlayer->Data3 = 810 - 1;
                 Scene->MyPlayer->Data4 = Scene->MyPlayer->X;
                 Scene->MyPlayer->Data5 = Scene->MyPlayer->Y;
+				Scene->MyPlayer->Ground = 1;
             }
         }
-    }
-    else {
-        if (Scene->MyPlayer->X < X && Scene->MyPlayer->ObjectControlled == 0)
+    } else if (Scene->MyPlayer->X < X && Scene->MyPlayer->ObjectControlled == 0) {
             Scene->MyPlayer->Data1 = 1;
     }
 

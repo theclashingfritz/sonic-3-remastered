@@ -4,14 +4,17 @@
 #include <S3/Object.h>
 
 class IGiantHollowLog : public Object {
-public:
-    int FirstRun = -1;
+	public:
+		int FirstRun = -1;
 
-    void Create();
-    void Update();
-    void Render(int CamX, int CamY);
+		void Create();
+		void Update();
+		void Render(int CamX, int CamY);
 
-    int  OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data);
+		int  OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data);
+	
+	private:
+		int PlayerID = -1;
 };
 
 #endif /* S3_GiantHollowLog_H */

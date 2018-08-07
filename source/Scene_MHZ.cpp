@@ -21,8 +21,8 @@ Scene_MHZ::Scene_MHZ(Application* app, int act, int checkpoint) {
     SDL_RWops *_RWList[35] = {
         newFile(res_MHZ_level_lvl, "Resource/Stages/MHZ/level.lvl"),
         // Musics
-        newFile(res_MHZ_act_1_ogg, "Resource/Stages/MHZ/Music/Act 1.ogg"),
-        newFile(res_MHZ_act_2_ogg, "Resource/Stages/MHZ/Music/Act 2.ogg"),
+        newFile(res_MHZ_act_1_ogg, "Resource/Stages/MHZ/Music/Act_1.ogg"),
+        newFile(res_MHZ_act_2_ogg, "Resource/Stages/MHZ/Music/Act_2.ogg"),
         // Layouts
         newFile(res_MHZ_layout_1_bin, "Resource/Stages/MHZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(res_MHZ_layout_1_bin, "Resource/Stages/MHZ/Data (Layout)/1.bin"), // Act 1

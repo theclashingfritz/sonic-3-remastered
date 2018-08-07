@@ -49,8 +49,8 @@ void Scene_AIZ::RefreshRW() {
     SDL_RWops *_RWList[35] = {
         newFile(Resource_Stages_AIZ_level_lvl, "Resource/Stages/AIZ/level.lvl"),
         // Musics
-        newFile(Resource_Stages_AIZ_Music_Act_1_ogg, "Resource/Stages/AIZ/Music/Act 1.ogg"),
-        newFile(Resource_Stages_AIZ_Music_Act_2_ogg, "Resource/Stages/AIZ/Music/Act 2.ogg"),
+        newFile(Resource_Stages_AIZ_Music_Act_1_ogg, "Resource/Stages/AIZ/Music/Act_1.ogg"),
+        newFile(Resource_Stages_AIZ_Music_Act_2_ogg, "Resource/Stages/AIZ/Music/Act_2.ogg"),
         // Layouts
         newFile(Resource_Stages_AIZ_Data_Layout_1_bin, "Resource/Stages/AIZ/Data (Layout)/1.bin"), // Pre-Act
         newFile(Resource_Stages_AIZ_Data_Layout_1_bin, "Resource/Stages/AIZ/Data (Layout)/1.bin"), // Act 1

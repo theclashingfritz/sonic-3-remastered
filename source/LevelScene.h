@@ -5,51 +5,51 @@
 #include "Resources.h"
 #include "TextureAudio.h"
 
-#include <Engine/IO/IStream.h>
-#include <Engine/IGraphics.h>
+#include "Engine/IO/IStream.h"
+#include "Engine/IGraphics.h"
 
-#include <S3/Object.h>
-#include <S3/Player.h>
-#include <S3/Objects/Ring.h>
-#include <S3/Objects/Button.h>
-#include <S3/Objects/Points.h>
-#include <S3/Objects/Spikes.h>
-#include <S3/Objects/Spring.h>
-#include <S3/Objects/Monitor.h>
-#include <S3/Objects/Starpole.h>
-#include <S3/Objects/EggCapsule.h>
-#include <S3/Objects/RollEnforcer.h>
-#include <S3/Objects/PathSwitcher.h>
-#include <S3/Objects/BreakableWall.h>
-#include <S3/Objects/AnimatedStill.h>
-#include <S3/Objects/InvisibleSolid.h>
-#include <S3/Objects/NonAnimatedStill.h>
-#include <S3/Objects/SpecialStageRing.h>
+#include "S3/Object.h"
+#include "S3/Player.h"
+#include "S3/Objects/Ring.h"
+#include "S3/Objects/Button.h"
+#include "S3/Objects/Points.h"
+#include "S3/Objects/Spikes.h"
+#include "S3/Objects/Spring.h"
+#include "S3/Objects/Monitor.h"
+#include "S3/Objects/Starpole.h"
+#include "S3/Objects/EggCapsule.h"
+#include "S3/Objects/RollEnforcer.h"
+#include "S3/Objects/PathSwitcher.h"
+#include "S3/Objects/BreakableWall.h"
+#include "S3/Objects/AnimatedStill.h"
+#include "S3/Objects/InvisibleSolid.h"
+#include "S3/Objects/NonAnimatedStill.h"
+#include "S3/Objects/SpecialStageRing.h"
 
-#include <S3/AIZ/Cork.h>
-#include <S3/AIZ/Rock.h>
-#include <S3/AIZ/Ridge.h>
-#include <S3/AIZ/RideVine.h>
-#include <S3/AIZ/TreeBark.h>
-#include <S3/AIZ/LogBridge.h>
-#include <S3/AIZ/SpikedLog.h>
-#include <S3/AIZ/FallingLog.h>
-#include <S3/AIZ/GiantHollowLog.h>
-#include <S3/AIZ/ForegroundPlant.h>
-#include <S3/AIZ/FloatingPlatform.h>
-#include <S3/AIZ/CollapsingPlatform.h>
-#include <S3/AIZ/DisappearingPlatform.h>
+#include "S3/AIZ/Cork.h"
+#include "S3/AIZ/Rock.h"
+#include "S3/AIZ/Ridge.h"
+#include "S3/AIZ/RideVine.h"
+#include "S3/AIZ/TreeBark.h"
+#include "S3/AIZ/LogBridge.h"
+#include "S3/AIZ/SpikedLog.h"
+#include "S3/AIZ/FallingLog.h"
+#include "S3/AIZ/GiantHollowLog.h"
+#include "S3/AIZ/ForegroundPlant.h"
+#include "S3/AIZ/FloatingPlatform.h"
+#include "S3/AIZ/CollapsingPlatform.h"
+#include "S3/AIZ/DisappearingPlatform.h"
 
-#include <S3/AIZ/RhinoBot.h>
-#include <S3/AIZ/MonkeyDude.h>
-#include <S3/AIZ/Bloominator.h>
+#include "S3/AIZ/RhinoBot.h"
+#include "S3/AIZ/MonkeyDude.h"
+#include "S3/AIZ/Bloominator.h"
 
-#include <S3/AIZ/Bosses/AIZBoss.h>
-#include <S3/AIZ/Bosses/AIZMinibossCutscene.h>
+#include "S3/AIZ/Bosses/AIZBoss.h"
+#include "S3/AIZ/Bosses/AIZMinibossCutscene.h"
 
-#include <S3/HCZ/Bubbler.h>
+#include "S3/HCZ/Bubbler.h"
 
-#include <S3/CNZ/Barrel.h>
+#include "S3/CNZ/Barrel.h"
 
 #define GetElapsed(nextTick) (SDL_GetTicks() - nextTick) / 1000.0f
 
@@ -208,7 +208,7 @@ public:
 
     IPlayer *player = NULL;
     IPlayer *playerAI = NULL;
-    IPlayer *playerBuffer[8];
+    std::array<IPlayer *, 16> playerBuffer;
     int player_count = 0;
 
     bool levelComplete = false;
