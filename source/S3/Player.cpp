@@ -1411,7 +1411,7 @@ void IPlayer::Step() {
         if (Action == ActionType::Grab) {
             int An = Angle;
             Jump();
-            Speed   =  std::cos(toRadians(An)) * GroundSpeed;
+            Speed = std::cos(toRadians(An)) * GroundSpeed;
             Gravity = -std::sin(toRadians(An)) * GroundSpeed;
         }
         else {
@@ -2326,8 +2326,7 @@ void IPlayer::SpeedMovement() {
         if (CollisionPushMode == 0) {
             PushPlayerX_Id(-1);
             PushPlayerY();
-        }
-        else {
+        } else {
             //PushPlayerSafe();
         }
 
@@ -2358,8 +2357,7 @@ void IPlayer::SpeedMovement() {
                     Angle = CheckAngle();
 
                 PushPlayerY();
-            }
-            else if ((Angle > 45 && Angle < 135) && AngleMode != 1 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
+            } else if ((Angle > 45 && Angle < 135) && AngleMode != 1 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
                 AngleModeLast = AngleMode;
                 AngleMode = 1;
 
@@ -2370,24 +2368,21 @@ void IPlayer::SpeedMovement() {
                 else */if (Speed < 0 && AngleMode == 0 && AngleModeSwitchMode == 1) {
                     X -= 12;
                     X = std::floor(X);
-                    //App->print(3, "Switched to Mode 1 and adjusted position. (Speed < 0)");
-                }
-                else if ((Speed > 0 || AngleMode != 0 || AngleModeSwitchMode == 1 || (AngleLast < 45 && AngleLast > 0))) {
+                    App->print(3, "Switched to Mode 1 and adjusted position. (Speed < 0)");
+                } else if ((Speed > 0 || AngleMode != 0 || AngleModeSwitchMode == 1 || (AngleLast < 45 && AngleLast > 0))) {
                     X += 1;
-                    //App->print(3, "Switched to Mode 1 and adjusted position. (Speed > 0)");
+                    App->print(3, "Switched to Mode 1 and adjusted position. (Speed > 0)");
                     AngleMode = 1;
                     if (!AngleBothSensors || std::abs(AngleDifference(AngleMode * 90, Angle)) > 10 ||
                     (CollisionASensor360(-1, 0) && CollisionBSensor360(-1, 0)))
                         Angle = CheckAngle();
-                }
-                else {
+                } else {
                     AngleMode = AngleModeLast;
                     Angle = AngleLast;
                 }
 
                 PushPlayerY();
-            }
-            else if ((Angle > 135 && Angle < 225) && AngleMode != 2 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
+            } else if ((Angle > 135 && Angle < 225) && AngleMode != 2 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
                 AngleModeLast = AngleMode;
                 AngleMode = 2;
 
@@ -2406,8 +2401,7 @@ void IPlayer::SpeedMovement() {
                 }
 
                 PushPlayerY();
-            }
-            else if ((Angle > 225 && Angle < 315) && AngleMode != 3 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
+            } else if ((Angle > 225 && Angle < 315) && AngleMode != 3 && std::abs(AngleDifference(AngleLast2, Angle)) < 40) {
                 AngleModeLast = AngleMode;
                 AngleMode = 3;
 
@@ -2418,19 +2412,18 @@ void IPlayer::SpeedMovement() {
                     X += 12;
                     X = std::ceil(X);
                     Y += 12;
-                    //App->print(3, "Switched to Mode 3 and adjusted position.");
-                }
-                else if (Speed < 0 || AngleMode != 0 || AngleModeSwitchMode == 1 || ((AngleLast > 315 && AngleLast < 360))) {
+                    App->print(3, "Switched to Mode 3 and adjusted position.");
+                } else if (Speed < 0 || AngleMode != 0 || AngleModeSwitchMode == 1 || ((AngleLast > 315 && AngleLast < 360))) {
                     AngleMode = 3;
                     if (!AngleBothSensors ||
                         std::abs(AngleDifference(AngleMode * 90, Angle)) > 10 ||
                         (CollisionASensor360(-1, 0) && CollisionBSensor360(-1, 0)))
                         Angle = CheckAngle();
 
-                    //App->print(3, "Switched to Mode 3 and adjusted position. (Speed < 0)");
-                }
-                else
+                    App->print(3, "Switched to Mode 3 and adjusted position. (Speed < 0)");
+                } else {
                     AngleMode = AngleModeLast;
+                }
 
                 PushPlayerY();
             }
@@ -2738,25 +2731,23 @@ void IPlayer::HandleAction() {
             ActionSpindash();
             break;
         case ActionType::Spring:
+            ActionSpring();
+            break;
         case ActionType::Fan:
             ActionSpring();
             break;
         case ActionType::Slide:
             ActionSlide();
             break;
-
         case ActionType::Fly:
             ActionFly();
             break;
-
         case ActionType::Grab:
             ActionGrab();
             break;
-
         case ActionType::ObjectGrab:
             //ActionObjectGrab();
             break;
-
         case ActionType::Glide:
             ActionGlide();
             break;
@@ -2772,7 +2763,6 @@ void IPlayer::HandleAction() {
         case ActionType::ClimbRise:
             ActionClimbRise();
             break;
-
         case ActionType::InStream:
             ActionInStream();
             break;
@@ -2782,12 +2772,9 @@ void IPlayer::HandleAction() {
         case ActionType::InStreamPipe:
             ActionInStreamPipe();
             break;
-
         case ActionType::Respawn:
             ActionRespawn();
             break;
-
-
         default:
             ActionNormal();
             break;
@@ -2846,6 +2833,7 @@ void IPlayer::ActionNormal() {
         Action = ActionType::Rolling;
     }
 }
+
 void IPlayer::ActionLookUp() {
     if (!InputUp)
         Action = ActionType::Normal;
@@ -2853,6 +2841,7 @@ void IPlayer::ActionLookUp() {
     if (InputJump && Ground)
         Jump();
 }
+
 void IPlayer::ActionPush() {
     if (
         (Flip == 1.0f && (!InputRight || !CollisionRightSensor(42069))) ||
@@ -2887,6 +2876,7 @@ void IPlayer::ActionPush() {
     if (Ground)
         Speed = 0;
 }
+
 void IPlayer::ActionRolling() {
     if (ObjectControlled > 0) return;
 
@@ -2928,6 +2918,7 @@ void IPlayer::ActionRolling() {
     if (RollSpeedCap)
         Speed = std::min(std::abs(Speed), 32.0f) * signum(Speed);
 }
+
 void IPlayer::ActionSkid() {
     bool CreateParticles = false;
     if (Speed > 0 && InputLeft) {
@@ -2970,6 +2961,7 @@ void IPlayer::ActionSkid() {
         Jump();
     }
 }
+
 void IPlayer::ActionJumping() {
     if (!InputJumpHold && Gravity < JumpRelease && JumpVariable == 1)
         Gravity = JumpRelease;
@@ -3149,6 +3141,7 @@ void IPlayer::ActionJumping() {
         DropDashRev++;
     }
 }
+
 void IPlayer::ActionCrouchDown() {
     if (!InputDown)
         Action = ActionType::Normal;
@@ -3168,6 +3161,7 @@ void IPlayer::ActionCrouchDown() {
     else if (InputJump && Ground)
         Jump();
 }
+
 void IPlayer::ActionSpindash() {
     if (false) { // Delay) {
         /*SpindashRev = SpindashRev;
@@ -3229,6 +3223,7 @@ void IPlayer::ActionSpindash() {
         }*/
     }
 }
+
 void IPlayer::ActionSpring() {
     if (Ground) {
         Action = ActionType::Normal;
@@ -3247,6 +3242,7 @@ void IPlayer::ActionSpring() {
         }
     }
 }
+
 void IPlayer::ActionSlide() {
     if (!Ground)
         Action = ActionType::Normal;
@@ -3256,9 +3252,36 @@ void IPlayer::ActionSlide() {
     if (signum(Speed) != 0)
         Flip = signum(Speed);
 }
-void IPlayer::ActionGrab() {
 
+void IPlayer::ActionGrab() {
+/*    this->Y = GrabY;
+    Gravity = 0;
+    Speed = ConveyorSpeed;
+    if (InputLeft) {
+        Speed = ConveyorSpeed - 1;
+    }
+    if (InputRight) {
+        Speed = ConveyorSpeed + 1;
+    }
+    if (InputJump) {
+        LastGrabY = GrabY;
+        GrabTimer = 60;
+        Jump();
+        Gravity = -5;
+        HangingBar = false;
+        ObjectControlled = 0;
+    } */
 }
+
+void IPlayer::ActionObjectGrab() {
+/*    if (InputJump) {
+        Jump();
+        Gravity = -5;
+        HangingBar = false;
+        ObjectControlled = 0;
+    } */
+}
+
 void IPlayer::ActionFly() {
     FlyTimer -= 1;
     GravityRate = 0;

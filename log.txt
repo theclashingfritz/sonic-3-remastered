@@ -54,55 +54,9 @@ source/S3/Player.cpp:1642:22: warning: variable 'Object2Col' set but not used [-
      bool Object1Col, Object2Col;
                       ^~~~~~~~~~
 source/S3/Player.cpp: In member function 'void IPlayer::SpeedMovement()':
-source/S3/Player.cpp:2441:13: warning: variable 'GoAroundCircleAddition' set but not used [-Wunused-but-set-variable]
+source/S3/Player.cpp:2434:13: warning: variable 'GoAroundCircleAddition' set but not used [-Wunused-but-set-variable]
          int GoAroundCircleAddition = 0;
              ^~~~~~~~~~~~~~~~~~~~~~
-g++ -static -c source/S3/AIZ/GiantHollowLog.cpp -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -std=gnu++11 -g -Wall -lstdc++ -DPLATFORM_WINDOWS -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -lmingw32 -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
--mwindows -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
--o out/CPP/S3/AIZ/GiantHollowLog.o
-In file included from c:\users\theclashingfritz\documents\sonic-3-remake\source\application.h:4:0,
-                 from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/S3/Object.h:4,
-                 from source/S3/AIZ/GiantHollowLog.h:4,
-                 from source/S3/AIZ/GiantHollowLog.cpp:1:
-c:\users\theclashingfritz\documents\sonic-3-remake\source\Standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
-In file included from c:\users\theclashingfritz\documents\sonic-3-remake\source\Input.h:4:0,
-                 from c:\users\theclashingfritz\documents\sonic-3-remake\source\application.h:5,
-                 from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/S3/Object.h:4,
-                 from source/S3/AIZ/GiantHollowLog.h:4,
-                 from source/S3/AIZ/GiantHollowLog.cpp:1:
-c:\users\theclashingfritz\documents\sonic-3-remake\source\Standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
-In file included from c:\users\theclashingfritz\documents\sonic-3-remake\source\Engine/ITexture.h:8:0,
-                 from c:\users\theclashingfritz\documents\sonic-3-remake\source\Input.h:6,
-                 from c:\users\theclashingfritz\documents\sonic-3-remake\source\application.h:5,
-                 from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/S3/Object.h:4,
-                 from source/S3/AIZ/GiantHollowLog.h:4,
-                 from source/S3/AIZ/GiantHollowLog.cpp:1:
-c:\users\theclashingfritz\documents\sonic-3-remake\source\standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
-In file included from c:\users\theclashingfritz\documents\sonic-3-remake\source\Scene.h:4:0,
-                 from c:\users\theclashingfritz\documents\sonic-3-remake\source\application.h:6,
-                 from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/S3/Object.h:4,
-                 from source/S3/AIZ/GiantHollowLog.h:4,
-                 from source/S3/AIZ/GiantHollowLog.cpp:1:
-c:\users\theclashingfritz\documents\sonic-3-remake\source\Standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
-In file included from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/LevelScene.h:4:0,
-                 from source/S3/AIZ/GiantHollowLog.cpp:2:
-C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
-In file included from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/TextureAudio.h:26:0,
-                 from C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/LevelScene.h:6,
-                 from source/S3/AIZ/GiantHollowLog.cpp:2:
-C:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/Standard.h:101:84: warning: backslash-newline at end of file
- #define WITH_ALL(IN) for (int _______p = 0; _______p < player_count; _______p++) { \
-                                                                                     
 g++ -static out/CPP/Application.o out/CPP/Scene_TDZ.o out/CPP/Scene_SpecialStage.o out/CPP/Scene_SSZ.o out/CPP/Scene_DEZ.o out/CPP/main.o out/CPP/Scene_MGZ.o out/CPP/S3/HCZ/Level.o out/CPP/S3/HCZ/AirBubble.o out/CPP/S3/HCZ/Bubbler.o out/CPP/S3/CNZ/Barrel.o out/CPP/S3/Player.o out/CPP/S3/AIZ/Bosses/AIZMinibossCutscene.o out/CPP/S3/AIZ/Bosses/AIZBoss.o out/CPP/S3/AIZ/Bosses/AIZMiniboss.o out/CPP/S3/AIZ/Ridge.o out/CPP/S3/AIZ/ForegroundPlant.o out/CPP/S3/AIZ/Rock.o out/CPP/S3/AIZ/Dummy.o out/CPP/S3/AIZ/SpikedLog.o out/CPP/S3/AIZ/FallingLog.o out/CPP/S3/AIZ/DisappearingPlatform.o out/CPP/S3/AIZ/RideVine.o out/CPP/S3/AIZ/LogBridge.o out/CPP/S3/AIZ/Bloominator.o out/CPP/S3/AIZ/RhinoBot.o out/CPP/S3/AIZ/FloatingPlatform.o out/CPP/S3/AIZ/GiantHollowLog.o out/CPP/S3/AIZ/Cork.o out/CPP/S3/AIZ/MonkeyDude.o out/CPP/S3/AIZ/CollapsingPlatform.o out/CPP/S3/AIZ/TreeBark.o out/CPP/S3/Objects/Button.o out/CPP/S3/Objects/Ring.o out/CPP/S3/Objects/Spikes.o out/CPP/S3/Objects/PathSwitcher.o out/CPP/S3/Objects/NonAnimatedStill.o out/CPP/S3/Objects/EggCapsule.o out/CPP/S3/Objects/Points.o out/CPP/S3/Objects/AnimatedStill.o out/CPP/S3/Objects/Starpole.o out/CPP/S3/Objects/Spring.o out/CPP/S3/Objects/BreakableWall.o out/CPP/S3/Objects/InvisibleSolid.o out/CPP/S3/Objects/SpecialStageRing.o out/CPP/S3/Objects/RollEnforcer.o out/CPP/S3/Objects/Monitor.o out/CPP/S3/ObjectNames.o out/CPP/S3/Enemy.o out/CPP/Scene_TitleScreen.o out/CPP/Scene_LBZ.o out/CPP/Scene_SOZ.o out/CPP/Engine/ICrypt.o out/CPP/Engine/IO/IResources.o out/CPP/Engine/ITexture.o out/CPP/Engine/IGraphics.o out/CPP/Scene_AIZ.o out/CPP/Scene_HCZ.o out/CPP/Scene_ICZ.o out/CPP/Scene_LRZ.o out/CPP/Scene_FBZ.o out/CPP/LevelScene.o out/CPP/Scene_Z_MSZ.o out/CPP/Scene_CNZ.o out/CPP/Scene_MHZ.o out/CPP/Scene_MainMenu.o out/CPP/Resources.o out/CPP/Scene.o out/CPP/Standard.o out/CPP/Input.o meta/sonic3.res -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source -IC:/MinGW/include/SDL2 -LC:/MinGW/lib -Llibpng/zlib -Llibpng/src -IC:/Users/theclashingfritz/Documents/Sonic-3-Remake/source/GL -std=gnu++11 -lstdc++ -DDEBUGGLE -DGLEW_STATIC -DSTATIC -static -DPNG_STATIC -DZLIB_STATIC -DLOAD_PNG_DYNAMIC="DLL/libpng16-16.dll" -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglu32 -lSDL2_image -lSDL2_mixer \
 -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -DGL_GLEXT_PROTOTYPES -logg -lz -Wl,-Bstatic --static \
 -Xlinker -Map=Sonic_3.map -o "Sonic 3.exe"

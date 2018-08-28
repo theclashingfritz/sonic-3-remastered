@@ -135,6 +135,9 @@ class IPlayer : public Object {
 		float CameraY = 0;
 		float DisplayFlip = 1;
 		float DisplayAngle = 0;
+        float GrabY = -1;
+        float LastGrabY = -1;
+        int GrabTimer = -1;
 		bool SlowRotationReset = false;
 		float StoredRotation = 0;
 
@@ -191,6 +194,8 @@ class IPlayer : public Object {
 		float GlideTurnSpeed = 0.0f;
 		int GlideTurnCos = 0;
 		bool GlideTurnFlag = false;
+        
+        bool HangingBar = false;
 
 		int Angle = 0;
 		int AngleMode = 0;
@@ -259,6 +264,8 @@ class IPlayer : public Object {
 		int AnimationEnd = 0;
 		int AnimationSpeed = 0;
 		bool AnimationStop = false;
+        
+        int ConveyorSpeed = 0;
 
 		float Sin[360];
 		float Cos[360];

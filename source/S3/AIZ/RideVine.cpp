@@ -18,75 +18,127 @@ void IRideVine::Create() {
     Timer = 0;
 
     Y += 64;
-	App->print(3, "RideVine: Object created in current zone!");
 }
-
 void IRideVine::Update() {
-    t++;
-    t %= 180;
-    Angle = std::sin(t / 180.f * 2 * Math_PI) * 90.f;
-    X = X + std::sin(Angle * Math_PI / 180.f) * 144;
-    Y = Y + std::cos(Angle * Math_PI / 180.f) * 144;
-    if (PlayerID != -1) {
-        if (Scene->player->ObjectControlled == 0) {
-            PlayerID = -1;
+    if (BaseX >= StartX + ((SubType & 0x7F) << 4) && PotentialEnergy == 0) {
+        BaseX  = StartX + ((SubType & 0x7F) << 4);
+        if (Scene->ApparentAct == 1) {
+            PotentialEnergy = 8;
+        } else {
+            Active = false;
+            Scene->MyPlayer->ObjectControlled = 0;
+            Scene->MyPlayer->Ground = false;
+            Scene->MyPlayer->Action = ActionType::Jumping;
             return;
         }
+        Speed = 0;
+        Gravity = 0;
+        Timer = 0;
+        Priority = true;
+    }
 
-        Scene->player->X = X + std::sin(0 * Math_PI / 180.f) * 20 + std::cos(0 * Math_PI / 180.f) * 2 * Scene->player->Flip;
-        Scene->player->Y = Y + std::cos(0 * Math_PI / 180.f) * 20 + std::sin(0 * Math_PI / 180.f) * 2 * Scene->player->Flip;
-        Scene->player->Angle = 0;//Angle * Math_PI / 180.f;
+    X = BaseX - Speed;
+    Y = BaseY - Gravity + 64;
 
-        /*
-		// Manually set Animation Frame for Sonic swinging
-        Scene->player->AnimationOffset = -((int)Scene->player->Flip - 1);
-        if (std::abs(Angle) < 45) {
-            Scene->player->AnimationOffset = 1;
-        } else if (Angle > 45) {
-            Scene->player->AnimationOffset = 2 - Scene->player->AnimationOffset;
-		}
-		*/
+    BaseX += Speed;
+    BaseY += Gravity;
 
-        Scene->player->Action = ActionType::ObjectGrab;
-        Scene->player->Speed = signum(std::sin(Angle * Math_PI / 180.f)) * 2.5f;
+    if (PotentialEnergy == 0) {
+        Timer = (Timer + 2) % 256;
+    } else {
+        Timer = (Timer + 1) % 80;
+    }
+
+    Angle = std::sin(Timer * Math_PI / 128.f) * 4;
+    if (Angle == 4)
+        Angle = 3.99f;
+
+    if (Speed > 0) {
+        float scl = std::min(1.f, (X - StartX) / 512.f);
+        Angle = std::sin(Timer * Math_PI / 128.f) * 2 - 10 * scl;
+    }
+    else if (PotentialEnergy > 0) {
+        Angle = (Timer / 80.f) * 256;
+    }
+
+    int OX = 0;
+    int OY = 0;
+    if (PotentialEnergy == 0) {
+        for (int i = 0; i < 4; i++) {
+            int A = -(int)std::round(Angle) * i;
+            int fr = A / 8;
+            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
+            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
+        }
+    } else {
+        for (int i = 0; i < 4; i++) {
+            int A = -(int)std::round(Angle);
+            int fr = A / 8;
+            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
+            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
+        }
+    }
+
+    X = BaseX + OX;
+    Y = BaseY + OY;
+    if (Scene->MyPlayer->LastGrab == this && Scene->MyPlayer->ObjectControlled != 0) {
+        Scene->MyPlayer->X = X;
+        Scene->MyPlayer->Y = Y + 18;
+        Scene->MyPlayer->Speed = 8;
+        if (PotentialEnergy > 0) {
+            int A = (int)std::round(Angle);
+            int fr = A / 8;
+            float An = (int)(fr * 8) * 180 / 128.f;
+
+
+            Scene->MyPlayer->Angle = (int)An;
+            Scene->MyPlayer->X = X + std::sin(An * Math_PI / 180.f) * 18;
+            Scene->MyPlayer->Y = Y + std::cos(An * Math_PI / 180.f) * 18;
+
+            Angle = (int)(fr * 8);
+        }
     }
 }
 void IRideVine::Render(int CamX, int CamY) {
-	G->PaletteShift(0);
-    G->DrawSprite(Sprite, X - CamX - (Scene->player->X - (int)Scene->player->X), Y - CamY - (Scene->player->Y - (int)Scene->player->Y), 0, 4, IE::CenterAlign | IE::MiddleAlign);
+    G->PaletteShift(0);
+    // Handle
+    G->DrawSprite(Sprite, (int)(X - CamX), (int)(Y - CamY), -0.3f, PotentialEnergy > 0 ? std::round(Angle) * Math_PI / 128.f : 0, 32, IE::CenterAlign | IE::MiddleAlign);
 
-    /*int framesAtAngle[] = {
-        0,  0,  0,  0,  0,  0,  0,  0,  0,
-        0,  0,  0,  0,  0,  0,  0,  0, -1,
-        0,  0,  0, -1, -1, -1, -1, -1, -1,
-        0,  0,  0, -1, -1, -1, -1, -1, -1,
-    };*/
+    // Rope?
+    int OX = 0;
+    int OY = 0;
+    if (PotentialEnergy == 0) {
+        for (int i = 0; i < 4; i++) {
+            int A = -(int)std::round(Angle) * i;
+            int fr = A / 8;
+            if (fr < 0)
+                fr += 32;
+            G->DrawSprite(Sprite, (int)BaseX - CamX + OX, (int)BaseY - CamY + OY, 0.1f - 5, 0, fr, IE::CenterAlign | IE::MiddleAlign);
+            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
+            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
+        }
+    } else {
+        for (int i = 0; i < 4; i++) {
+            int A = -(int)std::round(Angle);
+            int fr = A / 8;
+            if (fr < 0)
+                fr += 32;
+            G->DrawSprite(Sprite, (int)BaseX - CamX + OX, (int)BaseY - CamY + OY, 0.1f - 5, 0, fr, IE::CenterAlign | IE::MiddleAlign);
+            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
+            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
+        }
+    }
 
-    //float vineSegmentX = $X;
-    //float vineSegmentY = $Y;
-    //for (int i = 0; i < 9; i++) {
-        //App->drawSpriteOPTeasy(Scene->tex_objects[0x06], vineSegmentX - camX, vineSegmentY - camY, vineSegmentFrame % 8, vineSegmentFrame / 8, 1, 1, 1.f, 1.f, 6);
-    //}
-    //App->renderSpriteOPT(Sprite, 6);
-	
+    // Rope peg
+    G->DrawSprite(Sprite, (int)BaseX - CamX, (int)BaseY - CamY, 0.1f, 33, IE::CenterAlign | IE::MiddleAlign);
+
     if (Scene->ShowHitboxes) {
         G->PaletteShift(-1);
-        G->DrawRectangle((int)X - CamX - W / 2, (int)Y - CamY - H / 2, -2.11f, W, H, IColor(1, 0, 0, 0.5f));
+        G->DrawRectangle((int)X - CamX - W / 2, (int)Y - CamY - H / 2, -2.11f, W, H, IColor(1, 1, 1, 0.5f));
     }
 }
 
-int IRideVine::OnGrabbed(int PlayerID) {
-    if (this->PlayerID == -1) {
-        if (Scene->MyPlayer->ObjectControlled != 0)
-            return 0;
-
-        this->PlayerID = PlayerID;
-        return 1;
-    }
-    return 0;
-}
-
-int IRideVine::OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data) {
+int  IRideVine::OnCollisionWithPlayer(int PlayerID, int HitFrom, int Data) {
     if (Scene->MyPlayer->X - X + 16 >= 32)
         return 0;
     if (Scene->MyPlayer->Y - Y >= 24)
