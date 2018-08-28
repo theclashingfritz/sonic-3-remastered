@@ -6,6 +6,7 @@ log.txt
 *.zip
 *.log
 *.map
+log.txt
 
 
 # Prerequisites

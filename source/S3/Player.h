@@ -359,6 +359,7 @@ class IPlayer : public Object {
 		void PushPlayerYDown();
 
 		bool HandleSprings();
+        void HandleConveyers();
 		void HandleEnemies();
 		void HandleMonitors();
 		void HandlePathSwitchers();

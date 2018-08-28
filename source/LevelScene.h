@@ -30,6 +30,7 @@
 #include "S3/AIZ/Rock.h"
 #include "S3/AIZ/Ridge.h"
 #include "S3/AIZ/RideVine.h"
+#include "S3/AIZ/SwingVine.h"
 #include "S3/AIZ/TreeBark.h"
 #include "S3/AIZ/LogBridge.h"
 #include "S3/AIZ/SpikedLog.h"

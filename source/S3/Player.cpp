@@ -2327,6 +2327,7 @@ void IPlayer::SpeedMovement() {
             PushPlayerX_Id(-1);
             PushPlayerY();
         } else {
+            App->print(3, "Safely pushing player.");
             //PushPlayerSafe();
         }
 
@@ -2373,9 +2374,9 @@ void IPlayer::SpeedMovement() {
                     X += 1;
                     App->print(3, "Switched to Mode 1 and adjusted position. (Speed > 0)");
                     AngleMode = 1;
-                    if (!AngleBothSensors || std::abs(AngleDifference(AngleMode * 90, Angle)) > 10 ||
-                    (CollisionASensor360(-1, 0) && CollisionBSensor360(-1, 0)))
+                    if (!AngleBothSensors || std::abs(AngleDifference(AngleMode * 90, Angle)) > 10 || (CollisionASensor360(-1, 0) && CollisionBSensor360(-1, 0))) {
                         Angle = CheckAngle();
+                    }
                 } else {
                     AngleMode = AngleModeLast;
                     Angle = AngleLast;
@@ -2456,8 +2457,7 @@ void IPlayer::SpeedMovement() {
     if ((Angle >= 45 && Angle <= 315) && std::abs(Speed) < 2.5f && !ForceRoll) {
         if (Angle < 90 || Angle > 270) {
             InputAlarm  = 30;
-        }
-        else {
+        } else {
             Gravity = -Sin[Angle] * Speed;
             Speed = Cos[Angle] * Speed;
             Ground = false;
@@ -2746,7 +2746,7 @@ void IPlayer::HandleAction() {
             ActionGrab();
             break;
         case ActionType::ObjectGrab:
-            //ActionObjectGrab();
+            ActionObjectGrab();
             break;
         case ActionType::Glide:
             ActionGlide();
@@ -3254,15 +3254,18 @@ void IPlayer::ActionSlide() {
 }
 
 void IPlayer::ActionGrab() {
-/*    this->Y = GrabY;
     Gravity = 0;
+    
+    // Conveyor stuff.
+    /* this->Y = GrabY;
     Speed = ConveyorSpeed;
     if (InputLeft) {
         Speed = ConveyorSpeed - 1;
     }
     if (InputRight) {
         Speed = ConveyorSpeed + 1;
-    }
+    } */
+    
     if (InputJump) {
         LastGrabY = GrabY;
         GrabTimer = 60;
@@ -3270,16 +3273,16 @@ void IPlayer::ActionGrab() {
         Gravity = -5;
         HangingBar = false;
         ObjectControlled = 0;
-    } */
+    }
 }
 
 void IPlayer::ActionObjectGrab() {
-/*    if (InputJump) {
+    if (InputJump) {
         Jump();
         Gravity = -5;
         HangingBar = false;
         ObjectControlled = 0;
-    } */
+    }
 }
 
 void IPlayer::ActionFly() {
@@ -3315,14 +3318,19 @@ void IPlayer::ActionFly() {
         Action = ActionType::Normal;
     }
 }
+
 void IPlayer::ActionInStream() {
 }
+
 void IPlayer::ActionInStreamPipe() {
 }
+
 void IPlayer::ActionInStreamGrab() {
 }
+
 void IPlayer::ActionRespawn() {
 }
+
 void IPlayer::ActionGlide() {
     if (Gravity > 0.5f) {
         Gravity = std::max(0.5f, Gravity - 0.125f);
@@ -3621,25 +3629,28 @@ bool IPlayer::HandleSprings() {
                 int si = std::abs(Sin[obj->Rotation]);
                 int co = std::abs(Cos[obj->Rotation]);
                 if (obj->X + obj->W / 2 + si * 3 - co * 6 >= X - W / 2 - 8 &&
-                    obj->Y + obj->H / 2 + co * 3          >= Y - H / 2 &&
+                    obj->Y + obj->H / 2 + co * 3 >= Y - H / 2 &&
                     obj->X - obj->W / 2 - si * 3 + co * 6 <  X + W / 2 + 8 &&
-                    obj->Y - obj->H / 2 - co * 3          <  Y + H / 2) {
+                    obj->Y - obj->H / 2 - co * 3 <  Y + H / 2) {
 
                     float wy = (W + obj->W) * (Y - obj->Y);
                     float hx = (H + obj->H) * (X - obj->X);
 
                     int hitFrom = 0;
 
-                    if (wy > hx)
-                        if (wy > -hx)
+                    if (wy > hx) {
+                        if (wy > -hx) {
                             hitFrom = 3;
-                        else
+                        } else {
                             hitFrom = 2;
-                    else
-                        if (wy > -hx)
+                        }
+                    } else {
+                        if (wy > -hx) {
                             hitFrom = 0;
-                        else
+                        } else {
                             hitFrom = 1;
+                        }
+                    }
 
                     bool Hurt = Action == ActionType::Hurt;
                     if (obj->OnCollisionWithPlayer(0 /* PLAYER ID */, hitFrom, 1)) {
@@ -3655,6 +3666,11 @@ bool IPlayer::HandleSprings() {
     }
     return false;
 }
+
+void IPlayer::HandleConveyers() {
+
+}
+
 void IPlayer::HandleEnemies() {
 
 }

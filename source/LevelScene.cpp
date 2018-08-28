@@ -1173,8 +1173,8 @@ void LevelScene::createObjects(int check, int specialRing, bool actTransition) {
 
         }
         else if (ID == 0x0C) { // Swing Vine
-            OBJECT_MACRO(IRideVine);
-            obj->Y += 64;
+            OBJECT_MACRO(ISwingVine);
+            //obj->Y += 64;
         }
         else if (ID == 0x0D) { // Breakable Wall
             OBJECT_MACRO(IBreakableWall);
