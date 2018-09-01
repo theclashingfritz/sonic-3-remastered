@@ -39,12 +39,14 @@ float ShipY = 0;
 
 // Unique
 const char LevelID = 0x10;
+
 // Modularized
 Scene_AIZ::Scene_AIZ(Application* app, int act, int checkpoint) {
     App = app;
     RefreshRW();
     Init(app, LevelID + act, checkpoint);
 }
+
 void Scene_AIZ::RefreshRW() {
     SDL_RWops *_RWList[35] = {
         newFile(Resource_Stages_AIZ_level_lvl, "Resource/Stages/AIZ/level.lvl"),

@@ -107,26 +107,19 @@ void IRideVine::Render(int CamX, int CamY) {
     // Rope?
     int OX = 0;
     int OY = 0;
-    if (PotentialEnergy == 0) {
-        for (int i = 0; i < 4; i++) {
-            int A = -(int)std::round(Angle) * i;
-            int fr = A / 8;
-            if (fr < 0)
-                fr += 32;
-            G->DrawSprite(Sprite, (int)BaseX - CamX + OX, (int)BaseY - CamY + OY, 0.1f - 5, 0, fr, IE::CenterAlign | IE::MiddleAlign);
-            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
-            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
+    for (int i = 0; i < 4; i++) {
+        int A = 0;
+        if (PotentialEnergy == 0) {
+            A = -(int)std::round(Angle) * i;
+        } else {
+            A = -(int)std::round(Angle);
         }
-    } else {
-        for (int i = 0; i < 4; i++) {
-            int A = -(int)std::round(Angle);
-            int fr = A / 8;
-            if (fr < 0)
-                fr += 32;
-            G->DrawSprite(Sprite, (int)BaseX - CamX + OX, (int)BaseY - CamY + OY, 0.1f - 5, 0, fr, IE::CenterAlign | IE::MiddleAlign);
-            OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
-            OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
-        }
+        int fr = A / 8;
+        if (fr < 0)
+            fr += 32;
+        G->DrawSprite(Sprite, (int)BaseX - CamX + OX, (int)BaseY - CamY + OY, 0.1f - 5, 0, fr, IE::CenterAlign | IE::MiddleAlign);
+        OX -= std::sin((int)(fr * 8) * Math_PI / 128.f) * 16;
+        OY += std::cos((int)(fr * 8) * Math_PI / 128.f) * 16;
     }
 
     // Rope peg

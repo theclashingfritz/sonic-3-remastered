@@ -41,6 +41,7 @@ bool Menu::ButtonSelected() {
     }
     return false;
 }
+
 void Menu::Render(int x, float Cos, float Sin, Texture* tex_Buttons, Texture* tex_Font) {
     for (int i = 0; i < SubMenuCount; i++) {
         if (text[i] == NULL) break;
@@ -51,6 +52,7 @@ void Menu::Render(int x, float Cos, float Sin, Texture* tex_Buttons, Texture* te
         sc->drawText(tex_Font, text[i], x + 80 + 18 + (int)(Cos * (64 * i + ScrollY)), 50 + (int)(Sin * (64 * i + ScrollY)), 0, 1, (i == SelectedItem ? 1 : 0));
     }
 }
+
 bool Menu_Main::ButtonSelected() {
     if (SelectedItem < 3)
         Menu::ButtonSelected();
@@ -66,6 +68,7 @@ bool Menu_StartGame::ButtonSelected() {
 
     return false;
 }
+
 void Menu_StartGame::Render(int x, float Cos, float Sin, Texture* tex_Buttons, Texture* tex_Font) {
     int initalY = 48;
 
@@ -93,6 +96,7 @@ void Menu_StartGame::Render(int x, float Cos, float Sin, Texture* tex_Buttons, T
         drawFont(x + 40 + 80 + 16 + 4, initalY + 56 / 2 + (int)(64 * i + ScrollY) + 13, "ZONE", 0, sc->tex_HUD_ZoneNameFont);
     }
 }
+
 void Menu_StartGame::drawFont(int x, int y, const char* text, float align, Texture* font) {
     int ww = 0;
     int addx = 0;
@@ -356,7 +360,7 @@ void Scene_MainMenu::Update() {
         G->SetFade(0.f);
         //app->nextScene = new Scene_MSZ(app, 1 + app->input->right[0], 0);
         if (current_menu_item == 0)
-            app->nextScene = new Scene_AIZ(app, 1 + app->input->down[0], 2);
+            app->nextScene = new Scene_AIZ(app, 1 + app->input->down[0], 0);
         else if (current_menu_item == 1)
             app->nextScene = new Scene_HCZ(app, 1 + app->input->down[0], 0);
         else if (current_menu_item == 2)

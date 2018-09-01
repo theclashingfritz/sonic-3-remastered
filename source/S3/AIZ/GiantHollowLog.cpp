@@ -41,8 +41,7 @@ void IGiantHollowLog::Update() {
 
             Scene->cameraMinX = Scene->MyPlayer->Data4 - App->renderWidth / 2;
             Scene->cameraMaxX = Scene->MyPlayer->Data4 - App->renderWidth / 2;
-        }
-        else {
+        } else {
             Scene->MyPlayer->X = Scene->MyPlayer->Data4 + 0xC0 / 2 * ((90 - Scene->MyPlayer->Data3) / 90.f);
             Scene->cameraMinX = 0;
             Scene->cameraMaxX = Scene->levelW * 128 - App->renderWidth;
@@ -57,8 +56,7 @@ void IGiantHollowLog::Update() {
 
         if (Scene->MyPlayer->Data3 > 0)
             Scene->MyPlayer->Data3 -= Scene->MyPlayer->Data2 / 1.75f;
-    }
-    else {
+    } else {
         Scene->MyPlayer->ObjectControlled = 0;
         Scene->MyPlayer->Speed = Scene->MyPlayer->Data2 / 2;
         FirstRun = 1;
@@ -78,7 +76,6 @@ void IGiantHollowLog::Render(int CamX, int CamY) {
             0xAC,
             0xAB,
             0xAE,
-
             0xA9,
             0xAA,
             0xAD,
